@@ -1,13 +1,24 @@
 import { Button } from "./ui/Button/Button";
 import { Container } from "./ui/Container/Container";
+import { Header } from "./ui/Header/Header";
+import { PageWrapper } from "./ui/PageWrapper/PageWrapper";
+import { DevGrids } from "./ui/DevGrids/DevGrids";
+import { FirstScreen } from "./ui/FirstScreen/FirstScreen";
 
 export const App = () => {
   return (
-    <Container>
-      <h1>hello, world</h1>
-      <Button>123</Button>
-      <Button isActive>123</Button>
-      <Button>123</Button>
-    </Container>
+    
+    <PageWrapper>
+      <Header />
+
+      <FirstScreen />
+
+      <Container>
+
+      </Container>
+      
+      <DevGrids />
+    </PageWrapper>
+
   );
 };

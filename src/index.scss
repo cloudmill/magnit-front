@@ -1,3 +1,5 @@
+@import "/src/styles/fonts.scss";
+
 *,
 *::before,
 *::after {
@@ -30,6 +32,9 @@ textarea {
 
 body {
   overflow-x: hidden;
+
+  font-family: 'Golos';
+  font-weight: 400;
 }
 
 #root {

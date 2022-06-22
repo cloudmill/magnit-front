@@ -1,0 +1,52 @@
+@import "/src/styles/helpers.scss";
+
+.firstScreen {
+  background: linear-gradient(266.85deg, #FBECCF 6.46%, #F1C87A 146.03%);
+  padding: 32px 0 148px;
+  position: relative;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__ttl {
+    @include h1-big;
+  }
+
+  &__txt {
+    @include p-big;
+    margin-top: 24px;
+  }
+
+  &__list {
+    li {
+      @include p-small;
+
+      display: flex;
+      align-items: center;
+
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+
+      svg {
+        margin-right: 11px;
+      }
+    }
+  }
+
+  &__col {
+    &:nth-child(1) {
+      width: calc(#{$col-part-d} * 6);
+    }
+    &:nth-child(2) {
+      width: calc(#{$col-part-d} * 4 + #{$col-width-d});
+
+      display: flex;
+      align-items: flex-end;
+    }
+  }
+}
+
+

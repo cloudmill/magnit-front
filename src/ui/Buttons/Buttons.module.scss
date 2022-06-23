@@ -1,26 +1,24 @@
 @import "/src/styles/helpers.scss";
 
 .button {
-  padding: 10px;
-  height: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
 
-  border: 1px solid black;
   white-space: nowrap;
   cursor: pointer;
 
-  &.active,
-  &:hover {
-    .text {
-      color: blue;
-    }
+  border-radius: 12px;
+  padding: 12px 40px;
+
+  @include p-medium;
+
+  svg {
+    margin-right: 8px;
   }
 }
 
-.text {
-  font-size: 32px;
-  color: color(main);
+.grey {
+  background: color(greyBg);
 }

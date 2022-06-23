@@ -1,5 +1,8 @@
 $colors: (
   main: red,
+  greyBorder: #E7E7E7,
+  greyBorder2: #D0D0D0,
+  greyBg: #F3F3F3,
 );
 
 @function color($key) {

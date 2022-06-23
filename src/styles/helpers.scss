@@ -2,6 +2,7 @@
 @use "sass:string";
 @use "sass:math";
 
+@import "./mixins.scss";
 @import "./colors.scss";
 @import "./breakpoints.scss";
 @import "./columns.scss";

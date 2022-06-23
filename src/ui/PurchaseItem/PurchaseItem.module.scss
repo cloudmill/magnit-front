@@ -1,0 +1,77 @@
+@import "/src/styles/helpers.scss";
+
+$padding-left: 40px;
+$padding-right: 70px;
+
+.PurchaseItem {
+
+  border: 1px solid color(greyBorder);
+  padding: 32px $padding-right 32px $padding-left;
+  border-radius: 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &:not(:last-child) {
+    margin-bottom: 12px;
+  }
+
+}
+
+.col {
+  &:nth-child(1) {
+    width: calc(#{$col-part-d} * 6 - #{$padding-left});
+    padding-right: calc(#{$col-part-d} - 10px);
+
+    .txt {
+      @include p-small;
+      @include cropText(2);
+      margin-top: 12px;
+    }
+  }
+  &:nth-child(2), &:nth-child(3) {
+    display: flex;
+    align-items: center;
+
+    .txt {
+      @include p-medium;
+      white-space: nowrap;
+    }
+  }
+  &:nth-child(2) {
+    width: calc(#{$col-part-d} * 3);
+
+    svg {
+      margin-right: 8px;
+    }
+  }
+  &:nth-child(3) {
+    width: calc(#{$col-part-d} * 3 - #{$col-gap-d} - #{$padding-right});
+
+    svg {
+      margin-right: 12px;
+    }
+
+    .txt:not(:last-child) {
+      padding-right: 14px;
+      margin-right: 12px;
+      position: relative;
+      display: flex;
+      align-items: center;
+
+      &::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        width: 2px;
+        height: 11px;
+        background: color(greyBorder2);
+      }
+    }
+  }
+}
+
+.ttl {
+  @include h6-big;
+}

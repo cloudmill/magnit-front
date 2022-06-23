@@ -5,33 +5,41 @@ import { PageWrapper } from "./ui/PageWrapper/PageWrapper";
 import { Header } from "./ui/Header/Header";
 
 import { FirstScreen } from "./ui/FirstScreen/FirstScreen";
+import { Search } from "./ui/Search/Search";
 import { PurchaseList } from "./ui/PurchaseList/PurchaseList";
 import { PurchaseItem } from "./ui/PurchaseItem/PurchaseItem";
 import { InfoBlock } from "./ui/InfoBlock/InfoBlock";
+import { TermsBlock } from "./ui/TermsBlock/TermsBlock";
 
 export const App = () => {
   return (
     
     <PageWrapper>
-      <Header />
+      <Header/>
 
-      <FirstScreen />
+      <FirstScreen/>
 
       <Container>
+
+        <Search/>
         
         <PurchaseList>
 
-          <PurchaseItem />
-          <PurchaseItem />
-          <PurchaseItem />
+          <PurchaseItem/>
+          <PurchaseItem/>
+          <PurchaseItem/>
         
         </PurchaseList>
 
         <InfoBlock/>
 
+        <TermsBlock/>
+
       </Container>
       
-      <DevGrids />
+      <Header bottom />
+
+      <DevGrids/>
     </PageWrapper>
 
   );

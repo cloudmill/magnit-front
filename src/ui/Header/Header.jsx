@@ -1,4 +1,6 @@
 import styles from "./Header.module.scss";
+import classNames from "classnames";
+
 import { Container } from "../Container/Container";
 
 import { ReactComponent as Logo } from "../../assets/images/main-logo.svg";
@@ -7,8 +9,8 @@ import { HeaderNav } from "../HeaderNav/HeaderNav";
 import { GreyButton } from "../Buttons/Buttons"; 
 
 
-export const Header = ({ children }) => (
-  <div className={styles.header}>
+export const Header = ({ bottom }) => (
+  <div className={classNames(styles.header, {[styles.bottom] : bottom})}>
     <Container extraClass={styles.headerContainer}>
 
       <Logo />

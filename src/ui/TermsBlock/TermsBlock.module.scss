@@ -1,0 +1,13 @@
+@import "/src/styles/helpers.scss";
+
+.TermsBlock {
+  margin: 100px 0;
+}
+
+.ttl {
+  @include h1;
+}
+
+.btn {
+  margin-top: 40px;
+}

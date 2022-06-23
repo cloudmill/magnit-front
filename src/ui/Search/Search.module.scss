@@ -1,0 +1,47 @@
+@import "/src/styles/helpers.scss";
+
+.Search {
+  position: relative;
+  z-index: 1;
+  margin: -88px 0 60px 0;
+}
+
+.buttons {
+  display: flex;
+}
+
+.label {
+  background: color(greyBg);
+  border-radius: 15px 15px 0px 0px;
+  padding: 16px 40px;
+  @include p-medium;
+  cursor: pointer;
+
+  &.active {
+    background: #fff;
+  }
+}
+
+.row {
+  display: flex;
+  padding: 32px;
+  background: #fff;
+  box-shadow: 0px -10px 24px rgba(0, 0, 0, 0.06), 0px 20px 24px rgba(0, 0, 0, 0.06);
+  border-radius: 0px 15px 15px 15px;
+}
+
+.input {
+  width: calc(#{$col-part-d} * 6 + (#{$col-width-d} / 2));
+  background: color(greyBg2);
+  padding: 16px;
+  border: 1px solid color(greyBorder);
+  border-radius: 12px;
+  @include p-medium;
+  color: color(greyTxt2);
+  flex: none;
+}
+
+.button {
+  width: 100%;
+  margin-left: 12px;
+}

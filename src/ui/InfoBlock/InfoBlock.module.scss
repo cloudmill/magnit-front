@@ -1,0 +1,85 @@
+@import "/src/styles/helpers.scss";
+
+.InfoBlock {
+  padding: 80px 65px 80px 110px;
+  border-radius: 24px;
+
+  margin: 100px 0;
+
+  background: url('../../assets/images/info-block-bg.png') no-repeat center;
+  background-size: cover
+}
+
+.ttl {
+  @include h1;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  margin-top: 24px;
+
+  .item {
+    display: flex;
+    align-items: center;
+
+    @include p-medium;
+    font-weight: 400;
+
+    &:not(:last-child) {
+      margin-right: 72px;
+    }
+
+    svg {
+      margin-right: 11px;
+    }
+
+    a {
+      font-weight: 600;
+      color: color(red);
+      margin-left: 5px;
+    }
+  }
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 55px;
+
+  margin-top: 80px;
+}
+
+.col {
+
+  &__ttl {
+    @include h4;
+  }
+
+  .txt {
+    @include p-small;
+    margin-top: 8px;
+  }
+}
+
+.tel {
+  display: flex;
+  margin-top: 26px;
+
+  &__col {
+    margin-left: 16px;
+  }
+
+  .number {
+    @include p-medium;
+    font-weight: 700;
+  }
+
+  .dop {
+    @include p-note;
+  }
+}
+
+.btn {
+  margin-top: 24px;
+}

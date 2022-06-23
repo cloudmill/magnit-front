@@ -4,6 +4,18 @@
   line-height: 48px;
 }
 
+@mixin h1 {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 44px;
+}
+
+@mixin h4 {
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 30px;
+}
+
 @mixin h6-big {
   font-weight: 700;
   font-size: 18px;
@@ -26,4 +38,10 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 22px;
+}
+
+@mixin p-note {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 16px;
 }

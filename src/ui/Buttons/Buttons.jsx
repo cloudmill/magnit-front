@@ -9,4 +9,12 @@ const GreyButton = ({ children, isActive, extraClass }) => (
   </button>
 );
 
-export { GreyButton };
+const BlackButton = ({ children, isActive, extraClass }) => (
+  <button
+    className={classNames([styles.button], [styles.black], { [styles.active]: isActive }, extraClass)}
+  >
+  {children}
+  </button>
+);
+
+export { GreyButton, BlackButton };

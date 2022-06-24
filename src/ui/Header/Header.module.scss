@@ -13,6 +13,16 @@
 .headerContainer {
   display: flex;
   align-items: center;
+
+  @media #{media("<")} {
+    justify-content: space-between;
+  }
+
+  & > svg {
+    @media #{media("<")} {
+      width: 95px;
+    }
+  }
 }
 
 .headerButton {
@@ -20,5 +30,14 @@
 
   @media #{media("<")} {
     display: none !important;
+  }
+}
+
+.burger {
+  width: 24px;
+  height: 24px;
+
+  @media #{media()} {
+    display: none;
   }
 }

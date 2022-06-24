@@ -4,8 +4,10 @@ import { ReactComponent as Success } from "../../assets/images/success.svg";
 import { ReactComponent as Tel } from "../../assets/images/tel.svg";
 
 export const InfoBlock = () => (
+
   <div className={styles.InfoBlock}>
-    <h2 className={styles.ttl}>Для участия в процедурах B2B-center</h2>
+
+    <h2 className={styles.ttl}>Для участия в процедурах <span>B2B-center</span></h2>
 
     <div className={styles.top}>
       <div className={styles.item}>
@@ -23,6 +25,7 @@ export const InfoBlock = () => (
     </div>
 
     <div className={styles.bottom}>
+
       <div className={styles.col}>
         <div className={styles.col__ttl}>Технические вопросы</div>
         <div className={styles.txt}>По всем техническим вопросам участия в процедуре обращаться к специалистам B2B-center по телефону</div>
@@ -34,10 +37,12 @@ export const InfoBlock = () => (
           </div>
         </div>
       </div>
+
       <div className={styles.col}>
         <div className={styles.col__ttl}>Участие в процедуре</div>
         <div className={styles.txt}>Запросы к Заказчику процедуры подаются через функционал В2В-center в разделе соответствующей процедуры</div>
       </div>
+
       <div className={styles.col}>
         <div className={styles.col__ttl}>Будьте в курсе</div>
         <div className={styles.txt}>Чтобы не пропустить процедуры АО Тандер, настройте подписку в личном кабинете B2B-center</div>

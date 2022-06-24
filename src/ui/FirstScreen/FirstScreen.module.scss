@@ -1,12 +1,14 @@
 @import "/src/styles/helpers.scss";
 
 .firstScreen {
-  background: url('../../assets/images/first-screen-bg.png') no-repeat center;
+  background: url('../../assets/images/first-screen-bg-mob.png') no-repeat center;
   background-size: cover;
   padding: 32px 0 64px;
   position: relative;
 
   @media #{media()} {
+    background: url('../../assets/images/first-screen-bg.png') no-repeat center;
+    background-size: cover;
     padding: 32px 0 148px;
   }
 }

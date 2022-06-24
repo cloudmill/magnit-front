@@ -1,7 +1,11 @@
 @import "/src/styles/helpers.scss";
 
 .TermsBlock {
-  margin: 100px 0;
+  margin: 40px 0;
+
+  @media #{media()} {
+    margin: 100px 0;
+  }
 }
 
 .ttl {
@@ -9,5 +13,8 @@
 }
 
 .btn {
-  margin-top: 40px;
+  margin-top: 16px;
+  @media #{media()} {
+    margin-top: 40px;
+  }
 }

@@ -1,17 +1,26 @@
 @import "/src/styles/helpers.scss";
 
 .InfoBlock {
-  padding: 80px 65px 80px 110px;
-  border-radius: 24px;
+  padding: 35px 20px;
+  margin: 40px -20px;
 
-  margin: 100px 0;
+  background: url('../../assets/images/info-block-bg-mob.png') no-repeat center;
+  background-size: cover;
 
-  background: url('../../assets/images/info-block-bg.png') no-repeat center;
-  background-size: cover
+  @media #{media()} {
+    background: url('../../assets/images/info-block-bg.png') no-repeat center;
+    background-size: cover;
+    padding: 80px 65px 80px 110px;
+    border-radius: 24px;
+  }
 }
 
 .ttl {
   @include h1;
+
+  span {
+    white-space: nowrap;
+  }
 }
 
 .top {
@@ -19,19 +28,37 @@
   align-items: center;
   margin-top: 24px;
 
+  @media #{media('<')} {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 12px;
+  }
+
   .item {
     display: flex;
     align-items: center;
 
     @include p-medium;
     font-weight: 400;
+    white-space: nowrap;
 
     &:not(:last-child) {
-      margin-right: 72px;
+      margin-bottom: 8px;
+
+      @media #{media()} {
+        margin-right: 72px;
+        margin-bottom: 0;
+      }
     }
 
     svg {
-      margin-right: 11px;
+      margin-right: 8px;
+      flex: none;
+
+      @media #{media()} {
+        width: 16px;
+        margin-right: 11px;
+      }
     }
 
     a {
@@ -48,6 +75,15 @@
   gap: 55px;
 
   margin-top: 80px;
+
+  @media #{media('<')} {
+    gap: 32px;
+    margin-top: 32px;
+  }
+
+  @media #{media('<')} {
+    flex-direction: column;
+  }
 }
 
 .col {
@@ -64,7 +100,17 @@
 
 .tel {
   display: flex;
-  margin-top: 26px;
+  margin-top: 16px;
+
+  @media #{media()} {
+    margin-top: 26px;
+  }
+
+  svg {
+    @media #{media('<')} {
+
+    }
+  }
 
   &__col {
     margin-left: 16px;
@@ -73,6 +119,10 @@
   .number {
     @include p-medium;
     font-weight: 700;
+
+    @media #{media('<')} {
+      font-size: 14px;
+    }
   }
 
   .dop {
@@ -81,5 +131,9 @@
 }
 
 .btn {
-  margin-top: 24px;
+  margin-top: 16px;
+
+  @media #{media()} {
+    margin-top: 24px;
+  }
 }

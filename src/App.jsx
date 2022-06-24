@@ -39,7 +39,7 @@ export const App = () => {
       
       <Header bottom />
 
-      <DevGrids/>
+      {/* <DevGrids/> */}
     </PageWrapper>
 
   );

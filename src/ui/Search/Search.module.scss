@@ -68,6 +68,7 @@
 .button {
   width: calc(50% - 5px);
   @media #{media('<')} {
+    padding: 11px;
     svg {
       width: 16px;
     }

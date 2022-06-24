@@ -71,6 +71,9 @@ $padding-right: 70px;
 
     svg {
       margin-right: 8px;
+      @media #{media('<')} {
+        width: 16px;
+      }
     }
   }
   &:nth-child(3) {
@@ -80,14 +83,29 @@ $padding-right: 70px;
 
     svg {
       margin-right: 12px;
+      @media #{media('<')} {
+        margin-right: 8px;
+        width: 16px;
+      }
+    }
+
+    .txt {
+      @media #{media('<')} {
+        font-size: 10px;
+      }
     }
 
     .txt:not(:last-child) {
-      padding-right: 14px;
-      margin-right: 12px;
+      padding-right: 10px;
+      margin-right: 8px;
       position: relative;
       display: flex;
       align-items: center;
+
+      @media #{media()} {
+        padding-right: 14px;
+        margin-right: 12px;
+      }
 
       &::after {
         content: '';

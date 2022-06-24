@@ -3,3 +3,26 @@ $breakpoint-xs: 375px;
 $breakpoint-m: 768px;
 $breakpoint: 1280px;
 $breakpoint-ll: 1440px;
+
+$breakpoints: (
+  xxl: 1920px,
+  xl: 1680px,
+  ll: 1440px,
+  l: 1366px,
+  d: 1280px,
+  t: 1024px,
+  m: 768px,
+  s: 576px,
+  xs: 375px,
+  xxs: 320px,
+);
+@function breakpoint($variant: d) {
+  @return map.get($breakpoints, $variant);
+}
+@function media($direction: ">", $variant: d) {
+  @if $direction == ">" {
+    @return "(min-width: #{breakpoint($variant)})";
+  }
+
+  @return "(max-width: #{breakpoint($variant) - 1px})";
+}

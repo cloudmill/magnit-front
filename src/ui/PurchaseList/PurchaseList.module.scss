@@ -6,6 +6,10 @@ $padding-right: 70px;
 .top {
   display: flex;
   padding: 0 $padding-right 24px $padding-left;
+
+  @media #{media('<')} {
+    display: none;
+  }
 }
 
 .col {

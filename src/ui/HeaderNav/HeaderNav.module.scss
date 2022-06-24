@@ -3,6 +3,10 @@
 .headerNav {
   margin: 0 auto 0 65px;
   display: flex;
+
+  @media #{media("<")} {
+    display: none;
+  }
 }
 
 .item {

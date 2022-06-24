@@ -3,7 +3,11 @@
 .Search {
   position: relative;
   z-index: 1;
-  margin: -88px 0 60px 0;
+  margin: -32px 0 20px 0;
+
+  @media #{media()} {
+    margin: -88px 0 60px 0;
+  }
 }
 
 .buttons {
@@ -12,10 +16,19 @@
 
 .label {
   background: color(greyBg);
-  border-radius: 15px 15px 0px 0px;
-  padding: 16px 40px;
+  border-radius: 12px 12px 0px 0px;
+  padding: 7px 20px;
   @include p-medium;
+  text-align: center;
   cursor: pointer;
+
+  @media #{media('<')} {
+    width: 50%;
+  }
+  @media #{media()} {
+    border-radius: 15px 15px 0px 0px;
+    padding: 16px 40px;
+  }
 
   &.active {
     background: #fff;
@@ -28,20 +41,39 @@
   background: #fff;
   box-shadow: 0px -10px 24px rgba(0, 0, 0, 0.06), 0px 20px 24px rgba(0, 0, 0, 0.06);
   border-radius: 0px 15px 15px 15px;
+
+  @media #{media("<")} {
+    flex-wrap: wrap;
+    padding: 12px;
+    gap: 8px;
+  }
 }
 
 .input {
-  width: calc(#{$col-part-d} * 6 + (#{$col-width-d} / 2));
+  width: 100%;
   background: color(greyBg2);
-  padding: 16px;
+  padding: 11px 16px;
   border: 1px solid color(greyBorder);
   border-radius: 12px;
   @include p-medium;
   color: color(greyTxt2);
   flex: none;
+
+  @media #{media()} {
+    width: calc(#{$col-part-d} * 6 + (#{$col-width-d} / 2));
+    padding: 16px;
+  }
 }
 
 .button {
+  width: calc(50% - 5px);
+  @media #{media('<')} {
+    svg {
+      width: 16px;
+    }
+  }
+  @media #{media()} {
   width: 100%;
   margin-left: 12px;
+  }
 }

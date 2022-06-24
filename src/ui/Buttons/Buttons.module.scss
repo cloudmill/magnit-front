@@ -9,10 +9,15 @@
   white-space: nowrap;
   cursor: pointer;
 
-  border-radius: 12px;
-  padding: 12px 40px;
+  border-radius: 8px;
+  padding: 11px;
 
   @include p-medium;
+
+  @media #{media()} {
+    padding: 12px 40px;
+    border-radius: 12px;
+  }
 
   svg {
     margin-right: 8px;

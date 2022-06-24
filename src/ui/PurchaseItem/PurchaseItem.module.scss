@@ -6,12 +6,21 @@ $padding-right: 70px;
 .PurchaseItem {
 
   border: 1px solid color(greyBorder);
-  padding: 32px $padding-right 32px $padding-left;
-  border-radius: 15px;
+  padding: 16px 20px;
+  border-radius: 8px;
 
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
+
+  flex-direction: column;
+
+  @media #{media()} {
+    align-items: center;
+    flex-direction: row;
+    border-radius: 15px;
+    padding: 32px $padding-right 32px $padding-left;
+  }
 
   &:not(:last-child) {
     margin-bottom: 12px;
@@ -20,34 +29,54 @@ $padding-right: 70px;
 }
 
 .col {
-  &:nth-child(1) {
-    width: calc(#{$col-part-d} * 6 - #{$padding-left});
-    padding-right: calc(#{$col-part-d} - 10px);
+  &:nth-child(1) { 
+
+    @media #{media()} {
+      width: calc(#{$col-part-d} * 6 - #{$padding-left});
+      padding-right: calc(#{$col-part-d} - 10px);
+    }
 
     .txt {
       @include p-small;
-      @include cropText(2);
-      margin-top: 12px;
+      @include cropText(3);
+      margin-top: 4px;
+
+      @media #{media()} {
+        @include cropText(2);
+        margin-top: 12px;
+      }
     }
   }
   &:nth-child(2), &:nth-child(3) {
     display: flex;
     align-items: center;
 
+    @media #{media('<')} {
+      margin-top: 16px;
+      flex-wrap: wrap;
+    }
+
     .txt {
       @include p-medium;
       white-space: nowrap;
     }
+    svg {
+      flex: none;
+    }
   }
   &:nth-child(2) {
-    width: calc(#{$col-part-d} * 3);
+    @media #{media()} {
+      width: calc(#{$col-part-d} * 3);
+    }
 
     svg {
       margin-right: 8px;
     }
   }
   &:nth-child(3) {
-    width: calc(#{$col-part-d} * 3 - #{$col-gap-d} - #{$padding-right});
+    @media #{media()} {
+      width: calc(#{$col-part-d} * 3 - #{$col-gap-d} - #{$padding-right});
+    }
 
     svg {
       margin-right: 12px;
@@ -74,4 +103,17 @@ $padding-right: 70px;
 
 .ttl {
   @include h6-big;
+}
+
+.mob_ttl {
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 15px;
+  color: color(greyTxt);
+  width: 100%;
+  margin-bottom: 6px;
+
+  @media #{media()} {
+    display: none;
+  }
 }

@@ -1,0 +1,40 @@
+@import "/src/styles/helpers.scss";
+
+.devGrids {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 5000;
+
+  width: 100vw;
+  overflow: hidden;
+  pointer-events: none;
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__col {
+    width: calc(#{$col-width-m});
+    @media (min-width: $breakpoint) {
+      width: calc(#{$col-width-d});
+    }
+    @media #{media(">", xxl)} {
+      width: calc(#{$col-width-xxl});
+    }
+
+    flex-shrink: 0;
+    min-height: 100vh;
+
+    background-color: rgba($color: black, $alpha: 0.1); // ?
+
+    // скрываем на мобильном лишние колонки
+    &:nth-child(-n + #{$col-count-d - $col-count-m}) {
+      @media (max-width: ($breakpoint - 1px)) {
+        display: none;
+      }
+    }
+  }
+}

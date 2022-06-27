@@ -1,0 +1,26 @@
+@import "/src/styles/helpers.scss";
+
+.headerNav {
+  margin: 0 auto 0 65px;
+  display: flex;
+
+  @media #{media("<")} {
+    display: none;
+  }
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  @include p-medium;
+
+  &:not(:last-child) {
+    margin-right: 32px;
+  }
+
+  svg {
+    margin-left: 10px;
+  }
+}

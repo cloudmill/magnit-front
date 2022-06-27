@@ -1,0 +1,137 @@
+@import "/src/styles/helpers.scss";
+
+$padding-left: 40px;
+$padding-right: 70px;
+
+.PurchaseItem {
+
+  border: 1px solid color(greyBorder);
+  padding: 16px 20px;
+  border-radius: 8px;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  flex-direction: column;
+
+  @media #{media()} {
+    align-items: center;
+    flex-direction: row;
+    border-radius: 15px;
+    padding: 32px $padding-right 32px $padding-left;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 12px;
+  }
+
+}
+
+.col {
+  &:nth-child(1) { 
+
+    @media #{media()} {
+      width: calc(#{$col-part-d} * 6 - #{$padding-left});
+      padding-right: calc(#{$col-part-d} - 10px);
+    }
+
+    .txt {
+      @include p-small;
+      @include cropText(3);
+      margin-top: 4px;
+
+      @media #{media()} {
+        @include cropText(2);
+        margin-top: 12px;
+      }
+    }
+  }
+  &:nth-child(2), &:nth-child(3) {
+    display: flex;
+    align-items: center;
+
+    @media #{media('<')} {
+      margin-top: 16px;
+      flex-wrap: wrap;
+    }
+
+    .txt {
+      @include p-medium;
+      white-space: nowrap;
+    }
+    svg {
+      flex: none;
+    }
+  }
+  &:nth-child(2) {
+    @media #{media()} {
+      width: calc(#{$col-part-d} * 3);
+    }
+
+    svg {
+      margin-right: 8px;
+      @media #{media('<')} {
+        width: 16px;
+      }
+    }
+  }
+  &:nth-child(3) {
+    @media #{media()} {
+      width: calc(#{$col-part-d} * 3 - #{$col-gap-d} - #{$padding-right});
+    }
+
+    svg {
+      margin-right: 12px;
+      @media #{media('<')} {
+        margin-right: 8px;
+        width: 16px;
+      }
+    }
+
+    .txt {
+      @media #{media('<')} {
+        font-size: 10px;
+      }
+    }
+
+    .txt:not(:last-child) {
+      padding-right: 10px;
+      margin-right: 8px;
+      position: relative;
+      display: flex;
+      align-items: center;
+
+      @media #{media()} {
+        padding-right: 14px;
+        margin-right: 12px;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        width: 2px;
+        height: 11px;
+        background: color(greyBorder2);
+      }
+    }
+  }
+}
+
+.ttl {
+  @include h6-big;
+}
+
+.mob_ttl {
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 15px;
+  color: color(greyTxt);
+  width: 100%;
+  margin-bottom: 6px;
+
+  @media #{media()} {
+    display: none;
+  }
+}

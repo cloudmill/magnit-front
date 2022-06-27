@@ -11,34 +11,62 @@ import { PurchaseItem } from "./ui/PurchaseItem/PurchaseItem";
 import { InfoBlock } from "./ui/InfoBlock/InfoBlock";
 import { TermsBlock } from "./ui/TermsBlock/TermsBlock";
 
-import { Link } from "react-router-dom";
+import { BlackButton } from "./ui/Buttons/Buttons";
+import { DocsPage } from "./ui/Pages/Docs";
+
+import { Link, Routes, Route } from "react-router-dom";
+
+import { getPath } from "./utils/getPath";
 
 export const App = () => {
   return (
-    <PageWrapper>
-      <Header />
+    <Routes>
+      <Route
+        path={getPath("/")}
+        element={
+          <Container>
+            <div style={{ margin: "10px 0" }}>
+              <Link to={getPath("/main")}>
+                <BlackButton>Главная</BlackButton>
+              </Link>
+            </div>
+            <div style={{ margin: "10px 0" }}>
+              <Link to={getPath("/docs")}>
+                <BlackButton>Документация</BlackButton>
+              </Link>
+            </div>
+          </Container>
+        }
+      />
+      <Route
+        path={getPath("/main")}
+        element={
+          <PageWrapper>
+            <Header />
 
-      <FirstScreen />
+            <FirstScreen />
 
-      <Link to="/docs">Документация</Link>
+            <Container>
+              <Search />
 
-      <Container>
-        <Search />
+              <PurchaseList>
+                <PurchaseItem />
+                <PurchaseItem />
+                <PurchaseItem />
+              </PurchaseList>
 
-        <PurchaseList>
-          <PurchaseItem />
-          <PurchaseItem />
-          <PurchaseItem />
-        </PurchaseList>
+              <InfoBlock />
 
-        <InfoBlock />
+              <TermsBlock />
+            </Container>
 
-        <TermsBlock />
-      </Container>
+            <Header bottom />
 
-      <Header bottom />
-
-      {/* <DevGrids/> */}
-    </PageWrapper>
+            {/* <DevGrids/> */}
+          </PageWrapper>
+        }
+      />
+      <Route path={getPath("/docs")} element={<DocsPage />} />
+    </Routes>
   );
 };

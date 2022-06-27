@@ -13,34 +13,8 @@ import { TermsBlock } from "./ui/TermsBlock/TermsBlock";
 
 export const App = () => {
   return (
-    
-    <PageWrapper>
-      <Header/>
-
-      <FirstScreen/>
-
-      <Container>
-
-        <Search/>
-        
-        <PurchaseList>
-
-          <PurchaseItem/>
-          <PurchaseItem/>
-          <PurchaseItem/>
-        
-        </PurchaseList>
-
-        <InfoBlock/>
-
-        <TermsBlock/>
-
-      </Container>
-      
-      <Header bottom />
-
-      {/* <DevGrids/> */}
-    </PageWrapper>
-
+    <Container>
+      <h1>magnit-front</h1>
+    </Container>
   );
 };

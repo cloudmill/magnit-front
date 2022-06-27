@@ -1,0 +1,34 @@
+@import "/src/styles/helpers.scss";
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+  white-space: nowrap;
+  cursor: pointer;
+
+  border-radius: 8px;
+  padding: 11px 22px;
+
+  @include p-medium;
+
+  @media #{media()} {
+    padding: 12px 40px;
+    border-radius: 12px;
+  }
+
+  svg {
+    margin-right: 8px;
+  }
+}
+
+.grey {
+  background: color(greyBg);
+}
+
+.black {
+  background: color(black);
+  color: #fff;
+}

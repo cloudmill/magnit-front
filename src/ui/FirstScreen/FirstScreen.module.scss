@@ -1,0 +1,83 @@
+@import "/src/styles/helpers.scss";
+
+.firstScreen {
+  background: url('../../assets/images/first-screen-bg-mob.png') no-repeat center;
+  background-size: cover;
+  padding: 32px 0 64px;
+  position: relative;
+
+  @media #{media()} {
+    background: url('../../assets/images/first-screen-bg.png') no-repeat center;
+    background-size: cover;
+    padding: 32px 0 148px;
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+
+  @media #{media("<")} {
+    flex-direction: column;
+  }
+}
+
+.col {
+  &:nth-child(1) {
+    @media #{media()} {
+      width: calc(#{$col-part-d} * 6);
+    }
+  }
+  &:nth-child(2) {
+    @media #{media("<")} {
+      margin-top: 24px;
+    }
+    @media #{media()} {
+      width: calc(#{$col-part-d} * 4 + #{$col-width-d});
+
+      display: flex;
+      align-items: flex-end;
+    }
+  }
+}
+
+.ttl {
+  @include h1-big;
+}
+
+.txt {
+  @include p-big;
+  margin-top: 12px;
+
+  @media #{media()} {
+    margin-top: 24px;
+  }
+}
+
+.list {
+  li {
+    @include p-small;
+
+    display: flex;
+    align-items: center;
+
+    &:not(:last-child) {
+      margin-bottom: 8px;
+      @media #{media()} {
+        margin-bottom: 20px;
+      }
+    }
+
+    svg {
+      margin-right: 15px;
+      flex: none;
+
+      @media #{media("<")} {
+        width: 20px;
+      }
+      @media #{media()} {
+        margin-right: 11px;
+      }
+    }
+  }
+}

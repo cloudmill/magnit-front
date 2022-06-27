@@ -1,0 +1,11 @@
+@import "/src/styles/helpers.scss";
+
+.breadcrumbs {
+  display: flex;
+  margin-top: 24px;
+}
+
+.ttl {
+  @include h1;
+  margin-top: 24px;
+}

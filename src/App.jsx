@@ -1,15 +1,4 @@
-import { DevGrids } from "./ui/DevGrids/DevGrids";
-
 import { Container } from "./ui/Container/Container";
-import { PageWrapper } from "./ui/PageWrapper/PageWrapper";
-import { Header } from "./ui/Header/Header";
-
-import { FirstScreen } from "./ui/FirstScreen/FirstScreen";
-import { Search } from "./ui/Search/Search";
-import { PurchaseList } from "./ui/PurchaseList/PurchaseList";
-import { PurchaseItem } from "./ui/PurchaseItem/PurchaseItem";
-import { InfoBlock } from "./ui/InfoBlock/InfoBlock";
-import { TermsBlock } from "./ui/TermsBlock/TermsBlock";
 
 import { BlackButton } from "./ui/Buttons/Buttons";
 import { DocsPage } from "./ui/Pages/Docs";
@@ -17,6 +6,8 @@ import { DocsPage } from "./ui/Pages/Docs";
 import { Link, Routes, Route } from "react-router-dom";
 
 import { getPath } from "./utils/getPath";
+import { MainPage } from "./ui/Pages/Main";
+import { PurchasesPage } from "./ui/Pages/Purchases";
 
 export const App = () => {
   return (
@@ -31,6 +22,11 @@ export const App = () => {
               </Link>
             </div>
             <div style={{ margin: "10px 0" }}>
+              <Link to={getPath("/purchases")}>
+                <BlackButton>Закупки и реализация</BlackButton>
+              </Link>
+            </div>
+            <div style={{ margin: "10px 0" }}>
               <Link to={getPath("/docs")}>
                 <BlackButton>Документация</BlackButton>
               </Link>
@@ -38,34 +34,8 @@ export const App = () => {
           </Container>
         }
       />
-      <Route
-        path={getPath("/main")}
-        element={
-          <PageWrapper>
-            <Header />
-
-            <FirstScreen />
-
-            <Container>
-              <Search />
-
-              <PurchaseList>
-                <PurchaseItem />
-                <PurchaseItem />
-                <PurchaseItem />
-              </PurchaseList>
-
-              <InfoBlock />
-
-              <TermsBlock />
-            </Container>
-
-            <Header bottom />
-
-            {/* <DevGrids/> */}
-          </PageWrapper>
-        }
-      />
+      <Route path={getPath("/main")} element={ <MainPage /> } />
+      <Route path={getPath("/purchases")} element={ <PurchasesPage /> } />
       <Route path={getPath("/docs")} element={<DocsPage />} />
     </Routes>
   );

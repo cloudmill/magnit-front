@@ -5,9 +5,9 @@ import { BlackButton, GreyButton } from "../Buttons/Buttons";
 import { ReactComponent as Settings } from "../../assets/images/settings.svg";
 import { ReactComponent as SearchIco } from "../../assets/images/search.svg";
 
-export const Search = () => (
+export const Search = ({ extraClass }) => (
 
-  <div className={styles.Search}>
+  <div className={classNames(styles.Search, extraClass)}>
 
     <div className={styles.buttons}>
       <button className={classNames(styles.label, styles.active)}>Закупки</button>

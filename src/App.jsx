@@ -11,36 +11,34 @@ import { PurchaseItem } from "./ui/PurchaseItem/PurchaseItem";
 import { InfoBlock } from "./ui/InfoBlock/InfoBlock";
 import { TermsBlock } from "./ui/TermsBlock/TermsBlock";
 
+import { Link } from "react-router-dom";
+
 export const App = () => {
   return (
-    
     <PageWrapper>
-      <Header/>
+      <Header />
 
-      <FirstScreen/>
+      <FirstScreen />
+
+      <Link to="/docs">Документация</Link>
 
       <Container>
+        <Search />
 
-        <Search/>
-        
         <PurchaseList>
-
-          <PurchaseItem/>
-          <PurchaseItem/>
-          <PurchaseItem/>
-        
+          <PurchaseItem />
+          <PurchaseItem />
+          <PurchaseItem />
         </PurchaseList>
 
-        <InfoBlock/>
+        <InfoBlock />
 
-        <TermsBlock/>
-
+        <TermsBlock />
       </Container>
-      
+
       <Header bottom />
 
       {/* <DevGrids/> */}
     </PageWrapper>
-
   );
 };

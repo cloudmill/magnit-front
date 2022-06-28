@@ -33,3 +33,39 @@ $padding-right: 70px;
 .btn {
   margin: 32px auto 0;
 }
+
+.PurchaseListTop {
+  display: flex;
+  justify-content: space-between;
+  padding: 50px 0;
+}
+
+.count {
+  @include p-medium;
+}
+
+.txt {
+  color: color(greyTxt2);
+}
+
+.pages {
+  display: flex;
+  align-items: center;
+
+  .txt {
+    margin-right: 12px;
+  }
+}
+
+.num {
+  font-weight: 500;
+
+  &.active {
+    color: color(red);
+  }
+
+  &:not(:last-child) {
+    margin-right: 8px;
+  }
+}
+

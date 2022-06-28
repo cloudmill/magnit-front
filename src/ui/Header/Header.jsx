@@ -12,6 +12,7 @@ import { GreyButton } from "../Buttons/Buttons";
 
 export const Header = ({ bottom }) => (
   <div className={classNames(styles.header, {[styles.bottom] : bottom})}>
+  
     <Container extraClass={styles.headerContainer}>
 
       <Logo />

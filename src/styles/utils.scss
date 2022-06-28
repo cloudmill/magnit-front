@@ -1,0 +1,15 @@
+.blockMargin {
+  margin: 40px 0;
+
+  @media #{media()} {
+    margin: 100px 0;
+  }
+}
+
+.blockBottom {
+  margin-bottom: 40px;
+
+  @media #{media()} {
+    margin-bottom: 100px;
+  }
+}

@@ -1,0 +1,15 @@
+@import "../../styles/helpers.scss";
+
+.page2col {
+  display: flex;
+  justify-content: space-between;
+}
+
+.col {
+  &:nth-child(1) {
+    width: calc(#{$col-part-d} * 2 + #{$col-width-d});
+  }
+  &:nth-child(2) {
+    width: calc(#{$col-part-d} * 7 + #{$col-width-d});
+  }
+}

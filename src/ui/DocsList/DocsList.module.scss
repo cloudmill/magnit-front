@@ -1,0 +1,18 @@
+@import "/src/styles/helpers.scss";
+
+.block {
+  margin-top: 32px;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px;
+  margin-bottom: 24px;
+}
+
+.label {
+  @include p-small;
+  font-weight: 500;
+  color: color(greyTxt);
+}

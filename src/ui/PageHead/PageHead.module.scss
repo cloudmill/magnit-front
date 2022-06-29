@@ -4,7 +4,11 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-top: 24px;
+  margin-top: 12px;
+
+  @media #{media()} {
+    margin-top: 24px;
+  }
 }
 
 .item {
@@ -19,5 +23,9 @@
 
 .ttl {
   @include h1;
-  margin-top: 24px;
+  margin-top: 8px;
+
+  @media #{media()} {
+    margin-top: 24px;
+  }
 }

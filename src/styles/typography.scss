@@ -20,6 +20,17 @@
   }
 }
 
+@mixin h3 {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 26px;
+
+  @media #{media()} {
+    font-size: 30px;
+    line-height: 40px;
+  }
+}
+
 @mixin h4 {
   font-weight: 700;
   font-size: 16px;

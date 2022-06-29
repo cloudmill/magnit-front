@@ -2,10 +2,9 @@ import styles from "./Buttons.module.scss";
 import classNames from "classnames";
 import { ReactComponent as ArrowDown } from "../../assets/images/arrow-down.svg";
 
-const GreyButton = ({ children, isActive, extraClass }) => (
+const GreyButton = ({ children, isActive, extraClass, type }) => (
   <button
-    className={classNames(styles.button, styles.grey, { [styles.active]: isActive }, extraClass)}
-  >
+    className={classNames(styles.button, styles.grey, { [styles.active]: isActive }, extraClass)} type={type}>
   {children}
   </button>
 );
@@ -26,10 +25,9 @@ const BlackButton = ({ children, isActive, extraClass }) => (
   </button>
 );
 
-const RedButton = ({ children, extraClass, isActive }) => (
+const RedButton = ({ children, extraClass, isActive, type }) => (
   <button
-    className={classNames(styles.button, styles.red, extraClass, { [styles.active]: isActive })}
-  >
+    className={classNames(styles.button, styles.red, extraClass, { [styles.active]: isActive })} type={type}>
   {children}
   </button>
 );

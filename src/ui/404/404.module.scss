@@ -1,0 +1,45 @@
+@import "/src/styles/helpers.scss";
+
+.container {
+  width: 100vw;
+  height: calc(100vh - 81px);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.block {
+  text-align: center;
+}
+
+.big {
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 1;
+  color: color(red);
+
+  margin-bottom: 8px;
+
+  @media #{media()} {
+    font-size: 136px;
+    margin-bottom: 16px;
+  }
+}
+
+.txt {
+  @include h4;
+  margin-bottom: 16px;
+
+  @media #{media()} {
+    margin-bottom: 40px;
+  }
+}
+
+.row {
+  display: flex;
+
+  a:not(:last-child) {
+    margin-right: 12px;
+  }
+}

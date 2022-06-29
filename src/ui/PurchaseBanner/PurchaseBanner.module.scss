@@ -1,0 +1,18 @@
+@import "../../styles/helpers.scss";
+
+.bg {
+  background: url('../../assets/images/purchase-banner.png') no-repeat center;
+  background-size: cover;
+  height: 350px;
+
+  padding: 32px;
+  border-radius: 20px
+}
+
+.txt {
+  @include h4;
+
+  a {
+    color: color(red);
+  }
+}

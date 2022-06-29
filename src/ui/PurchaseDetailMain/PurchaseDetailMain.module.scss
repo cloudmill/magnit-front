@@ -1,0 +1,96 @@
+@import "/src/styles/helpers.scss";
+
+.top {
+  display: flex;
+  margin-top: 30px;
+  @include p-medium;
+
+  .col {
+    &:first-child {
+      width: calc(#{$col-part-d} * 2);
+    }
+  }
+
+  .ttl {
+    color: color(greyTxt2);
+    margin-bottom: 8px;
+  }
+}
+
+.block {
+  margin: 60px 0;
+
+  &:first-child {
+    margin-top: 0;
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  .ttl {
+    @include h4;
+    margin-bottom: 16px;
+  }
+
+  .txt {
+    @include p-medium;
+    font-weight: 400;
+  }
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  & > .ttl {
+    width: 100%;
+  }
+
+  .col {
+    width: 50%;
+  }
+}
+
+.table {
+
+  &Row {
+    display: flex;
+    padding: 16px;
+    border-bottom: 1px solid color(greyBorder);
+  }
+
+  .code {
+    width: calc(#{$col-part-d} * 2);
+  }
+
+  .txt {
+    width: calc(#{$col-part-d} * 5 + #{$col-width-d});
+  }
+
+  &Btn {
+    margin-top: 32px;
+  }
+}
+
+.markup {
+  p, ul {
+    margin: 20px 0;
+
+    &:first-child {
+      margin-top: 0;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  ul {
+    padding-left: $col-gap-d;
+  }
+  .listNum {
+    list-style: decimal;
+  }
+  .listDot {
+    list-style: disc;
+  }
+}

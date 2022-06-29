@@ -32,3 +32,20 @@
   background: color(black);
   color: #fff;
 }
+
+.red {
+  background: color(red);
+  color: #fff;
+}
+
+.arrowDown {
+  border: 1px solid color(greyBorder2);
+  padding: 8px 40px;
+
+  svg {
+    margin-left: 12px;
+    margin-right: 0;
+    height: auto;
+    width: 15px;
+  }
+}

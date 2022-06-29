@@ -1,0 +1,77 @@
+@import "../../styles/helpers.scss";
+
+.purchaseLinks {
+  background: color(greyBg);
+  border-radius: 15px;
+  margin-top: 24px;
+}
+
+.top {
+  padding: 24px;
+}
+
+.status {
+  @include p-medium;
+}
+
+.info {
+  display: flex;
+  margin-top: 8px;
+  @include p-small;
+  font-weight: 500;
+
+  svg {
+    margin-right: 12px;
+  }
+}
+
+.date {
+  padding-right: 14px;
+  margin-right: 12px;
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    height: 11px;
+    width: 2px;
+    background: color(greyBorder);
+  }
+}
+
+.item {
+  padding: 16px 20px 16px 25px;
+  border-bottom: 1px solid color(greyBorder);
+  @include p-medium;
+  cursor: pointer;
+
+  &:first-child {
+    border-top: 1px solid color(greyBorder);
+  }
+
+  &.active {
+    color: color(red);
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 4px;
+      height: 100%;
+      background: color(red);
+    }
+  }
+}
+
+.bottom {
+  padding: 24px;
+
+  button {
+    width: 100%;
+  }
+}

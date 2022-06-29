@@ -1,0 +1,45 @@
+@import "../../styles/helpers.scss";
+
+.card {
+  border: 1px solid color(greyBorder);
+  border-radius: 15px;
+  padding: 24px 30px;
+
+  display: flex;
+  justify-content: space-between;
+
+  &:not(:last-child) {
+    margin-bottom: 12px;
+  }
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.txt {
+  @include p-small;
+  width: calc(#{$col-part-d} * 6)
+}
+
+.date {
+  @include p-small;
+  font-weight: 500;
+  color: color(greyTxt2);
+}
+
+.download {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8px;
+  cursor: pointer;
+
+  width: 40px;
+  height: 40px;
+
+  border-radius: 12px;
+  border: 1px solid color(greyBorder2);
+}

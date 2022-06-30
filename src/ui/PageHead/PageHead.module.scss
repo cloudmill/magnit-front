@@ -18,6 +18,14 @@
   & * {
     flex: none;
   }
+
+  a {
+    transition: $transition;
+
+    &:hover {
+      color: color(blackBtnHover);
+    }
+  }
 }
 
 .item {

@@ -65,8 +65,13 @@ $padding-right: 70px;
 .num {
   font-weight: 500;
   cursor: pointer;
+  transition: $transition;
 
   &.active {
+    color: color(red);
+  }
+
+  &:hover {
     color: color(red);
   }
 

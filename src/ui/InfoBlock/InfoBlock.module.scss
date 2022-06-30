@@ -120,12 +120,14 @@
   .number {
     @include p-medium;
     font-weight: 700;
-
-
-
+    transition: $transition;
 
     @media #{media('<')} {
       font-size: 14px;
+    }
+
+    &:hover {
+      color: color(red);
     }
   }
 

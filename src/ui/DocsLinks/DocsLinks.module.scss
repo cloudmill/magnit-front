@@ -22,6 +22,12 @@
   overflow: hidden;
   position: relative;
   @include p-medium;
+  transition: $transition;
+  cursor: pointer;
+
+  &:hover {
+    color: color(red);
+  }
 
   @media #{media('<')} {
     flex: none;

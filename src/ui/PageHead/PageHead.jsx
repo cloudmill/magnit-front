@@ -8,7 +8,7 @@ function PageHead(props, {children}) {
       <div className={styles.breadcrumbs}>
         <a href="/" className={styles.item} > { props.bc1 } </a>
         <BcArrow />
-        <div className={styles.item}> { props.bc2 } </div>
+        <a href="/" className={styles.item}> { props.bc2 } </a>
         <BcArrow />
         <div className={styles.item}> { props.bc3 } </div>
       </div>

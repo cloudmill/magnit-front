@@ -8,8 +8,14 @@
   display: flex;
   justify-content: space-between;
 
+  transition: $transition;
+
   &:not(:last-child) {
     margin-bottom: 12px;
+  }
+
+  &:hover {
+    background: color(greyBg);
   }
 
   @media #{media('<')} {

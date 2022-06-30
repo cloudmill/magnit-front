@@ -4,7 +4,7 @@ import { ReactComponent as ClockMark } from "../../assets/images/clock-mark.svg"
 
 export const PurchaseItem = () => (
 
-  <div className={styles.PurchaseItem}>
+  <a href="/" className={styles.PurchaseItem}>
 
     <div className={styles.col}>
       <div className={styles.ttl}>Запрос предложений № 3001592</div>
@@ -21,6 +21,6 @@ export const PurchaseItem = () => (
       <div className={styles.txt}>03.06.2022</div>
       <div className={styles.txt}>16:00 МСК</div>
     </div>
-  </div>
+  </a>
 
 );

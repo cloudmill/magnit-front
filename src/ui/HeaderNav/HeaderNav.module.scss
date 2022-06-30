@@ -13,6 +13,7 @@
   display: flex;
   align-items: center;
   cursor: pointer;
+  transform: $transition;
 
   @include p-medium;
 
@@ -20,7 +21,19 @@
     margin-right: 32px;
   }
 
+  &:hover {
+    color: color(red);
+
+    svg path {
+      fill: color(red);
+    }
+  }
+
   svg {
     margin-left: 10px;
+
+    path {
+      transition: $transition;
+    }
   }
 }

@@ -7,6 +7,9 @@ $colors: (
   greyBg2: #FAFAFA,
   greyTxt: #888888,
   greyTxt2: #717171,
+
+  blackBtnHover: #414141,
+  redBtnHover: #F2564C,
 );
 
 @function color($key) {

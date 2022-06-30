@@ -31,6 +31,7 @@
   @include p-medium;
   text-align: center;
   cursor: pointer;
+  transition: $transition;
 
   @media #{media('<')} {
     width: 50%;
@@ -44,14 +45,21 @@
     background: #fff;
     filter: drop-shadow(0px -12px 24px rgba(0, 0, 0, 0.06));
   }
+
+  &:not(.active):hover {
+    color: color(blackBtnHover);
+  }
 }
 
 .row {
   display: flex;
   padding: 32px;
   background: #fff;
-  box-shadow: 0px -10px 24px rgba(0, 0, 0, 0.06), 0px 20px 24px rgba(0, 0, 0, 0.06);
+  box-shadow: 0px 20px 24px rgba(0, 0, 0, 0.06);
   border-radius: 0px 15px 15px 15px;
+
+  position: relative;
+  z-index: 1;
 
   @media #{media("<")} {
     flex-wrap: wrap;

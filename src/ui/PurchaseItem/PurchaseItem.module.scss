@@ -15,6 +15,12 @@ $padding-right: 70px;
 
   flex-direction: column;
 
+  transition: $transition;
+
+  &:hover {
+    background: color(greyBg);
+  }
+
   @media #{media()} {
     align-items: center;
     flex-direction: row;

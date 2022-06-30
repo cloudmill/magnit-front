@@ -29,6 +29,6 @@ export const PurchaseDetail = () => (
 
     <Header bottom />
 
-    {/* <DevGrids/> */}
+    <DevGrids/>
   </PageWrapper>
 );

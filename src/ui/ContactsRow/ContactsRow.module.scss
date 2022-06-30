@@ -5,8 +5,10 @@
   margin: 60px 0 120px;
 
   @media #{media('<')} {
-    flex-direction: column;
     margin: 32px 0 40px;
+  }
+  @media #{media('<', m)} {
+    flex-direction: column;
   }
 }
 
@@ -14,9 +16,16 @@
   display: flex;
   flex-wrap: wrap;
 
+  @media #{media('<')} {
+    flex-direction: column;
+  }
+
   &:nth-child(1) {
     @media #{media('<')} {
       margin-bottom: 20px;
+    }
+    @media #{media('>', m)} {
+      width: calc(#{$col-part-t} * 4);
     }
     @media #{media()} {
       width: calc(#{$col-part-d} * 5);
@@ -46,6 +55,11 @@
 
   &:not(:last-child) {
     margin-right: 40px;
+
+    @media #{media('<')} {
+      margin-right: 0;
+      margin-bottom: 8px;
+    }
   }
 
   a {

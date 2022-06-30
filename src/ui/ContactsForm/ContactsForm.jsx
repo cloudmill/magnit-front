@@ -19,7 +19,8 @@ export const ContactsForm = () => (
       <div className={styles.bottom}>
         <div className={styles.col}>
           <GreyButton type="file"><Clip/> Прикерпить файл</GreyButton>
-          <div className={styles.note}>Допустимое расширение файлов: .ppt, .pptx, .doc, .docx, .xls, <br/> .xlsx, .pdf, .jpg, .jpeg, .png</div>
+          <div className={classNames(styles.note, styles.onlyDesktop)}>Допустимое расширение файлов: .ppt, .pptx, .doc, .docx, .xls, <br/> .xlsx, .pdf, .jpg, .jpeg, .png</div>
+          <div className={classNames(styles.note, styles.onlyMobile)}>Допустимое расширение файлов: .ppt, .pptx, .doc, .docx, .xls, .xlsx, .pdf, .jpg, .jpeg, .png</div>
         </div>
         <div className={styles.col}>
           <div className={styles.checkbox}>

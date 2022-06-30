@@ -1,7 +1,19 @@
 @import "/src/styles/helpers.scss";
 
 .block {
-  margin-bottom: 100px;
+  .input {
+    margin-bottom: 8px;
+    @media #{media()} {
+      width: calc(#{$col-part-d} * 5 + #{$col-width-d});
+      margin-bottom: 24px;
+    }
+  }
+
+  .col {
+    @media #{media()} {
+      width: calc(#{$col-part-d} * 5 + #{$col-width-d});
+    }
+  }
 }
 
 .ttl {
@@ -17,6 +29,7 @@
   @media #{media()} {
     margin-top: 48px;
   }
+
 }
 
 .input {
@@ -25,13 +38,12 @@
   border: 1px solid color(greyBorder);
   border-radius: 12px;
   padding: 11px 16px;
-  margin-bottom: 8px;
+  
   @include p-medium;
   font-weight: 400;
 
   @media #{media()} {
-    width: calc(#{$col-part-d} * 5 + #{$col-width-d});
-    margin-bottom: 24px;
+    
     padding: 16px;
   }
 }
@@ -48,7 +60,7 @@
 }
 
 .fullWidth {
-  width: 100%;
+  width: 100% !important;
 }
 
 .bottom {
@@ -63,9 +75,6 @@
 }
 
 .col {
-  @media #{media()} {
-    width: calc(#{$col-part-d} * 5 + #{$col-width-d});
-  }
 
   &:nth-child(2) {
     display: flex;

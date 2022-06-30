@@ -49,6 +49,15 @@
 
   .col {
     width: 50%;
+
+    .ttl2 {
+      @include h6-big;
+      margin-bottom: 10px;
+
+      &:not(:first-child) {
+        margin-top: 32px;
+      }
+    }
   }
 }
 

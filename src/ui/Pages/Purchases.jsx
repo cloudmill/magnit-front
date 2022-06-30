@@ -7,29 +7,50 @@ import { PurchaseListTop } from "../PurchaseList/PurchaseListTop";
 import { PurchaseList } from "../PurchaseList/PurchaseList";
 import { PurchaseItem } from "../PurchaseItem/PurchaseItem";
 import { PageHead } from "../PageHead/PageHead";
+import { EmptySearch } from "../EmptySearch/EmptySearch";
 
-export const PurchasesPage = () => (
-  <PageWrapper>
-    <Header />
+function PurchasesPage() {
+  return <PageWrapper>
+      <Header />
 
-    <Container>
+      <Container>
 
-      <PageHead title='Закупки и реализация' bc1='Главная' bc2='Закупки и реализация' />
+        <PageHead title='Закупки и реализация' bc1='Главная' bc2='Закупки и реализация' />
 
-      <Search extraClass={styles.onPage} />
+        <Search extraClass={styles.onPage} />
 
-      <PurchaseListTop />
+        <PurchaseListTop />
 
-      <PurchaseList extraClass={styles.blockBottom}>
-        <PurchaseItem />
-        <PurchaseItem />
-        <PurchaseItem />
-      </PurchaseList>
+        <PurchaseList extraClass={styles.blockBottom}>
+          <PurchaseItem />
+          <PurchaseItem />
+          <PurchaseItem />
 
-    </Container>
+          <PurchaseItem />
+          <PurchaseItem />
+          <PurchaseItem />
 
-    <Header bottom />
+          <PurchaseItem />
+          <PurchaseItem />
+          <PurchaseItem />
 
-    {/* <DevGrids/> */}
-  </PageWrapper>
-);
+          <PurchaseItem />
+          <PurchaseItem />
+          <PurchaseItem />
+
+          <PurchaseItem />
+          <PurchaseItem />
+        </PurchaseList>
+
+        <EmptySearch/>
+
+      </Container>
+
+      <Header bottom />
+
+      {/* <DevGrids/> */}
+    </PageWrapper>
+
+};
+
+export { PurchasesPage };

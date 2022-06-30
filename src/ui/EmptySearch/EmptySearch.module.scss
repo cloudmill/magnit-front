@@ -1,0 +1,11 @@
+@import "/src/styles/helpers.scss";
+
+.block {
+  @include h4;
+  color: color(greyTxt);
+  margin: 32px 0 210px;
+
+  span {
+    color: color(black);
+  }
+}

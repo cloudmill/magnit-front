@@ -3,6 +3,7 @@ import classNames from "classnames";
 import { DocumentCard } from "../DocumentCard/DocumentCard";
 import { PurchaseBanner } from "../PurchaseBanner/PurchaseBanner";
 import { ArrowDownButton } from "../Buttons/Buttons";
+import { PurchaseForm } from "../PurchaseForm/PurchaseForm";
 
 export const PurchaseDetailMain = () => (
 
@@ -175,6 +176,38 @@ export const PurchaseDetailMain = () => (
       <div className={styles.txt}>Запросы к Заказчику процедуры подаются через функционал<br/> B2B-center в разделе «Разъяснения»</div>
     </div>
 
+    <div className={classNames(styles.block, styles.row)}>
+
+      <div className={styles.ttl}>Контакты</div>
+
+      <div className={styles.col}>
+
+        <div className={styles.ttl2}>Контактное лицо 1</div>
+        <div className={styles.txt}>
+          Сергей Звездочетов<br/>
+          8 982 810-22-89<br/>
+          sergey.zvezdochetov@pirelli.com
+        </div>
+
+        <div className={styles.ttl2}>Контактное лицо 3</div>
+        <div className={styles.txt}>
+          Андрей Паясу<br/>
+          8 999 432-20-39<br/>
+          payasudesign@mail.ru
+        </div>
+
+      </div>
+
+      <div className={styles.col}>
+      <div className={styles.ttl2}>Контактное лицо 3</div>
+        <div className={styles.txt}>
+          Алексей Дневальный<br/>
+          8 991 567-11-00<br/>
+          lesha123@magnit.com
+        </div>
+      </div>
+    </div>
+
     <div className={styles.block}>
       <div className={styles.ttl}>Документы</div>
       
@@ -190,6 +223,8 @@ export const PurchaseDetailMain = () => (
     </div>
 
     <PurchaseBanner extraClass={styles.block}/>
+
+    <PurchaseForm/>
 
   </div>
 

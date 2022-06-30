@@ -23,6 +23,7 @@ export const MainPage = () => (
         <PurchaseItem />
         <PurchaseItem />
         <PurchaseItem />
+        <PurchaseItem />
       </PurchaseList>
 
       <InfoBlock />

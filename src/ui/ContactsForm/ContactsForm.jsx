@@ -1,9 +1,10 @@
 import styles from "./ContactsForm.module.scss";
 import classNames from "classnames";
+import { ReactComponent as Clip } from "../../assets/images/clip.svg";
 import { GreyButton, RedButton } from "../Buttons/Buttons";
 
 export const ContactsForm = () => (
-  <div className={styles.blockBottom}>
+  <div className={classNames(styles.blockBottom, styles.block)}>
     <div className={classNames(styles.ttl, styles.onlyDesktop)}>Вы можете обратиться по вопросам сотрудничества <br/> с ПАО «Магнит», заполнив форму ниже</div>
     <div className={classNames(styles.ttl, styles.onlyMobile)}>Вы можете обратиться по вопросам сотрудничества с ПАО «Магнит», заполнив форму ниже</div>
 
@@ -17,7 +18,7 @@ export const ContactsForm = () => (
 
       <div className={styles.bottom}>
         <div className={styles.col}>
-          <GreyButton type="file">Прикерпить файл</GreyButton>
+          <GreyButton type="file"><Clip/> Прикерпить файл</GreyButton>
           <div className={styles.note}>Допустимое расширение файлов: .ppt, .pptx, .doc, .docx, .xls, <br/> .xlsx, .pdf, .jpg, .jpeg, .png</div>
         </div>
         <div className={styles.col}>

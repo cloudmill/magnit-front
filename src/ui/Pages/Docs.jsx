@@ -8,6 +8,7 @@ import { DocumentCard } from "../DocumentCard/DocumentCard";
 import { DocsLinks } from "../DocsLinks/DocsLinks";
 import { DocsSearch } from "../DocsSearch/DocsSearch";
 import { DocsList } from "../DocsList/DocsList";
+import { EmptySearch } from "../EmptySearch/EmptySearch";
 
 export const DocsPage = () => (
   <PageWrapper>
@@ -41,6 +42,9 @@ export const DocsPage = () => (
         <DocumentCard>ПКО по видам работ, услуг №339: Производство и наладка комплектов для доработки программного обеспечения и расширения систем автоматики технологических процессов и систем автоматики пожаротушения (СА ТП и СА ПТ) на объектах организаций системы «Транснефть»</DocumentCard>
 
         </DocsList>
+
+        <EmptySearch/>
+        
       </div>
 
     </Container>

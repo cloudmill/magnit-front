@@ -1,0 +1,35 @@
+@import "/src/styles/helpers.scss";
+
+.block {
+  margin-top: 60px;
+}
+
+.ttl {
+  @include h4;
+}
+
+.form {
+  margin-top: 32px;
+}
+
+.input {
+  margin-bottom: 12px;
+}
+
+.bottom {
+  flex-direction: column;
+}
+
+.col {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.col2 {
+  margin-top: 20px;
+}
+
+.note {
+  width: calc(#{$col-part-d} * 4 + #{$col-width-d});
+}

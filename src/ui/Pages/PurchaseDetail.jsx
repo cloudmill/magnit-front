@@ -20,7 +20,7 @@ export const PurchaseDetail = () => (
       </div>
 
       <div className={styles.col}>
-        <PageHead title='Запрос предложений № 3001592' bc1='Главная' bc2='Закупки и реализация' />
+        <PageHead title='Запрос предложений № 3001592' bc1='Главная' bc2='Закупки и реализация' bc3='Запрос предложений № 3001592' />
 
         <PurchaseDetailMain />
       </div>

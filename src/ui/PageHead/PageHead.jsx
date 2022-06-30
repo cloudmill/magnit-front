@@ -1,16 +1,31 @@
 import styles from "./PageHead.module.scss";
 import { ReactComponent as BcArrow } from "../../assets/images/breadcrumbs-arrow.svg";
 
-export const PageHead = ({ title, bc1, bc2 }) => (
+function PageHead(props) {
 
-  <>
-    <div className={styles.breadcrumbs}>
-      <a href="/" className={styles.item} > { bc1 } </a>
-      <BcArrow />
-      <div className={styles.item}> { bc2 } </div>
-    </div>
+  if (props.bc3) {
+    return <>
+      <div className={styles.breadcrumbs}>
+        <a href="/" className={styles.item} > { props.bc1 } </a>
+        <BcArrow />
+        <div className={styles.item}> { props.bc2 } </div>
+        <BcArrow />
+        <div className={styles.item}> { props.bc3 } </div>
+      </div>
 
-    <h1 className={styles.ttl}> { title } </h1>
-  </>
+      <h1 className={styles.ttl}> { props.title } </h1>
+    </>
+  }
 
-);
+  return <>
+          <div className={styles.breadcrumbs}>
+            <a href="/" className={styles.item} > { props.bc1 } </a>
+            <BcArrow />
+            <div className={styles.item}> { props.bc2 } </div>
+          </div>
+          <h1 className={styles.ttl}> { props.title } </h1>
+        </>
+
+};
+
+export { PageHead };

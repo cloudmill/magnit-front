@@ -33,6 +33,6 @@ export const MainPage = () => (
 
     <Header bottom />
 
-    {/* <DevGrids/> */}
+    <DevGrids/>
   </PageWrapper>
 );

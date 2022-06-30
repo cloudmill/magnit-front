@@ -17,13 +17,16 @@
   display: flex;
   justify-content: space-between;
 
-  @media #{media("<")} {
+  @media #{media("<", m)} {
     flex-direction: column;
   }
 }
 
 .col {
   &:nth-child(1) {
+    @media #{media(">", m)} {
+      width: calc(#{$col-part-t} * 4);
+    }
     @media #{media()} {
       width: calc(#{$col-part-d} * 6);
     }
@@ -32,17 +35,24 @@
     @media #{media("<")} {
       margin-top: 24px;
     }
-    @media #{media()} {
-      width: calc(#{$col-part-d} * 4 + #{$col-width-d});
+    @media #{media(">", m)} {
+      width: calc(#{$col-part-t} * 3 + #{$col-width-t});
 
       display: flex;
       align-items: flex-end;
+    }
+    @media #{media()} {
+      width: calc(#{$col-part-d} * 4 + #{$col-width-d});
     }
   }
 }
 
 .ttl {
   @include h1-big;
+
+  @media (min-width: $breakpoint-m) and (max-width: ($breakpoint - 1px)) {
+    width: calc(#{$col-part-t} * 7 + #{$col-width-t});
+  }
 }
 
 .txt {

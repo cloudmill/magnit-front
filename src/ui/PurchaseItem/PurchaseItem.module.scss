@@ -3,6 +3,8 @@
 $padding-left: 40px;
 $padding-right: 70px;
 
+
+
 .PurchaseItem {
 
   border: 1px solid color(greyBorder);
@@ -23,9 +25,11 @@ $padding-right: 70px;
 
   @media #{media()} {
     align-items: center;
-    flex-direction: row;
     border-radius: 15px;
     padding: 32px $padding-right 32px $padding-left;
+  }
+  @media #{media('>', m)} {
+    flex-direction: row;
   }
 
   &:not(:last-child) {
@@ -34,9 +38,23 @@ $padding-right: 70px;
 
 }
 
-.col {
-  &:nth-child(1) { 
+.info {
+  @media #{media('>', m)} {
+    width: calc(#{$col-part-t} * 2 + #{$col-width-t} - 20px);
+  }
+  @media #{media()} {
+    display: flex;
+    width: auto;
+  }
+}
 
+.col {
+  &1 { 
+
+    @media #{media('>', m)} {
+      width: calc(#{$col-part-t} * 5 - 20px);
+      padding-right: 40px;
+    }
     @media #{media()} {
       width: calc(#{$col-part-d} * 6 - #{$padding-left});
       padding-right: calc(#{$col-part-d} - 10px);
@@ -53,12 +71,11 @@ $padding-right: 70px;
       }
     }
   }
-  &:nth-child(2), &:nth-child(3) {
+  &2, &3 {
     display: flex;
     align-items: center;
 
     @media #{media('<')} {
-      margin-top: 16px;
       flex-wrap: wrap;
     }
 
@@ -70,9 +87,12 @@ $padding-right: 70px;
       flex: none;
     }
   }
-  &:nth-child(2) {
+  &2 {
     @media #{media()} {
       width: calc(#{$col-part-d} * 3);
+    }
+    @media #{media('<', m)} {
+      margin-top: 16px;
     }
 
     svg {
@@ -82,9 +102,15 @@ $padding-right: 70px;
       }
     }
   }
-  &:nth-child(3) {
+  &3 {
     @media #{media()} {
       width: calc(#{$col-part-d} * 3 - #{$col-gap-d} - #{$padding-right});
+    }
+    @media #{media('<')} {
+      margin-top: 10px;
+    }
+    @media #{media('<', m)} {
+      margin-top: 16px;
     }
 
     svg {

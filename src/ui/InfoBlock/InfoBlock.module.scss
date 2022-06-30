@@ -7,6 +7,14 @@
   background: url('../../assets/images/info-block-bg-mob.png') no-repeat center;
   background-size: cover;
 
+  @media (min-width: $breakpoint-m) and (max-width: ($breakpoint - 1px)) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  @media #{media('>', m)} {
+    background: url('../../assets/images/info-block-bg-tabl.png') no-repeat center;
+    background-size: cover;
+  }
   @media #{media()} {
     background: url('../../assets/images/info-block-bg.png') no-repeat center;
     background-size: cover;
@@ -22,16 +30,26 @@
   span {
     white-space: nowrap;
   }
+
+  @media (min-width: $breakpoint-m) and (max-width: ($breakpoint - 1px)) {
+    width: calc(#{$col-part-t} * 4);
+    padding-right: $col-gap-m;
+  }
 }
 
 .top {
   display: flex;
   align-items: center;
-  margin-top: 24px;
 
+  @media #{media()} {
+    margin-top: 24px;
+  }
   @media #{media('<')} {
     flex-direction: column;
     align-items: flex-start;
+    width: calc(#{$col-part-t} * 3 + #{$col-width-t});
+  }
+  @media #{media('<', m)} {
     margin-top: 12px;
   }
 
@@ -78,16 +96,26 @@
   margin-top: 80px;
 
   @media #{media('<')} {
-    gap: 32px;
+    gap: unset;
     margin-top: 32px;
+    flex-wrap: wrap;
   }
 
-  @media #{media('<')} {
+  @media #{media('<', m)} {
+    gap: 32px;
     flex-direction: column;
   }
 }
 
 .col {
+
+  @media (min-width: $breakpoint-m) and (max-width: ($breakpoint - 1px)) {
+    width: calc(#{$col-part-t} * 3 + #{$col-width-t});
+
+    &:last-child {
+      margin-top: 32px;
+    }
+  }
 
   &__ttl {
     @include h4;

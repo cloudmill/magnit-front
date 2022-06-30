@@ -11,23 +11,38 @@
   &:not(:last-child) {
     margin-bottom: 12px;
   }
+
+  @media #{media('<')} {
+    flex-direction: column;
+    padding: 16px 20px;
+  }
 }
 
 .col {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+
+  @media #{media()} {
+    align-items: flex-end;
+  }
 }
 
 .txt {
   @include p-small;
-  width: calc(#{$col-part-d} * 6)
+
+  @media #{media()} {
+    width: calc(#{$col-part-d} * 6)
+  }
 }
 
 .date {
   @include p-small;
   font-weight: 500;
   color: color(greyTxt2);
+
+  @media #{media('<')} {
+    margin-bottom: 4px;
+  }
 }
 
 .download {
@@ -42,4 +57,8 @@
 
   border-radius: 12px;
   border: 1px solid color(greyBorder2);
+
+  @media #{media('<')} {
+    margin-top: 12px;
+  }
 }

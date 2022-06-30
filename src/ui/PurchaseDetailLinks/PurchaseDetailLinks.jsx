@@ -4,8 +4,9 @@ import { ReactComponent as ClockMark } from "../../assets/images/clock-mark.svg"
 import classNames from "classnames";
 
 
-export const PurchaseDetailLinks = () => (
-  <div className={styles.purchaseLinks}>
+export const PurchaseDetailLinks = ({ extraClass }) => (
+
+  <div className={classNames(styles.purchaseLinks, extraClass)}>
     <div className={styles.top}>
       <div className={styles.status}>Прием заявок завершается</div>
       <div className={styles.info}>
@@ -35,4 +36,5 @@ export const PurchaseDetailLinks = () => (
       <RedButton>Подать заявку</RedButton>
     </div>
   </div>
+
 );

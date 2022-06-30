@@ -1,13 +1,19 @@
 @import "../../styles/helpers.scss";
 
 .purchaseLinks {
-  background: color(greyBg);
   border-radius: 15px;
+  margin-top: 20px;
+
+  @media #{media()} {
   margin-top: 24px;
+  background: color(greyBg);
+  }
 }
 
 .top {
-  padding: 24px;
+  @media #{media()} {
+    padding: 24px;
+  }
 }
 
 .status {
@@ -20,17 +26,33 @@
   @include p-small;
   font-weight: 500;
 
+  @media #{media('<')} {
+    font-size: 10px;
+    align-items: center;
+    margin-top: 4px;
+  }
+
   svg {
     margin-right: 12px;
+    @media #{media('<')} {
+      margin-right: 8px;
+      width: 14px;
+      height: 14px;
+    }
   }
 }
 
 .date {
-  padding-right: 14px;
-  margin-right: 12px;
+  padding-right: 10px;
+  margin-right: 8px;
   position: relative;
   display: flex;
   align-items: center;
+
+  @media #{media()} {
+    padding-right: 14px;
+    margin-right: 12px;
+  }
 
   &::after {
     content: '';
@@ -42,34 +64,54 @@
   }
 }
 
+.items {
+  @media #{media('<')} {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 21px;
+    padding: 12px 16px;
+    background: color(greyBg);
+    border-radius: 8px;
+  }
+}
+
 .item {
-  padding: 16px 20px 16px 25px;
-  border-bottom: 1px solid color(greyBorder);
   @include p-medium;
   cursor: pointer;
 
-  &:first-child {
-    border-top: 1px solid color(greyBorder);
+  @media #{media()} {
+    padding: 16px 20px 16px 25px;
+    border-bottom: 1px solid color(greyBorder);
+    &:first-child {
+      border-top: 1px solid color(greyBorder);
+    }
   }
 
   &.active {
     color: color(red);
-    position: relative;
 
-    &::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 4px;
-      height: 100%;
-      background: color(red);
+    @media #{media()} {
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 4px;
+        height: 100%;
+        background: color(red);
+      }
     }
   }
 }
 
 .bottom {
   padding: 24px;
+
+  @media #{media()} {
+    display: none;
+  }
 
   button {
     width: 100%;

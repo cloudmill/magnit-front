@@ -4,6 +4,7 @@ import { DocumentCard } from "../DocumentCard/DocumentCard";
 import { PurchaseBanner } from "../PurchaseBanner/PurchaseBanner";
 import { ArrowDownButton } from "../Buttons/Buttons";
 import { PurchaseForm } from "../PurchaseForm/PurchaseForm";
+import { PurchaseDetailLinks } from "../PurchaseDetailLinks/PurchaseDetailLinks";
 
 export const PurchaseDetailMain = () => (
 
@@ -19,6 +20,8 @@ export const PurchaseDetailMain = () => (
         <div className={styles.value}>30.05.2022</div>
       </div>
     </div>
+
+    <PurchaseDetailLinks extraClass={styles.onlyMobile} />
 
     <div className={styles.block}>
       <div className={styles.ttl}>Место проведения процедуры</div>
@@ -182,14 +185,14 @@ export const PurchaseDetailMain = () => (
 
       <div className={styles.col}>
 
-        <div className={styles.ttl2}>Контактное лицо 1</div>
+        <div className={styles.ttl2}>Контактное лицо</div>
         <div className={styles.txt}>
           Сергей Звездочетов<br/>
           8 982 810-22-89<br/>
           sergey.zvezdochetov@pirelli.com
         </div>
 
-        <div className={styles.ttl2}>Контактное лицо 3</div>
+        <div className={styles.ttl2}>Контактное лицо</div>
         <div className={styles.txt}>
           Андрей Паясу<br/>
           8 999 432-20-39<br/>
@@ -199,7 +202,7 @@ export const PurchaseDetailMain = () => (
       </div>
 
       <div className={styles.col}>
-      <div className={styles.ttl2}>Контактное лицо 3</div>
+      <div className={styles.ttl2}>Контактное лицо</div>
         <div className={styles.txt}>
           Алексей Дневальный<br/>
           8 991 567-11-00<br/>

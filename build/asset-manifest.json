@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/magnit-front/build/static/css/main.e797357d.css",
-    "main.js": "/magnit-front/build/static/js/main.a32f5335.js",
+    "main.css": "/magnit-front/build/static/css/main.3c6c72ba.css",
+    "main.js": "/magnit-front/build/static/js/main.1371faa8.js",
     "static/media/first-screen-bg.png": "/magnit-front/build/static/media/first-screen-bg.60cab4ead1de8f6d35c6.png",
     "static/media/Golos-Text_Medium.ttf": "/magnit-front/build/static/media/Golos-Text_Medium.5665f65e68980e80b1e4.ttf",
     "static/media/Golos-Text_DemiBold.ttf": "/magnit-front/build/static/media/Golos-Text_DemiBold.c8cfbf81387734a4e2f0.ttf",
@@ -10,6 +10,7 @@
     "static/media/Golos-Text_Regular.ttf": "/magnit-front/build/static/media/Golos-Text_Regular.e504b5d9f251f7c61708.ttf",
     "static/media/purchase-banner.png": "/magnit-front/build/static/media/purchase-banner.630daf97b2de4f9c1d8b.png",
     "static/media/first-screen-bg-mob.png": "/magnit-front/build/static/media/first-screen-bg-mob.ddabd648a873c2e6009e.png",
+    "static/media/purchase-banner-tabl.png": "/magnit-front/build/static/media/purchase-banner-tabl.11c6657284a848ca6bd1.png",
     "static/media/purchase-banner-mob.png": "/magnit-front/build/static/media/purchase-banner-mob.845d9fc7b26226ab108f.png",
     "static/media/tel.svg": "/magnit-front/build/static/media/tel.ffe0fee3aa43c2076db0e58ee3bcd701.svg",
     "static/media/settings.svg": "/magnit-front/build/static/media/settings.f29428796a2b8df80d66ca4b2d11f825.svg",
@@ -26,11 +27,11 @@
     "static/media/arrow-down.svg": "/magnit-front/build/static/media/arrow-down.d6c738b7987b73bcf8afd2a1243e687c.svg",
     "index.html": "/magnit-front/build/index.html",
     "static/media/breadcrumbs-arrow.svg": "/magnit-front/build/static/media/breadcrumbs-arrow.723d51dbd5a4f3db35d92c9ee14f1647.svg",
-    "main.e797357d.css.map": "/magnit-front/build/static/css/main.e797357d.css.map",
-    "main.a32f5335.js.map": "/magnit-front/build/static/js/main.a32f5335.js.map"
+    "main.3c6c72ba.css.map": "/magnit-front/build/static/css/main.3c6c72ba.css.map",
+    "main.1371faa8.js.map": "/magnit-front/build/static/js/main.1371faa8.js.map"
   },
   "entrypoints": [
-    "static/css/main.e797357d.css",
-    "static/js/main.a32f5335.js"
+    "static/css/main.3c6c72ba.css",
+    "static/js/main.1371faa8.js"
   ]
 }

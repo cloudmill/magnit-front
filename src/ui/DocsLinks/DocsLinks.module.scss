@@ -1,15 +1,45 @@
 @import "/src/styles/helpers.scss";
 
 .block {
-  background: color(greyBg);
-  border-radius: 15px;
   margin-top: 24px;
+
+  @media #{media('<')} {
+    display: flex;
+    overflow-x: scroll;
+    @include scrollbar-hidden;
+
+    margin: 12px -20px;
+    padding: 0 20px;
+  }
+  @media #{media()} {
+    background: color(greyBg);
+    border-radius: 15px;
+  }
 }
 
 .item {
   padding: 16px 25px;
   overflow: hidden;
   position: relative;
+  @include p-medium;
+
+  @media #{media('<')} {
+    flex: none;
+    background: color(greyBg);
+    padding: 12px 16px;
+  }
+
+  &:first-child {
+    @media #{media('<')} {
+      border-radius: 15px 0 0 15px;
+    }
+  }
+  &:last-child {
+    @media #{media('<')} {
+      border-radius: 0 15px 15px 0;
+      
+    }
+  }
 
   &:not(:last-child) {
     border-bottom: 1px solid color(greyBorder);
@@ -18,15 +48,27 @@
   &.active {
     color: color(red);
 
+    @media #{media('<')} {
+      display: flex;
+      justify-content: center;
+    }
+
     &::after {
       content: '';
       position: absolute;
       bottom: 0;
-      left: 0;
-      right: 0;
       height: 4px;
       width: 100%;
       background: color(red);
+
+      @media #{media()} {
+        left: 0;
+        right: 0;
+      }
+      @media #{media('<')} {
+        height: 2px;
+        width: 90%;
+      }
     }
   }
 }

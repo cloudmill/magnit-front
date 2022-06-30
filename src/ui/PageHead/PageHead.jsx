@@ -1,7 +1,7 @@
 import styles from "./PageHead.module.scss";
 import { ReactComponent as BcArrow } from "../../assets/images/breadcrumbs-arrow.svg";
 
-function PageHead(props) {
+function PageHead(props, {children}) {
 
   if (props.bc3) {
     return <>
@@ -13,6 +13,8 @@ function PageHead(props) {
         <div className={styles.item}> { props.bc3 } </div>
       </div>
 
+      {children}
+
       <h1 className={styles.ttl}> { props.title } </h1>
     </>
   }
@@ -23,6 +25,9 @@ function PageHead(props) {
             <BcArrow />
             <div className={styles.item}> { props.bc2 } </div>
           </div>
+
+          {children}
+
           <h1 className={styles.ttl}> { props.title } </h1>
         </>
 

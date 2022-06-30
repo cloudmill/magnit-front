@@ -1,7 +1,11 @@
 @import "/src/styles/helpers.scss";
 
 .block {
-  margin-top: 32px;
+  margin-top: 24px;
+
+  @media #{media()} {
+    margin-top: 32px;
+  }
 }
 
 .top {
@@ -9,6 +13,10 @@
   justify-content: space-between;
   padding: 0 30px;
   margin-bottom: 24px;
+
+  @media #{media('<')} {
+    display: none;
+  }
 }
 
 .label {

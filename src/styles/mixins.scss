@@ -9,3 +9,12 @@
   -webkit-line-clamp: $lineCount;
   line-clamp: $lineCount;
 }
+
+@mixin scrollbar-hidden() {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

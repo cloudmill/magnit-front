@@ -4,10 +4,19 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-top: 12px;
+  margin: 12px -20px 0;
+  padding: 0 20px;
+
+  overflow-x: scroll;
+  @include scrollbar-hidden;
 
   @media #{media()} {
-    margin-top: 24px;
+    margin: 24px 0 0;
+    padding: 0;
+  }
+
+  & * {
+    flex: none;
   }
 }
 

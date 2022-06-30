@@ -13,6 +13,6 @@ export const PurchaseList = ({ children, extraClass }) => (
 
     {children}
     
-    <GreyButton extraClass={styles.btn}>Смотреть все</GreyButton>
+    {/* <GreyButton extraClass={styles.btn}>Смотреть все</GreyButton> */}
   </div>
 );

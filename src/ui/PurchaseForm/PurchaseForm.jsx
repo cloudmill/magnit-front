@@ -21,7 +21,8 @@ function PurchaseForm(props) {
         <div className={classNames(styles.bottom, styles2.bottom)}>
           <div className={classNames(styles.col, styles2.col)}>
             <GreyButton type="file"><Clip/> Прикерпить файл</GreyButton>
-            <div className={classNames(styles.note, styles2.note)}>Допустимое расширение файлов: .ppt, .pptx, .doc, .docx, .xls, <br/> .xlsx, .pdf, .jpg, .jpeg, .png</div>
+            <div className={classNames(styles.note, styles2.note, styles.onlyDesktop)}>Допустимое расширение файлов: .ppt, .pptx, .doc, .docx, .xls, <br/> .xlsx, .pdf, .jpg, .jpeg, .png</div>
+            <div className={classNames(styles.note, styles2.note, styles.onlyMobile)}>Допустимое расширение файлов: .ppt, .pptx, .doc, .docx, .xls, .xlsx, .pdf, .jpg, .jpeg, .png</div>
           </div>
           <div className={classNames(styles.col, styles2.col2)}>
             <div className={styles.checkbox}>

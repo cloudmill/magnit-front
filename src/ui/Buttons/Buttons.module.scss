@@ -43,9 +43,14 @@
   padding: 8px 40px;
 
   svg {
-    margin-left: 12px;
+    margin-left: 8px;
     margin-right: 0;
-    height: auto;
-    width: 15px;
+
+    @media #{media()} {
+      margin-left: 12px;
+      margin-right: 0;
+      height: auto;
+      width: 15px;
+    }
   }
 }

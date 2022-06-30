@@ -5,9 +5,19 @@
   margin-top: 30px;
   @include p-medium;
 
+  @media #{media('<')} {
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+
   .col {
     &:first-child {
-      width: calc(#{$col-part-d} * 2);
+      @media #{media('<')} {
+        margin-right: 20px;
+      }
+      @media #{media()} {
+        width: calc(#{$col-part-d} * 2);
+      }
     }
   }
 
@@ -18,7 +28,10 @@
 }
 
 .block {
-  margin: 60px 0;
+  margin: 20px 0;
+  @media #{media()} {
+    margin: 60px 0;
+  }
 
   &:first-child {
     margin-top: 0;
@@ -29,7 +42,10 @@
 
   .ttl {
     @include h4;
-    margin-bottom: 16px;
+    margin-bottom: 4px;
+    @media #{media()} {
+      margin-bottom: 16px;
+    }
   }
 
   .txt {
@@ -65,26 +81,44 @@
 
   &Row {
     display: flex;
-    padding: 16px;
+    padding: 16px 0;
     border-bottom: 1px solid color(greyBorder);
   }
 
   .code {
     width: calc(#{$col-part-d} * 2);
+    font-size: 14px;
+    line-height: 22px;
+    @media #{media('<')} {
+      width: calc(#{$col-part-m});
+      font-size: 10px;
+      line-height: 1.8;
+    }
   }
 
   .txt {
     width: calc(#{$col-part-d} * 5 + #{$col-width-d});
+    @media #{media('<')} {
+      width: calc(#{$col-part-m} * 2 + #{$col-width-m});
+    }
   }
 
   &Btn {
     margin-top: 32px;
+    @media #{media('<')} {
+      margin-top: 12px;
+      width: 100%;
+    }
   }
 }
 
 .markup {
   p, ul {
-    margin: 20px 0;
+    margin: 10px 0;
+
+    @media #{media()} {
+      margin: 20px 0;
+    }
 
     &:first-child {
       margin-top: 0;
@@ -94,7 +128,10 @@
     }
   }
   ul {
-    padding-left: $col-gap-d;
+    padding-left: $col-gap-m;
+    @media #{media()} {
+      padding-left: $col-gap-d;
+    }
   }
   .listNum {
     list-style: decimal;

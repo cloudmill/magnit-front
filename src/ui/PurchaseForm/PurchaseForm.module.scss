@@ -1,7 +1,11 @@
 @import "/src/styles/helpers.scss";
 
 .block {
-  margin-top: 60px;
+  margin-top: 20px;
+
+  @media #{media()} {
+    margin-top: 60px;
+  }
 }
 
 .ttl {
@@ -9,11 +13,17 @@
 }
 
 .form {
-  margin-top: 32px;
+  margin-top: 20px;
+  @media #{media()} {
+    margin-top: 32px;
+  }
 }
 
 .input {
-  margin-bottom: 12px;
+  margin-bottom: 8px;
+  @media #{media()} {
+    margin-top: 12px;
+  }
 }
 
 .bottom {
@@ -24,6 +34,13 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
+  @media #{media('<')} {
+    flex-direction: column;
+
+    button {
+      width: fit-content;
+    }
+  }
 }
 
 .col2 {
@@ -31,5 +48,7 @@
 }
 
 .note {
-  width: calc(#{$col-part-d} * 4 + #{$col-width-d});
+  @media #{media()} {
+    width: calc(#{$col-part-d} * 4 + #{$col-width-d});
+  }
 }

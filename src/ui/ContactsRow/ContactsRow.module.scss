@@ -30,6 +30,9 @@
     @media #{media()} {
       width: calc(#{$col-part-d} * 5);
     }
+    @media #{media('>', xxl)} {
+      width: calc(#{$col-part-xxl} * 5);
+    }
   }
 }
 

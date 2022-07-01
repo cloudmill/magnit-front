@@ -3,22 +3,28 @@
 .block {
   .input {
     margin-bottom: 8px;
-    @media #{media()} {
-      width: calc(#{$col-part-d} * 5 + #{$col-width-d});
-      margin-bottom: 24px;
-    }
     @media #{media('>', m)} {
       width: calc(#{$col-part-t} * 3 + #{$col-width-t});
       margin-bottom: 16px;
     }
+    @media #{media()} {
+      width: calc(#{$col-part-d} * 5 + #{$col-width-d});
+      margin-bottom: 24px;
+    }
+    @media #{media('>', xxl)} {
+      width: calc(#{$col-part-xxl} * 5 + #{$col-width-xxl});
+    }
   }
 
   .col {
+    @media #{media('>', m)} {
+      width: calc(#{$col-part-t} * 3 + #{$col-width-t});
+    }
     @media #{media()} {
       width: calc(#{$col-part-d} * 5 + #{$col-width-d});
     }
-    @media #{media('>', m)} {
-      width: calc(#{$col-part-t} * 3 + #{$col-width-t});
+    @media #{media('>', xxl)} {
+      width: calc(#{$col-part-xxl} * 5 + #{$col-width-xxl});
     }
   }
 }

@@ -21,3 +21,4 @@ $col-width-xxl: '((1920px - (#{$col-pad-d} * 2) - (#{$col-gap-d} * #{$col-count-
 $col-part-m: '(#{$col-width-m} + #{$col-gap-m})';
 $col-part-t: '(#{$col-width-t} + #{$col-gap-m})';
 $col-part-d: '(#{$col-width-d} + #{$col-gap-d})';
+$col-part-xxl: '(#{$col-width-xxl} + #{$col-gap-d})';

@@ -53,6 +53,6 @@ export const DocsPage = () => (
 
     <Header bottom />
 
-    {/* <DevGrids/> */}
+    <DevGrids/>
   </PageWrapper>
 );

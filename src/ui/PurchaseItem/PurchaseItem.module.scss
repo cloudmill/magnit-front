@@ -59,6 +59,10 @@ $padding-right: 70px;
       width: calc(#{$col-part-d} * 6 - #{$padding-left});
       padding-right: calc(#{$col-part-d} - 10px);
     }
+    @media #{media('>', xxl)} {
+      width: calc(#{$col-part-xxl} * 6 - #{$padding-left});
+      padding-right: calc(#{$col-part-xxl} - 10px);
+    }
 
     .txt {
       @include p-small;
@@ -91,6 +95,9 @@ $padding-right: 70px;
     @media #{media()} {
       width: calc(#{$col-part-d} * 3);
     }
+    @media #{media('>', xxl)} {
+      width: calc(#{$col-part-xxl} * 3);
+    }
     @media #{media('<', m)} {
       margin-top: 16px;
     }
@@ -105,6 +112,9 @@ $padding-right: 70px;
   &3 {
     @media #{media()} {
       width: calc(#{$col-part-d} * 3 - #{$col-gap-d} - #{$padding-right});
+    }
+    @media #{media('>', xxl)} {
+      width: calc(#{$col-part-xxl} * 3 - #{$col-gap-d} - #{$padding-right});
     }
     @media #{media('<')} {
       margin-top: 10px;

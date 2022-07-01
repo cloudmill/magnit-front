@@ -19,6 +19,6 @@ export const ContactsPage = () => (
     </Container>
     <Header bottom />
 
-    {/* <DevGrids/> */}
+    <DevGrids/>
   </PageWrapper>
 );

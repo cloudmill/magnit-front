@@ -17,10 +17,16 @@
     @media #{media('<')} {
       display: none;
     }
+    @media #{media('>', xxl)} {
+      width: calc(#{$col-part-xxl} * 2 + #{$col-width-xxl});
+    }
   }
   &:nth-child(2) {
     @media #{media()} {
       width: calc(#{$col-part-d} * 7 + #{$col-width-d});
+    }
+    @media #{media('>', xxl)} {
+      width: calc(#{$col-part-xxl} * 7 + #{$col-width-xxl});
     }
   }
 }

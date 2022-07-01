@@ -1,8 +1,11 @@
 @import "/src/styles/helpers.scss";
 
 .block {
-  .input {
+  .label {
+    position: relative;
+    width: 100%;
     margin-bottom: 8px;
+
     @media #{media('>', m)} {
       width: calc(#{$col-part-t} * 3 + #{$col-width-t});
       margin-bottom: 16px;
@@ -51,14 +54,33 @@
   border: 1px solid color(greyBorder);
   border-radius: 12px;
   padding: 11px 16px;
+  transition: $transition;
   
   @include p-medium;
   font-weight: 400;
 
   @media #{media()} {
-    
     padding: 16px;
   }
+
+  &:focus {
+    border-color: color(greyBorder3);
+  }
+  &.error {
+    background: color(redBg);
+    border-color: color(redBorder);
+    color: color(redDark);
+  }
+}
+
+.inputError {
+  color: color(redDark);
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 0.22px;
+  margin: 4px 0 0 16px;
+
 }
 
 .textarea {
@@ -123,15 +145,59 @@
     margin-bottom: 20px;
   }
 
+  .boxLabel {
+    position: relative;
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+    cursor: pointer;
+
+    input {
+      position: absolute;
+      left: 0;
+      opacity: 0;
+
+      &:checked {
+        ~ .box {
+          border-color: color(red);
+
+          svg {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
   .box {
+    position: relative;
     width: 18px;
     height: 18px;
     border: 2px solid color(black);
-    border-radius: 2px;
-    margin-right: 8px;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: $transition;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    user-select: none;
 
     @media #{media()} {
       margin-right: 12px;
+    }
+
+    &:hover {
+      border-color: color(blackBtnHover);
+    }
+
+    svg {
+      position: absolute;
+      opacity: 0;
+      width: 18px;
+      height: 18px;
+      transition: $transition;
     }
   }
 

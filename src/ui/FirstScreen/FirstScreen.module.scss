@@ -30,13 +30,18 @@
   &:nth-child(1) {
     @media #{media(">", m)} {
       width: calc(#{$col-part-t} * 4);
+      padding-right: 40px;
     }
     @media #{media()} {
       width: calc(#{$col-part-d} * 6);
+      padding-right: 0;
     }
   }
   &:nth-child(2) {
     @media #{media("<")} {
+      margin-top: 44px;
+    }
+    @media #{media("<", m)} {
       margin-top: 24px;
     }
     @media #{media(">", m)} {
@@ -63,6 +68,9 @@
   @include p-big;
   margin-top: 12px;
 
+  @media #{media('>', m)} {
+    margin-top: 20px;
+  }
   @media #{media()} {
     margin-top: 24px;
   }

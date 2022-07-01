@@ -2,13 +2,14 @@ import styles from "../PurchaseDetail/PurchaseDetail.module.scss";
 import { Container } from "../Container/Container";
 import { PageWrapper } from "../PageWrapper/PageWrapper";
 import { Header } from "../Header/Header";
-import { PageHead } from "../PageHead/PageHead";
+import ttlStyle from "../PageHead/PageHead.module.scss";
 import { DevGrids } from "../DevGrids/DevGrids";
 import { DocumentCard } from "../DocumentCard/DocumentCard";
 import { DocsLinks } from "../DocsLinks/DocsLinks";
 import { DocsSearch } from "../DocsSearch/DocsSearch";
 import { DocsList } from "../DocsList/DocsList";
 import { EmptySearch } from "../EmptySearch/EmptySearch";
+import { Breadcrumbs } from "../Breadcrumbs/Breadcrumbs";
 
 export const DocsPage = () => (
   <PageWrapper>
@@ -21,9 +22,12 @@ export const DocsPage = () => (
       </div>
 
       <div className={styles.col}>
-        <PageHead title='Предварительный квалификационный отбор' bc1='Главная' bc2='Предварительный квалификационный отбор' />
+
+        <Breadcrumbs bc1='Главная' bc2='Предварительный квалификационный отбор'/>
 
         <DocsLinks extraClass={styles.onlyMobile} />
+
+        <h1 className={ttlStyle.ttl}> Предварительный квалификационный отбор </h1>
 
         <div className={styles.docsAbout}>ПКО по видам работ, услуг №340: Комплекс работ, услуг по совершенствованию сметно-нормативной базы, в том числе разработка государственных элементных сметных норм, федеральных единичных расценок, индексов, методик и т.д.</div>
 

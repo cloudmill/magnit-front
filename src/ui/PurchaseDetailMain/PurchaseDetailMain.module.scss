@@ -163,3 +163,11 @@
     list-style: disc;
   }
 }
+
+.linkHover {
+  transition: $transition;
+
+  &:hover {
+    color: color(red);
+  }
+}

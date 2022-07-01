@@ -162,14 +162,14 @@ export const PurchaseDetailMain = () => (
         <div className={styles.txt}>По вопросам технического задания
           <br/><br/>
           Сергей Звездочетов<br/>
-          8 982 810-22-89<br/>
-          sergey.zvezdochetov@pirelli.com
+          <a className={styles.linkHover} href="tel:+79828102289">8 982 810-22-89</a><br/>
+          <a className={styles.linkHover} href="mailto:sergey.zvezdochetov@pirelli.com">sergey.zvezdochetov@pirelli.com</a>
           <br/><br/>
           Логинов Алексей<br/>
-          8 912 710-03-08
+          <a className={styles.linkHover} href="tel:+79127100308">8 912 710-03-08</a>
           <br/><br/>
           Контактный телефон заказчика<br/>
-          8 982 380-16-10
+          <a className={styles.linkHover} href="tel:+79823801610">8 982 380-16-10</a>
         </div>
       </div>
     </div>
@@ -188,15 +188,15 @@ export const PurchaseDetailMain = () => (
         <div className={styles.ttl2}>Контактное лицо</div>
         <div className={styles.txt}>
           Сергей Звездочетов<br/>
-          8 982 810-22-89<br/>
-          sergey.zvezdochetov@pirelli.com
+          <a className={styles.linkHover} href="tel:+79828102289">8 982 810-22-89</a><br/>
+          <a className={styles.linkHover} href="mailto:sergey.zvezdochetov@pirelli.com">sergey.zvezdochetov@pirelli.com</a>
         </div>
 
         <div className={styles.ttl2}>Контактное лицо</div>
         <div className={styles.txt}>
           Андрей Паясу<br/>
-          8 999 432-20-39<br/>
-          payasudesign@mail.ru
+          <a className={styles.linkHover} href="tel:+79994322039">8 999 432-20-39</a><br/>
+          <a className={styles.linkHover} href="mailto:payasudesign@mail.ru">payasudesign@mail.ru</a>
         </div>
 
       </div>
@@ -205,8 +205,8 @@ export const PurchaseDetailMain = () => (
       <div className={styles.ttl2}>Контактное лицо</div>
         <div className={styles.txt}>
           Алексей Дневальный<br/>
-          8 991 567-11-00<br/>
-          lesha123@magnit.com
+          <a className={styles.linkHover} href="tel:+79915671100">8 991 567-11-00</a><br/>
+          <a className={styles.linkHover} href="mailto:lesha123@magnit.com">lesha123@magnit.com</a>
         </div>
       </div>
     </div>

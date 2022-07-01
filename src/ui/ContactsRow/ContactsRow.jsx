@@ -18,14 +18,14 @@ export const ContactsRow = () => (
       <div className={styles.item}>
         <ContactsTel/>
         <div>
-          <a href="tel:+74959898519">8 (495) 989-85-19</a>
+          <a href="tel:+74959898519,7610">8 (495) 989-85-19</a>
           <div className={styles.dop}>доб. 7610</div>
         </div>
       </div>
       <div className={styles.item}>
         <ContactsTel/>
         <div>
-          <a href="tel:+74959898519">8 (495) 989-85-19</a>
+          <a href="tel:+74959898519,7620">8 (495) 989-85-19</a>
           <div className={styles.dop}>доб. 7620</div>
         </div>
       </div>

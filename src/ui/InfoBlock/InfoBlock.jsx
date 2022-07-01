@@ -32,7 +32,7 @@ export const InfoBlock = () => (
         <div className={styles.tel}>
           <Tel />
           <div className={styles.tel__col}>
-            <a className={styles.number} href="tel:+74959898519">8 (495) 989-85-19</a>
+            <a className={styles.number} href="tel:+74959898519,7610">8 (495) 989-85-19</a>
             <div className={styles.dop}>доб. 7610, 7620</div>
           </div>
         </div>

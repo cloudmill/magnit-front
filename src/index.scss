@@ -30,13 +30,19 @@ textarea {
   outline: none;
 }
 
+button {
+  color: color(black);
+}
+
 body {
   overflow-x: hidden;
 
   font-family: 'Golos';
   font-weight: 400;
+  color: color(black);
 }
 
 #root {
   width: 100vw;
+  min-height: 100vh;
 }

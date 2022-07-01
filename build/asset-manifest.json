@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/magnit-front/build/static/css/main.ba9f252d.css",
-    "main.js": "/magnit-front/build/static/js/main.0742af9e.js",
+    "main.css": "/magnit-front/build/static/css/main.4e8152a2.css",
+    "main.js": "/magnit-front/build/static/js/main.e976237c.js",
     "static/media/first-screen-bg-xxl.png": "/magnit-front/build/static/media/first-screen-bg-xxl.5cafa70252bde3bf6b5f.png",
     "static/media/first-screen-bg.png": "/magnit-front/build/static/media/first-screen-bg.60cab4ead1de8f6d35c6.png",
     "static/media/Golos-Text_Medium.ttf": "/magnit-front/build/static/media/Golos-Text_Medium.5665f65e68980e80b1e4.ttf",
@@ -24,15 +24,15 @@
     "static/media/geo-mark.svg": "/magnit-front/build/static/media/geo-mark.c08f71a96887febb6a13bba0b96b1e36.svg",
     "static/media/search.svg": "/magnit-front/build/static/media/search.01f7a61f27cb64a3649adbb68059facc.svg",
     "static/media/burger.svg": "/magnit-front/build/static/media/burger.db4b734d118e8d92d05ee90c363aa37c.svg",
+    "index.html": "/magnit-front/build/index.html",
     "static/media/clock-mark.svg": "/magnit-front/build/static/media/clock-mark.9d0419b6ff01dd20e902c425f86eb23e.svg",
     "static/media/arrow-down.svg": "/magnit-front/build/static/media/arrow-down.d6c738b7987b73bcf8afd2a1243e687c.svg",
-    "index.html": "/magnit-front/build/index.html",
     "static/media/breadcrumbs-arrow.svg": "/magnit-front/build/static/media/breadcrumbs-arrow.723d51dbd5a4f3db35d92c9ee14f1647.svg",
-    "main.ba9f252d.css.map": "/magnit-front/build/static/css/main.ba9f252d.css.map",
-    "main.0742af9e.js.map": "/magnit-front/build/static/js/main.0742af9e.js.map"
+    "main.4e8152a2.css.map": "/magnit-front/build/static/css/main.4e8152a2.css.map",
+    "main.e976237c.js.map": "/magnit-front/build/static/js/main.e976237c.js.map"
   },
   "entrypoints": [
-    "static/css/main.ba9f252d.css",
-    "static/js/main.0742af9e.js"
+    "static/css/main.4e8152a2.css",
+    "static/js/main.e976237c.js"
   ]
 }

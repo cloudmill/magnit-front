@@ -29,6 +29,7 @@
   border-radius: 12px 12px 0px 0px;
   padding: 7px 20px;
   @include p-medium;
+  color: color(black);
   text-align: center;
   cursor: pointer;
   transition: $transition;

@@ -7,13 +7,52 @@
   @media #{media("<")} {
     display: none;
   }
+
+  .dropInner {
+    display: none;
+  }
+
+  &.bottom {
+    @media #{media("<")} {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin: 0;
+      width: calc(#{$col-part-t} * 3 + #{$col-width-t});
+
+      .drop {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        svg {
+          display: none;
+        }
+
+        &Inner {
+          display: flex;
+          flex-direction: column;
+          margin-left: 20px;
+
+          a {
+            margin-top: 8px;
+            color: color(greyTxt2);
+          }
+        }
+      }
+    }
+    @media #{media("<", m)} {
+      margin: 25px 0;
+      width: 100%;
+    }
+  }
 }
 
 .item {
   display: flex;
   align-items: center;
   cursor: pointer;
-  transform: $transition;
+  transition: $transition;
 
   @include p-medium;
 

@@ -6,7 +6,29 @@
 
   &.bottom {
     border-bottom: none;
-    border-top: 1px solid color(greyBorder)
+    border-top: 1px solid color(greyBorder);
+
+    @media #{media("<")} {
+      .headerContainer {
+        align-items: flex-start;
+        flex-wrap: wrap;
+      }
+      .headerButton {
+        display: flex;
+        margin: -40px 0 0;
+      }
+      .burger {
+        display: none;
+      }
+    }
+    @media #{media("<", m)} {
+      .headerContainer {
+        flex-direction: column;
+      }
+      .headerButton {
+        margin: 0;
+      }
+    }
   }
 }
 
@@ -18,9 +40,15 @@
     justify-content: space-between;
   }
 
-  & > svg {
-    @media #{media("<")} {
-      width: 95px;
+  .logo {
+    @media (min-width: $breakpoint-m) and (max-width: ($breakpoint - 1px)) {
+      width: calc(#{$col-part-t} * 4);
+    }
+
+    svg {
+      @media #{media("<")} {
+        width: 95px;
+      }
     }
   }
 }
@@ -29,7 +57,7 @@
   margin: 0 0 0 auto;
 
   @media #{media("<")} {
-    display: none !important;
+    display: none;
   }
 }
 

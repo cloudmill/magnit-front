@@ -10,13 +10,14 @@ import { HeaderNav } from "../HeaderNav/HeaderNav";
 import { GreyButton } from "../Buttons/Buttons"; 
 
 
-export const Header = ({ bottom }) => (
-  <div className={classNames(styles.header, {[styles.bottom] : bottom})}>
+function Header(props) {
+  return <div className={classNames(styles.header, {[styles.bottom] : props.bottom})}>
   
     <Container extraClass={styles.headerContainer}>
 
-      <Logo />
-      <HeaderNav />
+      <a className={styles.logo} href="/"><Logo /></a>
+      
+      <HeaderNav bottom={props.bottom} />
 
       <GreyButton extraClass={styles.headerButton}><Question /> Задать вопрос</GreyButton>
 
@@ -25,4 +26,6 @@ export const Header = ({ bottom }) => (
     </Container>
     
   </div>
-);
+};
+
+export { Header };

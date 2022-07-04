@@ -1,15 +1,35 @@
 import styles from "./Modals.module.scss";
 import classNames from "classnames";
 import AskModal from "./AskModal";
+import { useSelector, useDispatch } from "react-redux";
+import { useEffect, useRef } from "react";
+import { close } from "../../store/index.ts";
 
 function ModalsContainer(props) {
+  const dispatch = useDispatch();
 
-  return <div className={classNames(styles.modalsContainer, styles.active)}>
+  const rootEl = useRef(null);
 
-    <AskModal/>
+  const isOpen = useSelector((state) => state.isOpen);
 
-  </div>
-  
+  useEffect(() => {
+    rootEl.current.addEventListener("click", (event) => {
+      if (event.target.classList.contains("qweqweqwe")) {
+        dispatch(close());
+      }
+    });
+  }, []);
+
+  return (
+    <div
+      ref={rootEl}
+      className={classNames("qweqweqwe", styles.modalsContainer, {
+        [styles.active]: isOpen,
+      })}
+    >
+      {isOpen && <AskModal />}
+    </div>
+  );
 }
 
 export default ModalsContainer;

@@ -2,42 +2,67 @@ import styles from "./Buttons.module.scss";
 import classNames from "classnames";
 import { ReactComponent as ArrowDown } from "../../assets/images/arrow-down.svg";
 
-const GreyButton = ({ children, isActive, extraClass, type }) => (
+const GreyButton = ({ children, isActive, extraClass, type, onClick }) => (
   <button
-    className={classNames(styles.button, styles.grey, { [styles.active]: isActive }, extraClass)} type={type}>
-  {children}
+    onClick={onClick}
+    className={classNames(
+      styles.button,
+      styles.grey,
+      { [styles.active]: isActive },
+      extraClass
+    )}
+    type={type}
+  >
+    {children}
   </button>
 );
 
 const GreyButtonLink = ({ children, isActive, extraClass }) => (
-  <a href="/"
-    className={classNames(styles.button, styles.grey, { [styles.active]: isActive }, extraClass)}
+  <a
+    href="/"
+    className={classNames(
+      styles.button,
+      styles.grey,
+      { [styles.active]: isActive },
+      extraClass
+    )}
   >
-  {children}
+    {children}
   </a>
 );
 
 const BlackButton = ({ children, isActive, extraClass }) => (
   <button
-    className={classNames(styles.button, styles.black, { [styles.active]: isActive }, extraClass)}
+    className={classNames(
+      styles.button,
+      styles.black,
+      { [styles.active]: isActive },
+      extraClass
+    )}
   >
-  {children}
+    {children}
   </button>
 );
 
 const RedButton = ({ children, extraClass, isActive, type }) => (
   <button
-    className={classNames(styles.button, styles.red, extraClass, { [styles.active]: isActive })} type={type}>
-  {children}
+    className={classNames(styles.button, styles.red, extraClass, {
+      [styles.active]: isActive,
+    })}
+    type={type}
+  >
+    {children}
   </button>
 );
 
 const ArrowDownButton = ({ children, extraClass, isActive }) => (
   <button
-    className={classNames(styles.button, styles.arrowDown, extraClass, { [styles.active]: isActive })}
+    className={classNames(styles.button, styles.arrowDown, extraClass, {
+      [styles.active]: isActive,
+    })}
   >
-  {children}
-  <ArrowDown/>
+    {children}
+    <ArrowDown />
   </button>
 );
 

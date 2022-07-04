@@ -7,25 +7,38 @@ import { ReactComponent as Logo } from "../../assets/images/main-logo.svg";
 import { ReactComponent as Question } from "../../assets/images/question.svg";
 import { ReactComponent as Burger } from "../../assets/images/burger.svg";
 import { HeaderNav } from "../HeaderNav/HeaderNav";
-import { GreyButton } from "../Buttons/Buttons"; 
+import { GreyButton } from "../Buttons/Buttons";
 
+import { useDispatch } from "react-redux";
+import { open } from "../../store/index.ts";
 
 function Header(props) {
-  return <div className={classNames(styles.header, {[styles.bottom] : props.bottom})}>
-  
-    <Container extraClass={styles.headerContainer}>
+  const dispatch = useDispatch();
 
-      <a className={styles.logo} href="/"><Logo /></a>
-      
-      <HeaderNav bottom={props.bottom} />
+  return (
+    <div
+      className={classNames(styles.header, { [styles.bottom]: props.bottom })}
+    >
+      <Container extraClass={styles.headerContainer}>
+        <a className={styles.logo} href="/">
+          <Logo />
+        </a>
 
-      <GreyButton extraClass={styles.headerButton}><Question /> Задать вопрос</GreyButton>
+        <HeaderNav bottom={props.bottom} />
 
-      <button className={styles.burger}><Burger/></button>
+        <GreyButton
+          extraClass={styles.headerButton}
+          onClick={() => dispatch(open())}
+        >
+          <Question /> Задать вопрос
+        </GreyButton>
 
-    </Container>
-    
-  </div>
-};
+        <button className={styles.burger}>
+          <Burger />
+        </button>
+      </Container>
+    </div>
+  );
+}
 
 export { Header };

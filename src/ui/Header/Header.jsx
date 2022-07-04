@@ -28,7 +28,10 @@ function Header(props) {
 
         <GreyButton
           extraClass={styles.headerButton}
-          onClick={() => dispatch(open('login'))}
+          onClick={() => {
+            dispatch(open('form'));
+            document.querySelector('body').style.overflow = 'hidden';
+            }}
         >
           <Question /> Задать вопрос
         </GreyButton>

@@ -27,6 +27,7 @@ function ModalsContainer(props) {
     rootEl.current.addEventListener("click", (event) => {
       if (event.target.classList.contains("qweqweqwe")) {
         dispatch(close());
+        document.querySelector('body').style.overflow = '';
       }
     });
   }, []);

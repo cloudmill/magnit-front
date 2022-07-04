@@ -3,14 +3,25 @@ import classNames from "classnames";
 import AskModal from "./AskModal";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useRef } from "react";
-import { close } from "../../store/index.ts";
+import { open, close } from "../../store/index.ts";
+
+const LoginModal = () => {
+  const dispatch = useDispatch();
+
+  return <button onClick={() => dispatch(open('form'))}>to form</button>
+}
+
+const modals = {
+  form: <AskModal />,
+  login: <LoginModal />,
+};
 
 function ModalsContainer(props) {
   const dispatch = useDispatch();
 
   const rootEl = useRef(null);
 
-  const isOpen = useSelector((state) => state.isOpen);
+  const openModal = useSelector((state) => state.openModal);
 
   useEffect(() => {
     rootEl.current.addEventListener("click", (event) => {
@@ -24,10 +35,10 @@ function ModalsContainer(props) {
     <div
       ref={rootEl}
       className={classNames("qweqweqwe", styles.modalsContainer, {
-        [styles.active]: isOpen,
+        [styles.active]: openModal,
       })}
     >
-      {isOpen && <AskModal />}
+      {openModal && modals[openModal]}
     </div>
   );
 }

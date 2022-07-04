@@ -1,7 +1,7 @@
 import { createStore } from "redux";
 
 interface State {
-  isOpen: boolean;
+  openModal: string | false;
 }
 
 enum Actions {
@@ -10,7 +10,7 @@ enum Actions {
 }
 
 const initialState: State = {
-  isOpen: false,
+  openModal: false,
 };
 
 const reducer = (state: State = initialState, action) => {
@@ -18,12 +18,12 @@ const reducer = (state: State = initialState, action) => {
     case Actions.OPEN_MODAL:
       return {
         ...state,
-        isOpen: true,
+        openModal: action.payload,
       };
     case Actions.CLOSE_MODAL:
       return {
         ...state,
-        isOpen: false,
+        openModal: false,
       };
     default:
       return state;
@@ -32,8 +32,9 @@ const reducer = (state: State = initialState, action) => {
 
 const store = createStore(reducer);
 
-const open = () => ({
+const open = (modalName = "form") => ({
   type: Actions.OPEN_MODAL,
+  payload: modalName,
 });
 
 const close = () => ({

@@ -44,12 +44,13 @@ const BlackButton = ({ children, isActive, extraClass }) => (
   </button>
 );
 
-const RedButton = ({ children, extraClass, isActive, type }) => (
+const RedButton = ({ children, extraClass, isActive, type, onClick }) => (
   <button
     className={classNames(styles.button, styles.red, extraClass, {
       [styles.active]: isActive,
     })}
     type={type}
+    onClick={onClick}
   >
     {children}
   </button>

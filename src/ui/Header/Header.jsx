@@ -28,7 +28,7 @@ function Header(props) {
 
         <GreyButton
           extraClass={styles.headerButton}
-          onClick={() => dispatch(open())}
+          onClick={() => dispatch(open('login'))}
         >
           <Question /> Задать вопрос
         </GreyButton>

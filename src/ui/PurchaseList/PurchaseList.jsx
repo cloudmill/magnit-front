@@ -1,7 +1,7 @@
 import styles from "./PurchaseList.module.scss";
 import classNames from "classnames";
 
-import { GreyButton } from "../Buttons/Buttons";
+// import { GreyButton } from "../Buttons/Buttons";
 
 export const PurchaseList = ({ children, extraClass }) => (
   <div className={classNames(styles.PurchaseList, extraClass)}>

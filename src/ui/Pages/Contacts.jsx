@@ -1,7 +1,6 @@
 import { ContactsForm } from "../ContactsForm/ContactsForm";
 import { ContactsRow } from "../ContactsRow/ContactsRow";
 import { Container } from "../Container/Container";
-import { DevGrids } from "../DevGrids/DevGrids";
 import { Header } from "../Header/Header";
 import { PageHead } from "../PageHead/PageHead";
 import { PageWrapper } from "../PageWrapper/PageWrapper";
@@ -18,7 +17,6 @@ export const ContactsPage = () => (
 
     </Container>
     <Header bottom />
-
-    <DevGrids/>
+    
   </PageWrapper>
 );

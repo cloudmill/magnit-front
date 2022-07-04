@@ -2,7 +2,6 @@ import styles from "../PurchaseDetail/PurchaseDetail.module.scss";
 import { Container } from "../Container/Container";
 import { PageWrapper } from "../PageWrapper/PageWrapper";
 import { Header } from "../Header/Header";
-import { DevGrids } from "../DevGrids/DevGrids";
 import { PageHead } from "../PageHead/PageHead";
 import { PurchaseDetailLinks } from "../PurchaseDetailLinks/PurchaseDetailLinks";
 import { PurchaseDetailMain } from "../PurchaseDetailMain/PurchaseDetailMain";
@@ -29,6 +28,5 @@ export const PurchaseDetail = () => (
 
     <Header bottom />
 
-    <DevGrids/>
   </PageWrapper>
 );

@@ -3,7 +3,6 @@ import { Container } from "../Container/Container";
 import { PageWrapper } from "../PageWrapper/PageWrapper";
 import { Header } from "../Header/Header";
 import ttlStyle from "../PageHead/PageHead.module.scss";
-import { DevGrids } from "../DevGrids/DevGrids";
 import { DocumentCard } from "../DocumentCard/DocumentCard";
 import { DocsLinks } from "../DocsLinks/DocsLinks";
 import { DocsSearch } from "../DocsSearch/DocsSearch";
@@ -57,6 +56,5 @@ export const DocsPage = () => (
 
     <Header bottom />
 
-    <DevGrids/>
   </PageWrapper>
 );

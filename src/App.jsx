@@ -1,19 +1,21 @@
 import { Container } from "./ui/Container/Container";
-
 import { BlackButton } from "./ui/Buttons/Buttons";
-import { DocsPage } from "./ui/Pages/Docs";
 
 import { Link, Routes, Route } from "react-router-dom";
-
 import { getPath } from "./utils/getPath";
+
 import { MainPage } from "./ui/Pages/Main";
 import { PurchasesPage } from "./ui/Pages/Purchases";
 import { PurchaseDetail } from "./ui/Pages/PurchaseDetail";
+import { DocsPage } from "./ui/Pages/Docs";
 import { ContactsPage } from "./ui/Pages/Contacts";
 import { Page404 } from "./ui/Pages/404";
 
+import ModalsContainer from "./ui/Modals/ModalsContainer";
+import { DevGrids } from "./ui/DevGrids/DevGrids";
+
 export const App = () => {
-  return (
+  return (<>
     <Routes>
       <Route
         path={getPath("/")}
@@ -59,5 +61,8 @@ export const App = () => {
       <Route path={getPath("/404")} element={ <Page404 /> } />
       <Route path={getPath("/docs")} element={<DocsPage />} />
     </Routes>
+    <ModalsContainer/>
+    <DevGrids/>
+    </>
   );
 };

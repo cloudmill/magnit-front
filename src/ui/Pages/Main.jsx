@@ -8,7 +8,6 @@ import { PurchaseList } from "../PurchaseList/PurchaseList";
 import { PurchaseItem } from "../PurchaseItem/PurchaseItem";
 import { InfoBlock } from "../InfoBlock/InfoBlock";
 import { TermsBlock } from "../TermsBlock/TermsBlock";
-import { DevGrids } from "../DevGrids/DevGrids";
 
 export const MainPage = () => (
   <PageWrapper>
@@ -33,6 +32,5 @@ export const MainPage = () => (
 
     <Header bottom />
 
-    <DevGrids/>
   </PageWrapper>
 );

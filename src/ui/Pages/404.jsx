@@ -8,6 +8,5 @@ export const Page404 = () => (
 
     <Block404/>
 
-    {/* <DevGrids/> */}
   </PageWrapper>
 );

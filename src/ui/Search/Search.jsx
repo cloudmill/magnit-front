@@ -1,17 +1,35 @@
 import styles from "./Search.module.scss";
 import classNames from "classnames";
 
+import { useState } from "react";
 import { BlackButton, GreyButton } from "../Buttons/Buttons";
 import { ReactComponent as Settings } from "../../assets/images/settings.svg";
 import { ReactComponent as SearchIco } from "../../assets/images/search.svg";
 
-export const Search = ({ extraClass }) => (
+function Search({ extraClass }) {
 
-  <div className={classNames(styles.Search, extraClass)}>
+  const [isActive, setActive] = useState('purchases');
+
+  return <div className={classNames(styles.Search, extraClass)}>
 
     <div className={styles.buttons}>
-      <button className={classNames(styles.label, styles.active)}>Закупки</button>
-      <button  className={styles.label}>Реализация</button>
+
+      <button 
+        className={classNames(styles.label, isActive === 'purchases' ? [styles.active] : null)} 
+        onClick={() => { setActive('purchases') }}>
+
+        Закупки
+
+      </button>
+
+      <button 
+        className={classNames(styles.label, isActive === 'sales' ? [styles.active] : null)} 
+        onClick={() => { setActive('sales') }}>
+
+        Реализация
+
+      </button>
+      
     </div>
 
     <div className={styles.row}>
@@ -22,4 +40,6 @@ export const Search = ({ extraClass }) => (
     
   </div>
 
-);
+};
+
+export { Search };

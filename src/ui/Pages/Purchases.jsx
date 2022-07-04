@@ -8,7 +8,6 @@ import { PurchaseList } from "../PurchaseList/PurchaseList";
 import { PurchaseItem } from "../PurchaseItem/PurchaseItem";
 import { PageHead } from "../PageHead/PageHead";
 import { EmptySearch } from "../EmptySearch/EmptySearch";
-import { DevGrids } from "../DevGrids/DevGrids";
 
 function PurchasesPage() {
   return <PageWrapper>
@@ -49,7 +48,6 @@ function PurchasesPage() {
 
       <Header bottom />
 
-      <DevGrids/>
     </PageWrapper>
 
 };

@@ -4,7 +4,7 @@ import AskModal from "./AskModal";
 
 function ModalsContainer(props) {
 
-  return <div className={classNames(styles.modalsContainer)}>
+  return <div className={classNames(styles.modalsContainer, styles.active)}>
 
     <AskModal/>
 

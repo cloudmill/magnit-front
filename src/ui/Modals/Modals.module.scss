@@ -2,14 +2,32 @@
 
 .modalsContainer {
   position: fixed;
+  z-index: 100;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   pointer-events: none;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   &.active {
     background: rgba(18, 18, 18, .23);
     pointer-events: all;
+  }
+}
+
+.askModal {
+  width: calc(#{$col-part-d} * 5 + #{$col-width-d});
+  padding: 40px calc(#{$col-width-d});
+  background: #FFFFFF;
+  border-radius: 15px;
+
+  .ttl {
+    @include h4;
+    text-align: center;
+    margin-bottom: 40px;
   }
 }

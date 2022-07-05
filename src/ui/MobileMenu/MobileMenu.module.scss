@@ -1,0 +1,10 @@
+@import "/src/styles/helpers.scss";
+
+.menu {
+  width: 100%;
+  position: absolute;
+  z-index: 10;
+  bottom: 0;
+  background: #fff;
+  transition: $transition;
+}

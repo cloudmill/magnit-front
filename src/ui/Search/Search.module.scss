@@ -67,14 +67,15 @@
   @media #{media("<")} {
     padding: 12px;
   }
-  @media #{media("<", m)} {
-    flex-wrap: wrap;
-    gap: 8px;
-  }
 }
 
 .inner {
   display: flex;
+  
+  @media #{media("<", m)} {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
 }
 
 .input {
@@ -111,16 +112,52 @@
 }
 
 .filters {
-  padding-top: 32px;
+  padding-top: 20px;
 
-  &Row {
-    display: grid;
+  display: grid;
+  justify-content: space-between;
+  align-items: end;
+
+  grid-template-columns: 1fr;
+  row-gap: 16px;
+
+  @media #{media('>', m)} {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 16px;
+    row-gap: 20px;
+  }
+  @media #{media()} {
+    padding-top: 32px;
     grid-template-columns: repeat(4, 1fr);
-    justify-content: space-between;
-    gap: 24px;
+    column-gap: 24px;
+    row-gap: 20px;
+  }
 
-    &:not(:first-child) {
-      margin-top: 12px;
+  button {
+    width: 100%;
+  }
+}
+
+.name {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+
+  @include p-medium;
+  font-weight: 400;
+  color: color(greyTxt2);
+
+  @media #{media('<')} {
+    margin-bottom: 8px;
+  }
+
+  svg {
+    margin-left: 8px;
+
+    @media #{media('<')} {
+      width: 16px;
+      height: 16px;
+      margin-left: 4px;
     }
   }
 }
@@ -135,18 +172,10 @@
   border: 1px solid #E7E7E7;
   border-radius: 12px;
   height: 56px;
-}
+  padding: 16px;
 
-.tooltipTxt {
-  margin-top: 20px;
-  display: flex;
-  align-items: center;
-
-  @include p-medium;
-  font-weight: 400;
-  color: color(greyTxt2);
-
-  svg {
-    margin-left: 8px;
+  @media #{media('<')} {
+    padding: 11px 16px;
+    height: 40px;
   }
 }

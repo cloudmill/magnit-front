@@ -1,8 +1,7 @@
 @import "/src/styles/helpers.scss";
 
 .header {
-  padding: 16px 0;
-  border-bottom: 1px solid color(greyBorder);
+  position: relative;
 
   &.bottom {
     border-bottom: none;
@@ -36,11 +35,24 @@
   display: flex;
   align-items: center;
 
+  position: relative;
+  z-index: 20;
+
+  padding-top: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid color(greyBorder);
+  background: #fff;
+
   @media #{media("<")} {
     justify-content: space-between;
+
+    .headerButton {
+      display: none;
+    }
   }
 
   .logo {
+    display: flex;
     @media (min-width: $breakpoint-m) and (max-width: ($breakpoint - 1px)) {
       width: calc(#{$col-part-t} * 4);
     }
@@ -54,10 +66,12 @@
 }
 
 .headerButton {
-  margin: 0 0 0 auto;
+  @media #{media()} {
+    margin: 0 0 0 auto;
+  }
 
   @media #{media("<")} {
-    display: none;
+    margin: 10px 20px 20px;
   }
 }
 

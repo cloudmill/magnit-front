@@ -57,6 +57,8 @@ body {
   min-height: 100vh;
 }
 
+// селекты в фильтрах поиска
+
 .ant-select:not(.ant-select-customize-input) .ant-select-selector {
   border: 1px solid color(greyBorder2);
   border-radius: 12px;
@@ -66,7 +68,61 @@ body {
   display: flex;
   align-items: center;
 
+  @media #{media('<')} {
+    padding: 11px 16px;
+    height: 40px;
+  }
+
   .ant-select-selection-placeholder {
     color: color(black);
+    @include p-medium;
   }
+}
+
+.ant-select-arrow {
+  right: 16px;
+}
+
+// календарь в фильтрах поиска
+
+.ant-picker-cell-in-view.ant-picker-cell-selected .ant-picker-cell-inner, .ant-picker-cell-in-view.ant-picker-cell-range-start .ant-picker-cell-inner, .ant-picker-cell-in-view.ant-picker-cell-range-end .ant-picker-cell-inner {
+  color: #fff;
+  background: color(red);
+}
+
+.ant-picker-cell-in-view.ant-picker-cell-today .ant-picker-cell-inner::before {
+  border: 1px solid color(red);
+}
+
+.ant-picker-suffix {
+  @media #{media('<')} {
+    width: 14px;
+  }
+}
+
+// мобильное меню
+
+.ant-menu {
+  font-weight: 500;
+}
+
+.ant-menu-inline > .ant-menu-submenu > .ant-menu-submenu-title {
+  height: 30px;
+}
+
+.ant-menu-sub.ant-menu-inline > .ant-menu-item {
+  height: 20px;
+}
+
+.ant-menu-sub.ant-menu-inline {
+  background: #fff;
+}
+
+.ant-menu-inline.ant-menu-root .ant-menu-submenu-title > .ant-menu-title-content {
+  flex: none;
+}
+
+.ant-menu-submenu-expand-icon, .ant-menu-submenu-arrow {
+  position: static;
+  margin-left: 9px;
 }

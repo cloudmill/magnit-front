@@ -11,12 +11,17 @@ import { GreyButton } from "../Buttons/Buttons";
 
 import { useDispatch } from "react-redux";
 import { open } from "../../store/index.ts";
+import { MobileMenu } from "../MobileMenu/MobileMenu";
+import { useState } from "react";
 
 function Header(props) {
+
   const dispatch = useDispatch();
 
+  const [isBurgerOpen, setOpenBurger] = useState('close');
+
   return (
-    <div
+    <header
       className={classNames(styles.header, { [styles.bottom]: props.bottom })}
     >
       <Container extraClass={styles.headerContainer}>
@@ -36,11 +41,18 @@ function Header(props) {
           <Question /> Задать вопрос
         </GreyButton>
 
-        <button className={styles.burger}>
+        <button 
+          className={styles.burger} 
+          onClick={() => {isBurgerOpen === 'close' ? setOpenBurger('open') : setOpenBurger('close')}}
+        >
+
           <Burger />
+
         </button>
       </Container>
-    </div>
+
+      <MobileMenu state={isBurgerOpen} />
+    </header>
   );
 }
 

@@ -56,7 +56,6 @@
 }
 
 .row {
-  display: flex;
   padding: 32px;
   background: #fff;
   box-shadow: 0px 20px 24px rgba(0, 0, 0, 0.06);
@@ -72,6 +71,10 @@
     flex-wrap: wrap;
     gap: 8px;
   }
+}
+
+.inner {
+  display: flex;
 }
 
 .input {
@@ -104,5 +107,46 @@
   @media #{media('>', m)} {
   width: 100%;
   margin-left: 12px;
+  }
+}
+
+.filters {
+  padding-top: 32px;
+
+  &Row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: space-between;
+    gap: 24px;
+
+    &:not(:first-child) {
+      margin-top: 12px;
+    }
+  }
+}
+
+.select {
+  width: 100%;
+}
+
+.datepicker {
+  width: 100%;
+  background: #FAFAFA;
+  border: 1px solid #E7E7E7;
+  border-radius: 12px;
+  height: 56px;
+}
+
+.tooltipTxt {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+
+  @include p-medium;
+  font-weight: 400;
+  color: color(greyTxt2);
+
+  svg {
+    margin-left: 8px;
   }
 }

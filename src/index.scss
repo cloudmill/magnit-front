@@ -1,4 +1,6 @@
 @import "/src/styles/fonts.scss";
+@import "/src/styles/helpers.scss";
+@import 'antd/dist/antd.css';
 
 *,
 *::before,
@@ -12,7 +14,7 @@
 }
 
 a {
-  color: inherit;
+  color: color(black);
   text-decoration: none;
 }
 
@@ -40,9 +42,31 @@ body {
   font-family: 'Golos';
   font-weight: 400;
   color: color(black);
+
+  a {
+    color: color(black);
+
+    &:hover {
+      color: color(black);
+    }
+  }
 }
 
 #root {
   width: 100vw;
   min-height: 100vh;
+}
+
+.ant-select:not(.ant-select-customize-input) .ant-select-selector {
+  border: 1px solid color(greyBorder2);
+  border-radius: 12px;
+  padding: 16px;
+  height: 56px;
+
+  display: flex;
+  align-items: center;
+
+  .ant-select-selection-placeholder {
+    color: color(black);
+  }
 }

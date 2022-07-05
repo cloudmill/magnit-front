@@ -42,8 +42,8 @@ export const ContactsForm = () => (
         </div>
 
         <div className={styles.col}>
-          <div className={styles.checkbox}>
-            <label className={styles.boxLabel}>
+          <label className={styles.checkbox}>
+            <div className={styles.boxLabel}>
               <input type="checkbox"/>
 
               <div className={styles.box}>
@@ -52,9 +52,9 @@ export const ContactsForm = () => (
                   <path d="M6 10L9 13L14 7.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </div>
-            </label>
+            </div>
             <div className={styles.txt}>Согласен с условиями обработки <a href="/">персональных данных</a></div>
-          </div>
+          </label>
           <RedButton type="submit">Отправить</RedButton>
         </div>
 

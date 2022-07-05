@@ -7,4 +7,8 @@
   bottom: 0;
   background: #fff;
   transition: $transition;
+
+  @media #{media()} {
+    display: none;
+  }
 }

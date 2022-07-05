@@ -22,15 +22,22 @@
 }
 
 .askModal {
-  width: calc(#{$col-part-d} * 5 + #{$col-width-d});
+  width: calc(100% - 40px);
   height: fit-content;
-  padding: 40px calc(#{$col-width-d});
+  padding: 20px 20px 27px;
   background: #FFFFFF;
   border-radius: 15px;
   position: absolute;
-  top: 32px;
-  bottom: 32px;
+  top: 16px;
+  bottom: 16px;
   overflow-y: scroll;
+
+  @media #{media()} {
+    width: calc(#{$col-part-d} * 5 + #{$col-width-d});
+    top: 32px;
+    bottom: 32px;
+    padding: 40px calc(#{$col-width-d});
+  }
 
   .ttl {
     @include h4;

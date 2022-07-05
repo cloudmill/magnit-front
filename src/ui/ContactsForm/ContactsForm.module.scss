@@ -140,6 +140,7 @@
 .checkbox {
   display: flex;
   align-items: center;
+  cursor: pointer;
 
   @media #{media('<')} {
     margin-bottom: 20px;

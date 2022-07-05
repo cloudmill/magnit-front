@@ -84,8 +84,8 @@ function PurchaseForm(props) {
             </div>
 
             <div className={classNames(styles.col, styles2.col2)}>
-              <div className={styles.checkbox} style={{ marginBottom: "20px" }}>
-                <label className={styles.boxLabel}>
+              <label className={styles.checkbox} style={{ marginBottom: "20px" }}>
+                <div className={styles.boxLabel}>
                   <input type="checkbox" />
 
                   <div className={styles.box}>
@@ -111,12 +111,12 @@ function PurchaseForm(props) {
                       />
                     </svg>
                   </div>
-                </label>
+                </div>
                 <div className={styles.txt}>
                   Согласен с условиями обработки{" "}
                   <a href="/">персональных данных</a>
                 </div>
-              </div>
+              </label>
               <RedButton type="submit" onClick={() => dispatch(open("login"))}>
                 Отправить
               </RedButton>
@@ -208,8 +208,8 @@ function PurchaseForm(props) {
           </div>
 
           <div className={classNames(styles.col, styles2.col2)}>
-            <div className={styles.checkbox}>
-              <label className={styles.boxLabel}>
+            <label className={styles.checkbox}>
+              <div className={styles.boxLabel}>
                 <input type="checkbox" />
 
                 <div className={styles.box}>
@@ -235,12 +235,12 @@ function PurchaseForm(props) {
                     />
                   </svg>
                 </div>
-              </label>
+              </div>
               <div className={styles.txt}>
                 Согласен с условиями обработки{" "}
                 <a href="/">персональных данных</a>
               </div>
-            </div>
+            </label>
             <RedButton type="submit">Отправить</RedButton>
           </div>
         </div>

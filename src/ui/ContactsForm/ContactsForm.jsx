@@ -1,37 +1,9 @@
 import styles from "./ContactsForm.module.scss";
 import classNames from "classnames";
-import { ReactComponent as Clip } from "../../assets/images/clip.svg";
-import { GreyButton, RedButton, UploadBtn } from "../Buttons/Buttons";
-import { Form, Input, Checkbox, Button, Upload } from "antd";
-import { useState } from "react";
-
-// const { TextArea } = Input;
+import { RedButton, UploadBtn } from "../Buttons/Buttons";
+import { Form, Input } from "antd";
 
 export function ContactsForm() {
-
-  const [fileList, setFileList] = useState([]);
-
-  const handleChange = (info) => {
-    let newFileList = [...info.fileList];
-
-    newFileList = fileList.slice(-2);
-
-    newFileList = fileList.map((file) => {
-      if (file.response) {
-        
-        file.url = file.response.url;
-      }
-
-      return file;
-    });
-    setFileList(newFileList);
-  };
-
-  const props = {
-    action: 'https://www.mocky.io/v2/5cc8019d300000980a055e76',
-    onChange: handleChange,
-    multiple: true,
-  };
 
   const onFinish = (values) => {
     console.log('Success:', values);
@@ -49,19 +21,13 @@ export function ContactsForm() {
     <Form
       className={styles.form}
       name="basic"
-      // labelCol={{
-      //   span: 8,
-      // }}
-      // wrapperCol={{
-      //   span: 16,
-      // }}
       initialValues={{
         remember: true,
       }}
       onFinish={onFinish}
       onFinishFailed={onFinishFailed}
       autoComplete="off"
-    >
+      >
 
       <Form.Item
         className={styles.label}

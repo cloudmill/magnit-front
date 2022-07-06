@@ -81,13 +81,76 @@ body {
 
 .ant-select-arrow {
   right: 16px;
+  transition: $transition;
+}
+
+.ant-select-open .ant-select-arrow {
+  transform: rotate(180deg);
+}
+
+.ant-select-focused:not(.ant-select-disabled).ant-select:not(.ant-select-customize-input) .ant-select-selector {
+  border-color: color(greyBorder2);
+  box-shadow: none;
+}
+
+.ant-select-dropdown {
+  padding: 0;
+  border-radius: 12px;
+}
+
+.ant-select-item {
+  padding: 10px 16px;
+  @include p-small;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid color(greyBorder);
+  }
+}
+
+.ant-select-item-option-active:not(.ant-select-item-option-disabled) {
+  background: #fff;
+}
+
+.ant-select-selection-item {
+  @include p-medium;
 }
 
 // календарь в фильтрах поиска
 
+.ant-picker-panel-container {
+  border-radius: 12px;
+}
+
+.ant-picker-header {
+  border-bottom: none;
+  padding-top: 16px;
+}
+
+.ant-picker-header-view {
+  @include p-small;
+
+  button {
+    text-transform: uppercase;
+    line-height: inherit;
+  }
+}
+
+.ant-picker-content th {
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 20px;
+  color: color(greyTxt);
+  text-transform: uppercase;
+}
+
+.ant-picker-header-super-prev-btn, .ant-picker-header-super-next-btn {
+  display: none;
+}
+
 .ant-picker-cell-in-view.ant-picker-cell-selected .ant-picker-cell-inner, .ant-picker-cell-in-view.ant-picker-cell-range-start .ant-picker-cell-inner, .ant-picker-cell-in-view.ant-picker-cell-range-end .ant-picker-cell-inner {
   color: #fff;
   background: color(red);
+  border-radius: 8px;
 }
 
 .ant-picker-cell-in-view.ant-picker-cell-today .ant-picker-cell-inner::before {
@@ -98,6 +161,14 @@ body {
   @media #{media('<')} {
     width: 14px;
   }
+}
+
+.ant-picker-cell-in-view.ant-picker-cell-range-start:not(.ant-picker-cell-range-start-single)::before, .ant-picker-cell-in-view.ant-picker-cell-range-end:not(.ant-picker-cell-range-end-single)::before, .ant-picker-cell-in-view.ant-picker-cell-in-range::before {
+  background: color(greyBorder);
+}
+
+.ant-picker-cell-in-view.ant-picker-cell-range-start:not(.ant-picker-cell-range-start-single):not(.ant-picker-cell-range-end) .ant-picker-cell-inner, .ant-picker-cell-in-view.ant-picker-cell-range-end:not(.ant-picker-cell-range-end-single):not(.ant-picker-cell-range-start) .ant-picker-cell-inner {
+  border-radius: 8px;
 }
 
 // мобильное меню

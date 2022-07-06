@@ -8,7 +8,7 @@ import { ReactComponent as TooltipIco } from "../../assets/images/tooltip.svg";
 import { ReactComponent as ArrowDown } from "../../assets/images/arrow-down.svg";
 import { ReactComponent as CalendarIco } from "../../assets/images/calendar.svg";
 
-import { Select, DatePicker, Tooltip } from 'antd';
+import { Select, DatePicker, Tooltip, ConfigProvider } from 'antd';
 
 import moment from "moment";
 import "moment/locale/ru";
@@ -17,7 +17,19 @@ import locale from "antd/es/date-picker/locale/ru_RU";
 moment.locale("ru_RU", {
   week: {
     dow: 1
-  }
+  },
+  months : [
+    "Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль",
+    "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"
+  ],
+  monthsShort : [
+    "Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль",
+    "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"
+  ],
+//   monthsShort : [
+//     "Янв", "Фев", "Мар", "Апр", "Май", "Июн",
+//     "Июл", "Авг", "Сен", "Окт", "Ноя", "Дек"
+// ]
 });
 
 const { RangePicker } = DatePicker;
@@ -35,7 +47,7 @@ export function SearchFilters(props) {
 
   if (props.state === 'open') {
     
-    return <div className={styles.filters}>
+    return <ConfigProvider locale={locale}><div className={styles.filters}>
 
       <div>
         <div className={styles.name}>Площадка приема заявок</div>
@@ -43,7 +55,7 @@ export function SearchFilters(props) {
           className={styles.select}
           placeholder="Выбрать"
           onChange={handleChange}
-          suffixIcon={<ArrowDown />}
+          suffixIcon={<ArrowDown />} 
         >
 
           <Option value="option1">Опция 1</Option>
@@ -93,6 +105,7 @@ export function SearchFilters(props) {
         format="DD.MM.YYYY" 
         suffixIcon={<CalendarIco/>}
         onChange={onChange} 
+        popupStyle={{borderRadius: '12px'}}
       />
 
       <RangePicker 
@@ -124,6 +137,7 @@ export function SearchFilters(props) {
 
       
     </div>
+    </ConfigProvider>
 
   }
 

@@ -105,4 +105,16 @@ function UploadBtn() {
   
 }
 
-export { GreyButton, GreyButtonLink, BlackButton, RedButton, ArrowDownButton, UploadBtn };
+function RedSubmit(props) {
+  return <Button
+    type="primary" 
+    htmlType="submit" 
+    className={classNames(styles.button, styles.red, props.extraClass, )} 
+    onClick={props.onClick}>
+
+      Отправить
+      
+    </Button>
+}
+
+export { GreyButton, GreyButtonLink, BlackButton, RedButton, ArrowDownButton, UploadBtn, RedSubmit };

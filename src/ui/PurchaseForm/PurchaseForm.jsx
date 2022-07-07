@@ -1,12 +1,12 @@
 import styles from "../ContactsForm/ContactsForm.module.scss";
 import styles2 from "./PurchaseForm.module.scss";
 import classNames from "classnames";
-import { GreyButton, RedButton, UploadBtn } from "../Buttons/Buttons";
+import { GreyButton, RedButton, RedSubmit, UploadBtn } from "../Buttons/Buttons";
 import { ReactComponent as Clip } from "../../assets/images/clip.svg";
 import { useDispatch } from "react-redux";
 import { open } from "../../store/index.ts";
 
-import { Form, Input } from "antd";
+import { Form, Input, Checkbox, Button } from "antd";
 
 
 function PurchaseForm(props) {
@@ -23,8 +23,8 @@ function PurchaseForm(props) {
   if (props.inModal) {
     return (<>
 
-<Form
-      className={styles.form}
+    <Form
+      className={classNames(styles.form, styles2.form)}
       name="basic"
       // labelCol={{
       //   span: 8,
@@ -41,7 +41,7 @@ function PurchaseForm(props) {
       >
 
       <Form.Item
-        className={styles.label}
+        className={classNames(styles2.label)}
         // label="Username"
         name="username"
         rules={[
@@ -55,7 +55,7 @@ function PurchaseForm(props) {
       </Form.Item>
 
       <Form.Item
-        className={styles.label}
+        className={classNames(styles2.label)}
         // label="Password"
         name="password"
         rules={[
@@ -69,7 +69,7 @@ function PurchaseForm(props) {
       </Form.Item>
 
       <Form.Item
-        className={styles.label}
+        className={classNames(styles2.label)}
         // label="Password"
         name="mail"
         rules={[
@@ -83,7 +83,7 @@ function PurchaseForm(props) {
       </Form.Item>
 
       <Form.Item
-        className={styles.label}
+        className={classNames(styles2.label)}
         // label="Password"
         name="fio"
         rules={[
@@ -97,7 +97,7 @@ function PurchaseForm(props) {
       </Form.Item>
 
       <Form.Item
-        className={classNames(styles.label, styles.fullWidth)}
+        className={classNames(styles2.label)}
         // label="Password"
         name="tel"
         rules={[
@@ -122,7 +122,7 @@ function PurchaseForm(props) {
 
         <div className={styles.col}>
 
-          <label className={styles.checkbox}>
+          {/* <label className={styles.checkbox}>
             <div className={styles.boxLabel}>
               <input type="checkbox" required/>
 
@@ -134,7 +134,7 @@ function PurchaseForm(props) {
               </div>
             </div>
             <div className={styles.txt}>Согласен с условиями обработки <a href="/">персональных данных</a></div>
-          </label>
+          </label> */}
           <RedButton type="submit">Отправить</RedButton>
 
           {/* <Form.Item
@@ -162,7 +162,7 @@ function PurchaseForm(props) {
           {props.ttl}{" "}
         </h2>
 
-        <form className={classNames(styles.form, styles2.form)}>
+        {/* <form className={classNames(styles.form, styles2.form)}>
           <label className={classNames(styles2.label)}>
             <input
               className={classNames(styles.input, styles2.input)}
@@ -267,7 +267,7 @@ function PurchaseForm(props) {
               </RedButton>
             </div>
           </div>
-        </form>
+        </form> */}
       </>
     );
   }
@@ -277,8 +277,8 @@ function PurchaseForm(props) {
     <div className={styles2.block}>
 
 
-<Form
-      className={styles.form}
+    <Form
+      className={classNames(styles.form, styles2.form)}
       name="basic"
       // labelCol={{
       //   span: 8,
@@ -295,7 +295,7 @@ function PurchaseForm(props) {
       >
 
       <Form.Item
-        className={styles.label}
+        className={classNames(styles2.label)}
         // label="Username"
         name="username"
         rules={[
@@ -305,11 +305,11 @@ function PurchaseForm(props) {
           },
         ]}
       >
-        <Input className={styles.input} type='text' placeholder="Название организации*" />
+        <Input className={classNames(styles.input, styles2.input)} type='text' placeholder="Название организации*" />
       </Form.Item>
 
       <Form.Item
-        className={styles.label}
+        className={classNames(styles2.label)}
         // label="Password"
         name="password"
         rules={[
@@ -319,11 +319,11 @@ function PurchaseForm(props) {
           },
         ]}
       >
-        <Input className={styles.input} type='number' placeholder="ИНН" />
+        <Input className={classNames(styles.input, styles2.input)} type='number' placeholder="ИНН" />
       </Form.Item>
 
       <Form.Item
-        className={styles.label}
+        className={classNames(styles2.label)}
         // label="Password"
         name="mail"
         rules={[
@@ -333,11 +333,11 @@ function PurchaseForm(props) {
           },
         ]}
       >
-        <Input className={styles.input} type='email' placeholder="E-mail*" />
+        <Input className={classNames(styles.input, styles2.input)} type='email' placeholder="E-mail*" />
       </Form.Item>
 
       <Form.Item
-        className={styles.label}
+        className={classNames(styles2.label)}
         // label="Password"
         name="fio"
         rules={[
@@ -347,11 +347,11 @@ function PurchaseForm(props) {
           },
         ]}
       >
-        <Input className={styles.input} type='text' placeholder="ФИО*" />
+        <Input className={classNames(styles.input, styles2.input)} type='text' placeholder="ФИО*" />
       </Form.Item>
 
       <Form.Item
-        className={classNames(styles.label, styles.fullWidth)}
+        className={classNames(styles2.label, styles.fullWidth)}
         // label="Password"
         name="tel"
         rules={[
@@ -361,22 +361,37 @@ function PurchaseForm(props) {
           },
         ]}
       >
-        <Input className={styles.input} type='tel' placeholder="Телефон" />
+        <Input className={classNames(styles.input, styles2.input)} type='tel' placeholder="Телефон" />
       </Form.Item>
 
       <Input.TextArea className={styles.textarea} placeholder="Текст обращения*" />
       
-      <div className={styles.bottom}>
+      <div className={classNames(styles.bottom, styles2.bottom)}>
 
-        <div className={styles.col}>
+        <div className={classNames(styles.col, styles2.col)}>
           <UploadBtn/>
-          <div className={classNames(styles.note, styles.onlyDesktop)}>Допустимое расширение файлов: .ppt, .pptx, .doc, .docx, .xls, <br/> .xlsx, .pdf, .jpg, .jpeg, .png</div>
-          <div className={classNames(styles.note, styles.onlyMobile)}>Допустимое расширение файлов: .ppt, .pptx, .doc, .docx, .xls, .xlsx, .pdf, .jpg, .jpeg, .png</div>
+
+          <div className={classNames(
+                styles.note,
+                styles2.note,
+                styles.onlyDesktop
+              )}>
+
+              Допустимое расширение файлов: .ppt, .pptx, .doc, .docx, .xls, <br/> .xlsx, .pdf, .jpg, .jpeg, .png</div>
+
+          <div className={classNames(
+                styles.note,
+                styles2.note,
+                styles.onlyMobile
+              )}>
+              
+              Допустимое расширение файлов: .ppt, .pptx, .doc, .docx, .xls, .xlsx, .pdf, .jpg, .jpeg, .png</div>
+
         </div>
 
-        <div className={styles.col}>
+        <div className={classNames(styles.col, styles2.col2)}>
 
-          <label className={styles.checkbox}>
+          {/* <label className={styles.checkbox}>
             <div className={styles.boxLabel}>
               <input type="checkbox" required/>
 
@@ -389,21 +404,20 @@ function PurchaseForm(props) {
             </div>
             <div className={styles.txt}>Согласен с условиями обработки <a href="/">персональных данных</a></div>
           </label>
-          <RedButton type="submit">Отправить</RedButton>
+          <RedButton type="submit">Отправить</RedButton> */}
 
-          {/* <Form.Item
+          <Form.Item
             name="remember"
             valuePropName="checked"
-          >
+            >
             <Checkbox><div className={styles.txt}>Согласен с условиями обработки <a href="/">персональных данных</a></div></Checkbox>
 
           </Form.Item>
           <Form.Item
-          >
-            <Button type="primary" htmlType="submit">
-              Отправить
-            </Button>
-          </Form.Item> */}
+            >
+            <RedSubmit/>
+          </Form.Item>
+
         </div>
 
       </div>
@@ -418,7 +432,7 @@ function PurchaseForm(props) {
         Для участия заполните форму заявки ниже.
       </h2>
 
-      <form className={classNames(styles.form, styles2.form)}>
+      {/* <form className={classNames(styles.form, styles2.form)}>
         <label className={classNames(styles2.label)}>
           <input
             className={classNames(styles.input, styles2.input)}
@@ -527,7 +541,7 @@ function PurchaseForm(props) {
             <RedButton type="submit">Отправить</RedButton>
           </div>
         </div>
-      </form>
+      </form> */}
     </div>
   );
 }

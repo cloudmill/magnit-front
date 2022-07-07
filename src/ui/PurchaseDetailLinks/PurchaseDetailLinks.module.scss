@@ -66,6 +66,9 @@
 
 .items {
   @media #{media('<')} {
+    position: sticky;
+    top: 60px;
+
     width: calc(#{$col-part-t} * 3 + #{$col-width-t} - 20px);
     display: flex;
     justify-content: space-between;

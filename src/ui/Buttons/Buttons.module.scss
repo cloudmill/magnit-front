@@ -62,6 +62,10 @@
   &:hover {
     background: color(redBtnHover);
   }
+
+  &:focus {
+    background: color(red);
+  }
 }
 
 .arrowDown {

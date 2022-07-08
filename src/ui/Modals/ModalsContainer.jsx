@@ -10,21 +10,23 @@ const AskSuccessModal = () => {
   const dispatch = useDispatch();
 
   return <div className={styles.smallModal}>
-    <h2 className={styles.ttl}>Заявка отправлена</h2>
-    <div className={styles.txt}>Обратную связь вы получите <br/> на указанную электронную почту</div>
-    <BlackButton 
-      onClick={() => {
-        dispatch(close());
-        document.querySelector('body').style.overflow = '';
-        }}>
-      
-      Ок
-      
-    </BlackButton>
-  </div>
+
+  <h2 className={classNames(styles.ttl, styles.single)}>Вопрос отправлен</h2>
+
+  <BlackButton 
+    onClick={() => {
+      dispatch(close());
+      document.querySelector('body').style.overflow = '';
+      }}>
+    
+    Ок
+    
+  </BlackButton>
+
+</div>
 }
 
-const PurchaseSuccessModal = () => {
+const ContactsSuccessModal = () => {
   const dispatch = useDispatch();
 
   return <div className={styles.smallModal}>
@@ -44,10 +46,29 @@ const PurchaseSuccessModal = () => {
     </div>
 }
 
+const PurchaseSuccessModal = () => {
+  const dispatch = useDispatch();
+
+  return <div className={styles.smallModal}>
+    <h2 className={styles.ttl}>Заявка отправлена</h2>
+    <div className={styles.txt}>Обратную связь вы получите <br/> на указанную электронную почту</div>
+    <BlackButton 
+      onClick={() => {
+        dispatch(close());
+        document.querySelector('body').style.overflow = '';
+        }}>
+      
+      Ок
+      
+    </BlackButton>
+  </div>
+}
+
 const modals = {
   form: <AskModal />,
   askSuccess: <AskSuccessModal />,
   purchaseSuccess: <PurchaseSuccessModal />,
+  contactsSuccess: <ContactsSuccessModal />,
 };
 
 function ModalsContainer(props) {

@@ -1,12 +1,16 @@
 import styles from "./ContactsForm.module.scss";
 import classNames from "classnames";
-import { RedButton, UploadBtn } from "../Buttons/Buttons";
-import { Form, Input } from "antd";
+import { UploadBtn, RedSubmit } from "../Buttons/Buttons";
+import { Form, Input, Checkbox } from "antd";
+import { useDispatch } from "react-redux";
+import { open } from "../../store/index.ts";
 
 export function ContactsForm() {
+  const dispatch = useDispatch();
 
   const onFinish = (values) => {
     console.log('Success:', values);
+    dispatch(open("contactsSuccess"));
   };
 
   const onFinishFailed = (errorInfo) => {
@@ -20,7 +24,7 @@ export function ContactsForm() {
 
     <Form
       className={styles.form}
-      name="basic"
+      name="contacts"
       initialValues={{
         remember: true,
       }}
@@ -103,104 +107,46 @@ export function ContactsForm() {
       
       <div className={styles.bottom}>
 
-        <div className={styles.col}>
-          <UploadBtn/>
-          <div className={classNames(styles.note, styles.onlyDesktop)}>Допустимое расширение файлов: .ppt, .pptx, .doc, .docx, .xls, <br/> .xlsx, .pdf, .jpg, .jpeg, .png</div>
-          <div className={classNames(styles.note, styles.onlyMobile)}>Допустимое расширение файлов: .ppt, .pptx, .doc, .docx, .xls, .xlsx, .pdf, .jpg, .jpeg, .png</div>
-        </div>
+        <div className={classNames(styles.col)}>
+            <UploadBtn/>
 
-        <div className={styles.col}>
+            <div className={classNames(
+                  styles.note,
+                  styles.onlyDesktop
+                )}>
 
-          <label className={styles.checkbox}>
-            <div className={styles.boxLabel}>
-              <input type="checkbox" required/>
+                Допустимое расширение файлов: .ppt, .pptx, .doc, .docx, .xls, <br/> .xlsx, .pdf, .jpg, .jpeg, .png</div>
 
-              <div className={styles.box}>
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M15 1L5 1C3.11438 1 2.17157 1 1.58579 1.58579C1 2.17157 1 3.11438 1 5V15C1 16.8856 1 17.8284 1.58579 18.4142C2.17157 19 3.11438 19 5 19H15C16.8856 19 17.8284 19 18.4142 18.4142C19 17.8284 19 16.8856 19 15V5C19 3.11438 19 2.17157 18.4142 1.58579C17.8284 1 16.8856 1 15 1Z" fill="#ED0E00" stroke="#ED0E00" stroke-width="2"/>
-                  <path d="M6 10L9 13L14 7.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </div>
-            </div>
-            <div className={styles.txt}>Согласен с условиями обработки <a href="/">персональных данных</a></div>
-          </label>
-          <RedButton type="submit">Отправить</RedButton>
+            <div className={classNames(
+                  styles.note,
+                  styles.onlyMobile
+                )}>
+                
+                Допустимое расширение файлов: .ppt, .pptx, .doc, .docx, .xls, .xlsx, .pdf, .jpg, .jpeg, .png</div>
 
-          {/* <Form.Item
-            name="remember"
-            valuePropName="checked"
-          >
-            <Checkbox><div className={styles.txt}>Согласен с условиями обработки <a href="/">персональных данных</a></div></Checkbox>
+          </div>
 
-          </Form.Item>
-          <Form.Item
-          >
-            <Button type="primary" htmlType="submit">
-              Отправить
-            </Button>
-          </Form.Item> */}
-        </div>
+          <div className={classNames(styles.col)}>
+
+            <Form.Item
+              name="remember"
+              valuePropName="checked"
+              >
+
+              <Checkbox><div className={styles.checkboxTxt}>Согласен с условиями обработки <a href="/">персональных данных</a></div>
+              </Checkbox>
+
+            </Form.Item>
+            
+            <Form.Item>
+              <RedSubmit/>
+            </Form.Item>
+
+          </div>
 
       </div>
 
-      
     </Form>
-
-    
-
-    {/* <form className={styles.form}>
-
-      <label className={styles.label}>
-        <input className={styles.input} type='text' placeholder="Название организации*"/>
-      </label>
-      
-      <label className={styles.label}>
-        <input className={styles.input} type='number' placeholder="ИНН"/>
-      </label>
-
-      <label className={styles.label}>
-        <input className={styles.input} type='email' placeholder="E-mail*"/>
-      </label>
-
-      <label className={styles.label}>
-        <input className={styles.input} type='text' placeholder="ФИО*"/>
-      </label>
-
-      <label className={classNames(styles.label, styles.fullWidth)}>
-        <input className={classNames(styles.input, styles.fullWidth, styles.error)} type='tel' placeholder="Телефон" value='7900'/>
-        <div className={classNames(styles.inputError)}>Error text</div>
-      </label>
-      
-      <textarea className={styles.textarea} placeholder="Текст обращения*"/>
-
-      <div className={styles.bottom}>
-
-        <div className={styles.col}>
-          <GreyButton type="file"><Clip/> Прикерпить файл</GreyButton>
-
-          <div className={classNames(styles.note, styles.onlyDesktop)}>Допустимое расширение файлов: .ppt, .pptx, .doc, .docx, .xls, <br/> .xlsx, .pdf, .jpg, .jpeg, .png</div>
-          <div className={classNames(styles.note, styles.onlyMobile)}>Допустимое расширение файлов: .ppt, .pptx, .doc, .docx, .xls, .xlsx, .pdf, .jpg, .jpeg, .png</div>
-        </div>
-
-        <div className={styles.col}>
-          <label className={styles.checkbox}>
-            <div className={styles.boxLabel}>
-              <input type="checkbox"/>
-
-              <div className={styles.box}>
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M15 1L5 1C3.11438 1 2.17157 1 1.58579 1.58579C1 2.17157 1 3.11438 1 5V15C1 16.8856 1 17.8284 1.58579 18.4142C2.17157 19 3.11438 19 5 19H15C16.8856 19 17.8284 19 18.4142 18.4142C19 17.8284 19 16.8856 19 15V5C19 3.11438 19 2.17157 18.4142 1.58579C17.8284 1 16.8856 1 15 1Z" fill="#ED0E00" stroke="#ED0E00" stroke-width="2"/>
-                  <path d="M6 10L9 13L14 7.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </div>
-            </div>
-            <div className={styles.txt}>Согласен с условиями обработки <a href="/">персональных данных</a></div>
-          </label>
-          <RedButton type="submit">Отправить</RedButton>
-        </div>
-
-      </div>
-    </form> */}
 
   </div>
 };

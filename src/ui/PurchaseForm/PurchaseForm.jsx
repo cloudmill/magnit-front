@@ -7,7 +7,6 @@ import { open } from "../../store/index.ts";
 
 import { Form, Input, Checkbox } from "antd";
 
-
 function PurchaseForm(props) {
   const dispatch = useDispatch();
 

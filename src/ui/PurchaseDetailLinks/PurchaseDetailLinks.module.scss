@@ -7,6 +7,9 @@
   @media #{media()} {
   margin-top: 24px;
   background: color(greyBg);
+
+  position: sticky;
+  top: 105px;
   }
 }
 

@@ -18,7 +18,6 @@ function AskModal(props) {
 
   </div>
   
-}
+};
 
 export default AskModal;
-

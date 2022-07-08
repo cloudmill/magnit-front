@@ -2,13 +2,17 @@ import styles from "./PurchaseDetailMain.module.scss";
 import classNames from "classnames";
 import { DocumentCard } from "../DocumentCard/DocumentCard";
 import { PurchaseBanner } from "../PurchaseBanner/PurchaseBanner";
-import { ArrowDownButton } from "../Buttons/Buttons";
+import { ArrowDownButton, RedButton } from "../Buttons/Buttons";
 import { PurchaseForm } from "../PurchaseForm/PurchaseForm";
 import { PurchaseDetailLinks } from "../PurchaseDetailLinks/PurchaseDetailLinks";
 
 export const PurchaseDetailMain = () => (
 
   <div className={styles.main}>
+
+    <div className={classNames(styles.mobButton, styles.onlyMobile)}>
+      <RedButton>Подать заявку</RedButton>
+    </div>
 
     <div className={styles.top}>
       <div className={styles.col}>

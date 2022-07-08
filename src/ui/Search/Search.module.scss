@@ -22,6 +22,23 @@
 
 .buttons {
   display: flex;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: 10;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background: white;
+    transform: translateY(100%);
+
+    @media #{media()} {
+      height: 20px;
+    }
+  }
 }
 
 .label {
@@ -47,9 +64,9 @@
 
   &.active {
     background: #fff;
-    filter: drop-shadow(0px -25px 24px rgba(0, 0, 0, 0.06));
     position: relative;
     z-index: 2;
+    box-shadow: 0px -12px 24px rgba(0, 0, 0, 0.06);
   }
 
   &:not(.active):hover {
@@ -161,6 +178,14 @@
       width: 16px;
       height: 16px;
       margin-left: 4px;
+    }
+
+    &:hover path {
+      fill: color(red);
+    }
+
+    path {
+      transition: $transition;
     }
   }
 }

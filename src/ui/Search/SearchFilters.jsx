@@ -26,6 +26,15 @@ moment.locale("ru_RU", {
     "Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль",
     "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"
   ],
+  weekdays : [
+    "Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"
+  ],
+  weekdaysShort : [
+    "Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"
+  ],
+  weekdaysMin : [
+    "Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"
+  ],
 //   monthsShort : [
 //     "Янв", "Фев", "Мар", "Апр", "Май", "Июн",
 //     "Июл", "Авг", "Сен", "Окт", "Ноя", "Дек"
@@ -105,7 +114,7 @@ export function SearchFilters(props) {
         format="DD.MM.YYYY" 
         suffixIcon={<CalendarIco/>}
         onChange={onChange} 
-        popupStyle={{borderRadius: '12px'}}
+        allowClear={false}
       />
 
       <RangePicker 
@@ -115,7 +124,9 @@ export function SearchFilters(props) {
         placeholder={["Дата окончания", "приема заявок"]} 
         format="DD.MM.YYYY" 
         suffixIcon={<CalendarIco/>} 
-        onChange={onChange} />
+        onChange={onChange}
+        allowClear={false}
+        />
 
       <div>
         <div className={styles.name}>

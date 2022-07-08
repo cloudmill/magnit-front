@@ -168,3 +168,26 @@
   line-height: 20px;
   color: color(redDark);
 }
+.ant-upload-list-item {
+  width: fit-content;
+}
+.ant-upload-list-item:hover .ant-upload-list-item-info {
+  background-color: transparent;
+}
+.ant-upload-list-item-card-actions-btn {
+  opacity: 1;
+  display: flex;
+  align-items: center;
+}
+.ant-upload-list-item-card-actions {
+  .ant-btn:hover, .ant-btn:focus {
+    border-color: transparent;
+    background: none;
+  }
+}
+.ant-upload-text-icon {
+  display: none;
+}
+.ant-upload-list-text .ant-upload-list-item-name {
+  padding-left: 0;
+}

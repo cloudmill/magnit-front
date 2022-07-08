@@ -2,6 +2,7 @@ import styles from "./Buttons.module.scss";
 import classNames from "classnames";
 import { ReactComponent as ArrowDown } from "../../assets/images/arrow-down.svg";
 import { ReactComponent as Clip } from "../../assets/images/clip.svg";
+import { ReactComponent as Trash } from "../../assets/images/trash-ico.svg";
 import { Button, Upload } from "antd";
 import { useState } from "react";
 
@@ -72,7 +73,7 @@ const ArrowDownButton = ({ children, extraClass, isActive }) => (
 );
 
 function UploadBtn() {
-  const [fileList, setFileList] = useState([]);
+  const [fileList, setFileList] = useState();
 
   const handleChange = (info) => {
     let newFileList = [...info.fileList];
@@ -94,6 +95,26 @@ function UploadBtn() {
     action: 'https://www.mocky.io/v2/5cc8019d300000980a055e76',
     onChange: handleChange,
     multiple: true,
+
+    defaultFileList: [
+      {
+        uid: '1',
+        name: 'filename.jpg',
+        status: 'done',
+        response: 'Server Error 500',
+        url: 'http://www.baidu.com/xxx.png',
+      },
+      {
+        uid: '2',
+        name: 'filename2.jpg',
+        status: 'done',
+        url: 'http://www.baidu.com/yyy.png',
+      },
+    ],
+    showUploadList: {
+      showRemoveIcon: true,
+      removeIcon: <Trash/>,
+    },
   };
 
   return <Upload {...props} fileList={fileList}>

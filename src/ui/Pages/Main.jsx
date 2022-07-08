@@ -18,7 +18,7 @@ export const MainPage = () => (
     <Container>
       <Search extraClass={styles.main} />
 
-      <PurchaseList>
+      <PurchaseList onMain={true}>
         <PurchaseItem />
         <PurchaseItem />
         <PurchaseItem />

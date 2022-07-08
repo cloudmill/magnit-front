@@ -34,7 +34,7 @@ const GreyButtonLink = ({ children, isActive, extraClass }) => (
   </a>
 );
 
-const BlackButton = ({ children, isActive, extraClass }) => (
+const BlackButton = ({ children, isActive, extraClass, onClick }) => (
   <button
     className={classNames(
       styles.button,
@@ -42,6 +42,7 @@ const BlackButton = ({ children, isActive, extraClass }) => (
       { [styles.active]: isActive },
       extraClass
     )}
+    onClick={onClick}
   >
     {children}
   </button>

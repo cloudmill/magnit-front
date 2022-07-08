@@ -13,7 +13,12 @@ function PurchaseForm(props) {
 
   const onFinish = (values) => {
     console.log('Success:', values);
-    dispatch(open("login"));
+    dispatch(open("purchaseSuccess"));
+  };
+
+  const onFinishModal = (values) => {
+    console.log('Success:', values);
+    dispatch(open("askSuccess"));
   };
 
   const onFinishFailed = (errorInfo) => {
@@ -30,19 +35,18 @@ function PurchaseForm(props) {
 
     <Form
         className={classNames(styles.form, styles2.form)}
-        name="basic"
+        name="ask form"
         initialValues={{
           remember: true,
         }}
-        onFinish={onFinish}
+        onFinish={onFinishModal}
         onFinishFailed={onFinishFailed}
         autoComplete="off"
         >
 
         <Form.Item
           className={classNames(styles2.label)}
-          // label="Username"
-          name="username"
+          name="organisation"
           rules={[
             {
               required: true,
@@ -55,8 +59,7 @@ function PurchaseForm(props) {
 
         <Form.Item
           className={classNames(styles2.label)}
-          // label="Password"
-          name="password"
+          name="inn"
           rules={[
             {
               required: true,
@@ -69,7 +72,6 @@ function PurchaseForm(props) {
 
         <Form.Item
           className={classNames(styles2.label)}
-          // label="Password"
           name="mail"
           rules={[
             {
@@ -83,7 +85,6 @@ function PurchaseForm(props) {
 
         <Form.Item
           className={classNames(styles2.label)}
-          // label="Password"
           name="fio"
           rules={[
             {
@@ -97,7 +98,6 @@ function PurchaseForm(props) {
 
         <Form.Item
           className={classNames(styles2.label, styles.fullWidth)}
-          // label="Password"
           name="tel"
           rules={[
             {
@@ -126,6 +126,7 @@ function PurchaseForm(props) {
 
           <div className={classNames(styles.col, styles2.col)} 
             style={{ flexDirection: "column", alignItems: "flex-start" }}>
+
             <UploadBtn/>
 
             <div className={classNames(styles.note)}
@@ -143,23 +144,23 @@ function PurchaseForm(props) {
               style={{ marginBottom: "20px" }}
               >
 
-              <Checkbox><div className={styles.checkboxTxt}>Согласен с условиями обработки <a href="/">персональных данных</a></div>
+              <Checkbox>
+                <div className={styles.checkboxTxt}>Согласен с условиями обработки <a href="/">персональных данных</a>
+                </div>
               </Checkbox>
 
             </Form.Item>
-            <Form.Item
-              >
-              <RedSubmit onClick={() => dispatch(open("login"))}/>
+
+            <Form.Item>
+              <RedSubmit/>
             </Form.Item>
 
           </div>
 
         </div>
-
-        
+ 
       </Form>
 
-        
       </>
     );
   }
@@ -187,7 +188,6 @@ function PurchaseForm(props) {
 
         <Form.Item
           className={classNames(styles2.label)}
-          // label="Username"
           name="username"
           rules={[
             {
@@ -201,7 +201,6 @@ function PurchaseForm(props) {
 
         <Form.Item
           className={classNames(styles2.label)}
-          // label="Password"
           name="password"
           rules={[
             {
@@ -215,7 +214,6 @@ function PurchaseForm(props) {
 
         <Form.Item
           className={classNames(styles2.label)}
-          // label="Password"
           name="mail"
           rules={[
             {
@@ -229,7 +227,6 @@ function PurchaseForm(props) {
 
         <Form.Item
           className={classNames(styles2.label)}
-          // label="Password"
           name="fio"
           rules={[
             {
@@ -243,7 +240,6 @@ function PurchaseForm(props) {
 
         <Form.Item
           className={classNames(styles2.label, styles.fullWidth)}
-          // label="Password"
           name="tel"
           rules={[
             {
@@ -302,9 +298,8 @@ function PurchaseForm(props) {
               </Checkbox>
 
             </Form.Item>
-            <Form.Item
-              >
-              <RedSubmit onClick={() => dispatch(open("login"))}/>
+            <Form.Item>
+              <RedSubmit/>
             </Form.Item>
 
           </div>

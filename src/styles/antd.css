@@ -2488,10 +2488,10 @@ html {
   /* stylelint-disable-next-line property-no-vendor-prefix */
   -webkit-appearance: none;
 }
-/* .ant-select:not(.ant-select-disabled):hover .ant-select-selector {
+.ant-select:not(.ant-select-disabled):hover .ant-select-selector {
   border-color: #40a9ff;
   border-right-width: 1px;
-} */
+}
 .ant-select-selection-item {
   flex: 1;
   overflow: hidden;

@@ -207,3 +207,40 @@
     height: 40px;
   }
 }
+
+.pickerLinks {
+  display: flex;
+  align-items: center;
+  margin-top: 4px;
+  color: color(greyTxt2);
+
+  .item {
+    font-size: 12px;
+    line-height: 24px;
+    cursor: pointer;
+
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+  }
+}
+
+.filterPaddingTop {
+  @media #{media('>', m)} {
+    padding-top: 26px;
+  }
+  @media #{media()} {
+    padding-top: 36px;
+  }
+}
+.filterPaddingBottom {
+  @media #{media('>', m)} {
+    padding-bottom: 28px;
+  }
+}
+.filtersBtn {
+  height: 40px;
+  @media #{media()} {
+    height: 56px;
+  }
+}

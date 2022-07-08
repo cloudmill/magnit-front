@@ -83,7 +83,7 @@
 
 }
 
-.textarea {
+textarea.textarea {
   width: 100%;
   background: color(greyBg2);
   border: 1px solid color(greyBorder);
@@ -92,6 +92,7 @@
   resize: none;
   @include p-medium;
   font-weight: 400;
+  min-height: 160px;
 }
 
 .textareaLabel {

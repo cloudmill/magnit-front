@@ -117,18 +117,26 @@ export function SearchFilters(props) {
         allowClear={false}
       />
 
-      <RangePicker 
-        className={styles.datepicker} 
-        locale={locale} 
-        showToday={false} 
-        placeholder={["Дата окончания", "приема заявок"]} 
-        format="DD.MM.YYYY" 
-        suffixIcon={<CalendarIco/>} 
-        onChange={onChange}
-        allowClear={false}
-        />
+      <div className={styles.filterPaddingTop}>
+        <RangePicker 
+          className={styles.datepicker} 
+          locale={locale} 
+          showToday={false} 
+          placeholder={["Дата окончания", "приема заявок"]} 
+          format="DD.MM.YYYY" 
+          suffixIcon={<CalendarIco/>} 
+          onChange={onChange}
+          allowClear={false}
+          />
 
-      <div>
+          <div className={styles.pickerLinks}>
+            <div className={styles.item}>Сегодня</div>
+            <div className={styles.item}>Завтра</div>
+            <div className={styles.item}>Неделя</div>
+          </div>
+      </div>
+
+      <div className={styles.filterPaddingBottom}>
         <div className={styles.name}>
           Классификатор ОКПД2
           <Tooltip 
@@ -141,11 +149,19 @@ export function SearchFilters(props) {
           </Tooltip>
         </div>
 
-        <GreyButton><Plus/> Добавить</GreyButton>
+        <GreyButton extraClass={styles.filtersBtn}>
+          <Plus/> Добавить
+        </GreyButton>
+
       </div>
       
-      <GreyButton><Reset/> Сбросить</GreyButton>
+      <div className={styles.filterPaddingBottom}>
 
+        <GreyButton extraClass={styles.filtersBtn}>
+          
+        <Reset/> Сбросить</GreyButton>
+
+      </div>
       
     </div>
     </ConfigProvider>

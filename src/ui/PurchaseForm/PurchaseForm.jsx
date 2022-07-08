@@ -118,7 +118,7 @@ function PurchaseForm(props) {
             },
           ]}
           >
-          <Input.TextArea className={styles.textarea} placeholder="Текст обращения*" />
+          <Input.TextArea className={styles.textarea} style={{minHeight: '100px'}} placeholder="Текст обращения*" />
         </Form.Item>
         
         <div className={classNames(styles.bottom, styles2.bottom)}>

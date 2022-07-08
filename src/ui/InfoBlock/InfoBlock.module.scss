@@ -124,6 +124,10 @@
   .txt {
     @include p-small;
     margin-top: 8px;
+
+    @media #{media()} {
+      max-width: 350px;
+    }
   }
 }
 

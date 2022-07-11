@@ -191,3 +191,15 @@
 .ant-upload-list-text .ant-upload-list-item-name {
   padding-left: 0;
 }
+.ant-picker:hover, .ant-picker-focused {
+  box-shadow: none;
+  border-color: #E7E7E7;
+}
+.ant-picker-active-bar {
+  opacity: 0 !important;
+}
+.ant-picker-panel-container .ant-picker-panels {
+  @media #{media('<')} {
+    flex-direction: column;
+  }
+}

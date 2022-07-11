@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useRef } from "react";
 import { close } from "../../store/index.ts";
 import { BlackButton } from "../Buttons/Buttons";
+import { ClassifierModal } from "./ClassifierModal";
 
 const AskSuccessModal = () => {
   const dispatch = useDispatch();
@@ -69,6 +70,7 @@ const modals = {
   askSuccess: <AskSuccessModal />,
   purchaseSuccess: <PurchaseSuccessModal />,
   contactsSuccess: <ContactsSuccessModal />,
+  classifier: <ClassifierModal />,
 };
 
 function ModalsContainer(props) {

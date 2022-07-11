@@ -7,12 +7,18 @@ import { ReactComponent as Reset } from "../../assets/images/reset.svg";
 import { ReactComponent as TooltipIco } from "../../assets/images/tooltip.svg";
 import { ReactComponent as ArrowDown } from "../../assets/images/arrow-down.svg";
 import { ReactComponent as CalendarIco } from "../../assets/images/calendar.svg";
+import { ReactComponent as Tire } from "../../assets/images/tire-svg.svg";
+
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { open } from "../../store/index.ts";
 
 import { Select, DatePicker, Tooltip, ConfigProvider } from 'antd';
 
 import moment from "moment";
 import "moment/locale/ru";
 import locale from "antd/es/date-picker/locale/ru_RU";
+import classNames from "classnames";
 
 moment.locale("ru_RU", {
   week: {
@@ -53,6 +59,10 @@ const onChange = (date, dateString) => {
 };
 
 export function SearchFilters(props) {
+
+  const dispatch = useDispatch();
+  const [isClicked1, setActive1] = useState('no-active');
+  const [isClicked2, setActive2] = useState('no-active');
 
   if (props.state === 'open') {
     
@@ -108,25 +118,29 @@ export function SearchFilters(props) {
       </div>
 
       <RangePicker 
-        className={styles.datepicker} 
+        className={classNames(styles.datepicker, isClicked1 === 'no-active' ? 'noactive' : null)} 
         locale={locale} showToday={false} 
         placeholder={["Дата публикации", ""]} 
         format="DD.MM.YYYY" 
         suffixIcon={<CalendarIco/>}
         onChange={onChange} 
         allowClear={false}
+        onClick={() => {setActive1('active')}} 
+        separator={<Tire/>}
       />
 
       <div className={styles.filterPaddingTop}>
         <RangePicker 
-          className={styles.datepicker} 
+          className={classNames(styles.datepicker, isClicked2 === 'no-active' ? 'noactive' : null)} 
           locale={locale} 
           showToday={false} 
-          placeholder={["Дата окончания", "приема заявок"]} 
+          placeholder={["Дата окончания приема заявок", ""]} 
           format="DD.MM.YYYY" 
           suffixIcon={<CalendarIco/>} 
           onChange={onChange}
-          allowClear={false}
+          allowClear={false} 
+          onClick={() => {setActive2('active')}}
+          separator={<Tire/>}
           />
 
           <div className={styles.pickerLinks}>
@@ -149,7 +163,7 @@ export function SearchFilters(props) {
           </Tooltip>
         </div>
 
-        <GreyButton extraClass={styles.filtersBtn}>
+        <GreyButton extraClass={styles.filtersBtn} onClick={() => {dispatch(open('classifier'))}}>
           <Plus/> Добавить
         </GreyButton>
 

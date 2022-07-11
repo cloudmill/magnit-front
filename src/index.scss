@@ -60,3 +60,16 @@ body {
 }
 
 @import "/src/styles/ant-redesign.scss";
+
+.ant-picker-range.noactive {
+  .ant-picker-range-separator {
+    visibility: hidden;
+    position: absolute;
+    pointer-events: none;
+  }
+  .ant-picker-input:not(.ant-picker-input-active) {
+    visibility: hidden;
+    position: absolute;
+    pointer-events: none;
+  }
+} 

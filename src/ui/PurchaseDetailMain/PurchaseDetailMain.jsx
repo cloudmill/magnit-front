@@ -5,10 +5,13 @@ import { PurchaseBanner } from "../PurchaseBanner/PurchaseBanner";
 import { ArrowDownButton, RedButton } from "../Buttons/Buttons";
 import { PurchaseForm } from "../PurchaseForm/PurchaseForm";
 import { PurchaseDetailLinks } from "../PurchaseDetailLinks/PurchaseDetailLinks";
+import { useState } from "react";
 
-export const PurchaseDetailMain = () => (
+export function PurchaseDetailMain(props) {
 
-  <div className={styles.main}>
+  const [isTableShort, setFull] = useState('short');
+
+  return <div className={styles.main}>
 
     <div className={classNames(styles.mobButton, styles.onlyMobile)}>
       <RedButton>Подать заявку</RedButton>
@@ -59,7 +62,7 @@ export const PurchaseDetailMain = () => (
       <div className={styles.txt}>Одноэтапный запрос предложений</div>
     </div>
 
-    <div className={classNames(styles.block, styles.table)}>
+    <div className={classNames(styles.block, styles.table, isTableShort === 'short' ? styles.short : null)}>
 
       <div className={styles.ttl}>Классификатор ОКПД2</div>
 
@@ -88,7 +91,32 @@ export const PurchaseDetailMain = () => (
         <div className={styles.txt}>Батареи аккумуляторные прочие</div>
       </div>
 
-      <ArrowDownButton extraClass={styles.tableBtn}>Показать полностью</ArrowDownButton>
+      <div className={styles.tableRow}>
+        <div className={styles.code}>26.20.40.190</div>
+        <div className={styles.txt}>Комплектующие и запасные части для вычислительных машин прочие, не включенные в другие группировки</div>
+      </div>
+
+      <div className={styles.tableRow}>
+        <div className={styles.code}>27.20.22</div>
+        <div className={styles.txt}>Аккумуляторы свинцовые, кроме используемых для запуска поршневых двигателей</div>
+      </div>
+
+      <div className={styles.tableRow}>
+        <div className={styles.code}>27.20.23</div>
+        <div className={styles.txt}>Батареи аккумуляторные никель-кадмиевые, никель-металл-гидридные, литий-ионные, литий-полимерные, никель-железные и прочие</div>
+      </div>
+
+      <div className={styles.tableRow}>
+        <div className={styles.code}>27.20.22.000</div>
+        <div className={styles.txt}>Аккумуляторы свинцовые, кроме используемых для запуска поршневых двигателей</div>
+      </div>
+
+      <div className={styles.tableRow}>
+        <div className={styles.code}>27.20.23.190</div>
+        <div className={styles.txt}>Батареи аккумуляторные прочие</div>
+      </div>
+
+      <ArrowDownButton extraClass={styles.tableBtn} onClick={() => {isTableShort === 'short' ? setFull('full') : setFull('short')}}>Показать полностью</ArrowDownButton>
 
     </div>
 
@@ -235,4 +263,4 @@ export const PurchaseDetailMain = () => (
 
   </div>
 
-);
+};

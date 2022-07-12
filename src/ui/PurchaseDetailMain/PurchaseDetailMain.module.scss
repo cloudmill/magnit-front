@@ -133,6 +133,12 @@
       width: 100%;
     }
   }
+
+  &.short {
+    .tableRow:nth-child(1n + 7) {
+      display: none;
+    }
+  }
 }
 
 .markup {

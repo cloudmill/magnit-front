@@ -61,11 +61,12 @@ const RedButton = ({ children, extraClass, isActive, type, onClick }) => (
   </button>
 );
 
-const ArrowDownButton = ({ children, extraClass, isActive }) => (
+const ArrowDownButton = ({ children, extraClass, isActive, onClick }) => (
   <button
     className={classNames(styles.button, styles.arrowDown, extraClass, {
       [styles.active]: isActive,
     })}
+    onClick={onClick}
   >
     {children}
     <ArrowDown />

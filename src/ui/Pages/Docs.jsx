@@ -21,8 +21,12 @@ export const DocsPage = () => {
   useEffect(() => {
     (async () => {
       try {
+        console.log(q.length ? "qwe" : "ewq");
+
         const response = await fetch(
-          `http://nkz.devmill.ru/docs/predvaritelnyy-kvalifikatsionnyy-otbor/?q=${q}`
+          `http://nkz.devmill.ru/docs/predvaritelnyy-kvalifikatsionnyy-otbor/${
+            (q && `?q=${q}`) || ""
+          }`
         );
         const json = await response.json();
 

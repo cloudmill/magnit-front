@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/magnit-front/build/static/css/main.74f32b92.css",
-    "main.js": "/magnit-front/build/static/js/main.b59bc68b.js",
+    "main.js": "/magnit-front/build/static/js/main.6a4be54e.js",
     "static/media/first-screen-bg-xxl.png": "/magnit-front/build/static/media/first-screen-bg-xxl.5cafa70252bde3bf6b5f.png",
     "static/media/first-screen-bg.png": "/magnit-front/build/static/media/first-screen-bg.60cab4ead1de8f6d35c6.png",
     "static/media/Golos-Text_Medium.ttf": "/magnit-front/build/static/media/Golos-Text_Medium.5665f65e68980e80b1e4.ttf",
@@ -35,10 +35,10 @@
     "static/media/breadcrumbs-arrow.svg": "/magnit-front/build/static/media/breadcrumbs-arrow.723d51dbd5a4f3db35d92c9ee14f1647.svg",
     "static/media/tire-svg.svg": "/magnit-front/build/static/media/tire-svg.1e4a12d3055c7f8e4c3018aa2a2d759b.svg",
     "main.74f32b92.css.map": "/magnit-front/build/static/css/main.74f32b92.css.map",
-    "main.b59bc68b.js.map": "/magnit-front/build/static/js/main.b59bc68b.js.map"
+    "main.6a4be54e.js.map": "/magnit-front/build/static/js/main.6a4be54e.js.map"
   },
   "entrypoints": [
     "static/css/main.74f32b92.css",
-    "static/js/main.b59bc68b.js"
+    "static/js/main.6a4be54e.js"
   ]
 }

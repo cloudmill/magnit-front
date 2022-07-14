@@ -10,51 +10,77 @@ import { DocsList } from "../DocsList/DocsList";
 import { EmptySearch } from "../EmptySearch/EmptySearch";
 import { Breadcrumbs } from "../Breadcrumbs/Breadcrumbs";
 
-export const DocsPage = () => (
-  <PageWrapper>
-    <Header />
+import { useState, useEffect, useCallback } from "react";
 
-    <Container extraClass={styles.page2col}>
+export const DocsPage = () => {
+  const [q, setQ] = useState("");
+  const [docs, setDocs] = useState([]);
 
-      <div className={styles.col}>
-        <DocsLinks/>
-      </div>
+  const handleChange = useCallback((q) => setQ(q), []);
 
-      <div className={styles.col}>
+  useEffect(() => {
+    (async () => {
+      try {
+        const response = await fetch(
+          `http://nkz.devmill.ru/docs/predvaritelnyy-kvalifikatsionnyy-otbor/?q=${q}`
+        );
+        const json = await response.json();
 
-        <Breadcrumbs bc1='Главная' bc2='Предварительный квалификационный отбор'/>
+        setDocs(
+          json.data.map(({ DATE_ACTIVE_FROM, FILE, NAME }) => ({
+            title: NAME,
+            href: FILE,
+            date: DATE_ACTIVE_FROM,
+          }))
+        );
+      } catch (error) {
+        console.log(error);
+      }
+    })();
+  }, [q]);
 
-        <DocsLinks extraClass={styles.onlyMobile} />
+  return (
+    <PageWrapper>
+      <Header />
 
-        <h1 className={ttlStyle.ttl}> Предварительный квалификационный отбор </h1>
+      <Container extraClass={styles.page2col}>
+        <div className={styles.col}>
+          <DocsLinks />
+        </div>
 
-        <div className={styles.docsAbout}>ПКО по видам работ, услуг №340: Комплекс работ, услуг по совершенствованию сметно-нормативной базы, в том числе разработка государственных элементных сметных норм, федеральных единичных расценок, индексов, методик и т.д.</div>
+        <div className={styles.col}>
+          <Breadcrumbs
+            bc1="Главная"
+            bc2="Предварительный квалификационный отбор"
+          />
 
-        <DocsSearch/>
+          <DocsLinks extraClass={styles.onlyMobile} />
 
-        <DocsList>
+          <h1 className={ttlStyle.ttl}>
+            {" "}
+            Предварительный квалификационный отбор{" "}
+          </h1>
 
-          <DocumentCard>ПКО по видам работ, услуг №341: Техническое диагностирование, освидетельствование и мониторинг объектов организаций системы «Транснефть», расположенных на территории Российской Федерации</DocumentCard>
-          <DocumentCard>ПКО по видам работ, услуг №341: Техническое диагностирование, освидетельствование и мониторинг объектов организаций системы «Транснефть», расположенных на территории Российской Федерации</DocumentCard>
+          <div className={styles.docsAbout}>
+            ПКО по видам работ, услуг №340: Комплекс работ, услуг по
+            совершенствованию сметно-нормативной базы, в том числе разработка
+            государственных элементных сметных норм, федеральных единичных
+            расценок, индексов, методик и т.д.
+          </div>
 
-          <DocumentCard>ПКО по видам работ, услуг №339: Производство и наладка комплектов для доработки программного обеспечения и расширения систем автоматики технологических процессов и систем автоматики пожаротушения (СА ТП и СА ПТ) на объектах организаций системы «Транснефть»</DocumentCard>
-          <DocumentCard>ПКО по видам работ, услуг №339: Производство и наладка комплектов для доработки программного обеспечения и расширения систем автоматики технологических процессов и систем автоматики пожаротушения (СА ТП и СА ПТ) на объектах организаций системы «Транснефть»</DocumentCard>
+          <DocsSearch {...{ q, handleChange }} />
 
-          <DocumentCard>ПКО по видам работ, услуг №341: Техническое диагностирование, освидетельствование и мониторинг объектов организаций системы «Транснефть», расположенных на территории Российской Федерации</DocumentCard>
-          <DocumentCard>ПКО по видам работ, услуг №341: Техническое диагностирование, освидетельствование и мониторинг объектов организаций системы «Транснефть», расположенных на территории Российской Федерации</DocumentCard>
-          
-          <DocumentCard>ПКО по видам работ, услуг №339: Производство и наладка комплектов для доработки программного обеспечения и расширения систем автоматики технологических процессов и систем автоматики пожаротушения (СА ТП и СА ПТ) на объектах организаций системы «Транснефть»</DocumentCard>
-          <DocumentCard>ПКО по видам работ, услуг №339: Производство и наладка комплектов для доработки программного обеспечения и расширения систем автоматики технологических процессов и систем автоматики пожаротушения (СА ТП и СА ПТ) на объектах организаций системы «Транснефть»</DocumentCard>
+          {(docs.length && (
+            <DocsList>
+              {docs.map((doc) => (
+                <DocumentCard key={doc.title} {...doc} />
+              ))}
+            </DocsList>
+          )) || <EmptySearch q={q} />}
+        </div>
+      </Container>
 
-        </DocsList>
-
-        <EmptySearch/>
-        
-      </div>
-
-    </Container>
-
-    <Header bottom />
-
-  </PageWrapper>
-);
+      <Header bottom />
+    </PageWrapper>
+  );
+};

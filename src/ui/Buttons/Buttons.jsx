@@ -73,14 +73,16 @@ const ArrowDownButton = ({ children, extraClass, isActive, onClick }) => (
   </button>
 );
 
-function UploadBtn() {
+function UploadBtn({updateFile}) {
   const [fileList, setFileList] = useState();
 
   const handleChange = (info) => {
     // let newFileList = [...info.fileList];
-    console.log(info);
     // newFileList = fileList.slice(-2);
-
+    if (info.file.response) {
+      console.log(info);
+      updateFile(info.fileList)
+    }
     // newFileList = fileList.map((file) => {
     //   if (file.response) {
         
@@ -96,6 +98,7 @@ function UploadBtn() {
     action: 'https://www.mocky.io/v2/5cc8019d300000980a055e76',
     onChange: handleChange,
     multiple: true,
+    // maxCount: 1,
 
     defaultFileList: [
       // {

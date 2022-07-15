@@ -4,18 +4,33 @@ import { UploadBtn, RedSubmit } from '../Buttons/Buttons';
 import { Form, Input, Checkbox } from 'antd';
 import { useDispatch } from 'react-redux';
 import { open } from '../../store/index.ts';
+import { useState } from 'react';
+import { formService } from '../../service/forms';
 
 export function ContactsForm() {
   const dispatch = useDispatch();
+  const [files, setFiles] = useState([]);
 
-  const onFinish = (values) => {
-    console.log('Success:', values);
-    dispatch(open('contactsSuccess'));
+  const onFinish = async (values) => {
+    const data = values
+    
+    if (files.length) {
+      data.files = files
+
+      console.log(data);
+      const response = await formService.sendForm(data)
+      console.log(response);
+      dispatch(open('contactsSuccess'));
+    }
   };
 
   const onFinishFailed = (errorInfo) => {
     console.log('Failed:', errorInfo);
   };
+
+  function updateFile(files) {
+    setFiles(files);
+  }
 
   return (
     <div className={classNames(styles.blockBottom, styles.block)}>
@@ -119,7 +134,7 @@ export function ContactsForm() {
 
         <div className={styles.bottom}>
           <div className={classNames(styles.col)}>
-            <UploadBtn />
+            <UploadBtn updateFile={updateFile} />
 
             <div className={classNames(styles.note, styles.onlyDesktop)}>
               Допустимое расширение файлов: .ppt, .pptx, .doc, .docx, .xls,{' '}

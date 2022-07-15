@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import { useState } from "react";
 import { ContactsForm } from "../ContactsForm/ContactsForm";
 import { ContactsRow } from "../ContactsRow/ContactsRow";
 import { Container } from "../Container/Container";
@@ -5,18 +7,34 @@ import { Header } from "../Header/Header";
 import { PageHead } from "../PageHead/PageHead";
 import { PageWrapper } from "../PageWrapper/PageWrapper";
 
-export const ContactsPage = () => (
-  <PageWrapper>
-    <Header/>
-    <Container>
-      <PageHead title='Контакты' bc1='Главная' bc2='Контакты' />
+export const ContactsPage = () => {
+  const [data, setData] = useState(null);
 
-      <ContactsRow/>
+  useEffect(() => {
+    try {
+      fetch("https://nkz.devmill.ru/contacts/").then((response) => {
+        response.json().then((json) => {
+          const { data } = json;
+          console.log(data);
+          setData(data);
+        });
+      });
+    } catch (error) {
+      console.error("contacts", error);
+    }
+  }, []);
 
-      <ContactsForm/>
+  return (
+    <PageWrapper>
+      <Header />
+      <Container>
+        <PageHead title="Контакты" bc1="Главная" bc2="Контакты" />
 
-    </Container>
-    <Header bottom />
-    
-  </PageWrapper>
-);
+        <ContactsRow {...{ data }} />
+
+        <ContactsForm />
+      </Container>
+      <Header bottom />
+    </PageWrapper>
+  );
+};

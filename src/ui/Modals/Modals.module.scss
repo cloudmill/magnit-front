@@ -2,6 +2,7 @@
 
 .modalsContainer {
   position: fixed;
+  width: 100vw;
   z-index: 100;
   top: 0;
   right: 0;
@@ -14,6 +15,7 @@
   justify-content: center;
 
   overflow-y: scroll;
+  @include scrollbar-hidden;
 
   &.active {
     background: rgba(18, 18, 18, .23);
@@ -30,7 +32,9 @@
   position: absolute;
   top: 16px;
   bottom: 16px;
+
   overflow-y: scroll;
+  @include scrollbar-hidden;
 
   @media #{media()} {
     width: calc(#{$col-part-d} * 5 + #{$col-width-d});
@@ -183,6 +187,7 @@
   .list {
     margin-top: 20px;
     overflow-y: scroll;
+    @include styled-scrollbar;
 
     @media #{media('<')} {
       padding: 0 20px;

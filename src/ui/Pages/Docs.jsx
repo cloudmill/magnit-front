@@ -24,7 +24,7 @@ export const DocsPage = () => {
         console.log(q.length ? "qwe" : "ewq");
 
         const response = await fetch(
-          `http://nkz.devmill.ru/docs/predvaritelnyy-kvalifikatsionnyy-otbor/${
+          `https://nkz.devmill.ru/docs/predvaritelnyy-kvalifikatsionnyy-otbor/${
             (q && `?q=${q}`) || ""
           }`
         );

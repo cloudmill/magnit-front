@@ -17,11 +17,11 @@ export function ContactsForm() {
     if (files.length) {
       data.files = files
 
-      console.log(data);
-      const response = await formService.sendForm(data)
-      console.log(response);
-      dispatch(open('contactsSuccess'));
     }
+    console.log(data);
+    const response = await formService.sendForm(data)
+    console.log(response);
+    dispatch(open('contactsSuccess'));
   };
 
   const onFinishFailed = (errorInfo) => {

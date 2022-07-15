@@ -12,7 +12,7 @@ export const ContactsPage = () => {
 
   useEffect(() => {
     try {
-      fetch("http://nkz.devmill.ru/contacts/").then((response) => {
+      fetch("https://nkz.devmill.ru/contacts/").then((response) => {
         response.json().then((json) => {
           const { data } = json;
           console.log(data);

@@ -77,19 +77,19 @@ function UploadBtn() {
   const [fileList, setFileList] = useState();
 
   const handleChange = (info) => {
-    let newFileList = [...info.fileList];
+    // let newFileList = [...info.fileList];
+    console.log(info);
+    // newFileList = fileList.slice(-2);
 
-    newFileList = fileList.slice(-2);
-
-    newFileList = fileList.map((file) => {
-      if (file.response) {
+    // newFileList = fileList.map((file) => {
+    //   if (file.response) {
         
-        file.url = file.response.url;
-      }
+    //     file.url = file.response.url;
+    //   }
 
-      return file;
-    });
-    setFileList(newFileList);
+    //   return file;
+    // });
+    // setFileList(newFileList);
   };
 
   const props = {
@@ -98,19 +98,19 @@ function UploadBtn() {
     multiple: true,
 
     defaultFileList: [
-      {
-        uid: '1',
-        name: 'filename.jpg',
-        status: 'done',
-        response: 'Server Error 500',
-        url: 'http://www.baidu.com/xxx.png',
-      },
-      {
-        uid: '2',
-        name: 'filename2.jpg',
-        status: 'done',
-        url: 'http://www.baidu.com/yyy.png',
-      },
+      // {
+      //   uid: '1',
+      //   name: 'filename.jpg',
+      //   status: 'done',
+      //   response: 'Server Error 500',
+      //   url: 'http://www.baidu.com/xxx.png',
+      // },
+      // {
+      //   uid: '2',
+      //   name: 'filename2.jpg',
+      //   status: 'done',
+      //   url: 'http://www.baidu.com/yyy.png',
+      // },
     ],
     showUploadList: {
       showRemoveIcon: true,

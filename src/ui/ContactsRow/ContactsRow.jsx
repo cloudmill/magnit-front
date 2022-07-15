@@ -4,32 +4,31 @@ import { ReactComponent as ContactsTel } from "../../assets/images/contacts-tel.
 export const ContactsRow = ({ data }) =>
   data && (
     <div className={styles.row}>
-      <div className={styles.col}>
-        <div className={styles.ttl}>{data[0].NAME}</div>
-        <div className={styles.item}>
-          <ContactsTel />
-          <a href={`tel:${data[0].PROPERTIES.PHONE.VALUE}`}>
-            {data[0].PROPERTIES.PHONE.VALUE}
-          </a>
-        </div>
-      </div>
-      <div className={styles.col}>
-        <div className={styles.ttl}>{data[1].NAME}</div>
-        {data[1].PROPERTIES.PHONE.VALUE.map((phone, index) => (
-          <div key={phone + index} className={styles.item}>
-            <ContactsTel />
-            <div>
-              <a
-                href={`tel:${phone},${data[1].PROPERTIES.PHONE.DESCRIPTION[index]}`}
-              >
-                {phone}
-              </a>
-              <div className={styles.dop}>
-                доб. {data[1].PROPERTIES.PHONE.DESCRIPTION[index]}
+      {data.map(({ NAME, PROPERTIES }, index) => (
+        <div key={NAME + index} className={styles.col}>
+          <div className={styles.ttl}>{NAME}</div>
+          {PROPERTIES.PHONE.VALUE.map((value, index) => (
+            <div key={value + index} className={styles.item}>
+              <ContactsTel />
+              <div>
+                <a
+                  href={`tel:${value}${
+                    (PROPERTIES.PHONE.DESCRIPTION[index] &&
+                      `,${PROPERTIES.PHONE.DESCRIPTION[index]}`) ||
+                    ""
+                  }`}
+                >
+                  {value}
+                </a>
+                {PROPERTIES.PHONE.DESCRIPTION[index] && (
+                  <div className={styles.dop}>
+                    доб. {PROPERTIES.PHONE.DESCRIPTION[index]}
+                  </div>
+                )}
               </div>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      ))}
     </div>
   );

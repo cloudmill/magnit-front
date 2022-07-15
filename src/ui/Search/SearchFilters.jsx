@@ -163,7 +163,10 @@ export function SearchFilters(props) {
           </Tooltip>
         </div>
 
-        <GreyButton extraClass={styles.filtersBtn} onClick={() => {dispatch(open('classifier'))}}>
+        <GreyButton extraClass={styles.filtersBtn} onClick={() => {
+          dispatch(open('classifier'));
+          document.querySelector('body').style.overflow = 'hidden';
+        }}>
           <Plus/> Добавить
         </GreyButton>
 

@@ -18,3 +18,25 @@
     display: none;
   }
 }
+
+@mixin styled-scrollbar() {
+  scrollbar-width: 4px;
+  border-radius: 4px;
+
+  &::-webkit-scrollbar {
+    width: 4px;
+    background-color: color(greyBg);
+    border-radius: 4px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: color(greyBg);
+    border-radius: 4px;
+  }
+  &::-webkit-scrollbar-button {
+    display: none;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(18, 18, 18, 0.2);
+    border-radius: 4px;
+  }
+}

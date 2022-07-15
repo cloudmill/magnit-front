@@ -39,7 +39,8 @@ button {
 }
 
 body {
-  // overflow-x: hidden;
+  min-width: 100vw;
+  overflow-x: hidden;
 
   font-family: 'Golos';
   font-weight: 400;

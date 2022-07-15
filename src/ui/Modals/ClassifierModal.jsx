@@ -22,7 +22,10 @@ export function ClassifierModal(props) {
 
         <h2 className={styles.ttl}>Классификатор ОКПД2</h2>
 
-        <button className={styles.close} onClick={() => {dispatch(close())}}></button>
+        <button className={styles.close} onClick={() => {
+          dispatch(close())
+          document.querySelector('body').style.overflow = '';
+        }}></button>
 
         <Input className={styles.search} placeholder="Введите ключевое слово или номер классификатора"/>
 

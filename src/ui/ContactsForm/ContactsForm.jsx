@@ -13,13 +13,21 @@ export function ContactsForm() {
 
   const onFinish = async (values) => {
     const data = values
-    
+
     if (files.length) {
       data.files = files
-
     }
+    const formData = new FormData()
+
+    for (let key in data ) {
+      formData.append(key, data[key]);
+    }
+
     console.log(data);
-    const response = await formService.sendForm(data)
+    const response = await fetch("https://nkz.devmill.ru/forms/", {method: "POST", body: formData})
+        .then((response) => response.json().then((json) => {
+          return json;
+        }));
     console.log(response);
     dispatch(open('contactsSuccess'));
   };
@@ -126,11 +134,16 @@ export function ContactsForm() {
         >
           <Input className={styles.input} type="tel" placeholder="Телефон" />
         </Form.Item>
-
+        
+        <Form.Item
+          className={classNames(styles.fullWidth)}
+          name="text"
+        >
         <Input.TextArea
           className={styles.textarea}
           placeholder="Текст обращения*"
         />
+        </Form.Item>
 
         <div className={styles.bottom}>
           <div className={classNames(styles.col)}>
@@ -148,14 +161,14 @@ export function ContactsForm() {
           </div>
 
           <div className={classNames(styles.col)}>
-            <Form.Item name="remember" valuePropName="checked">
+            {/* <Form.Item name="remember" valuePropName="checked"> */}
               <Checkbox>
                 <div className={styles.checkboxTxt}>
                   Согласен с условиями обработки{' '}
                   <a href="/">персональных данных</a>
                 </div>
               </Checkbox>
-            </Form.Item>
+            {/* </Form.Item> */}
 
             <Form.Item>
               <RedSubmit />

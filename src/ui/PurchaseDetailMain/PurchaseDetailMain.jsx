@@ -5,11 +5,42 @@ import { PurchaseBanner } from "../PurchaseBanner/PurchaseBanner";
 import { ArrowDownButton, RedButton } from "../Buttons/Buttons";
 import { PurchaseForm } from "../PurchaseForm/PurchaseForm";
 import { PurchaseDetailLinks } from "../PurchaseDetailLinks/PurchaseDetailLinks";
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
+import { DocsList } from "../DocsList/DocsList";
 
 export function PurchaseDetailMain(props) {
 
   const [isTableShort, setFull] = useState('short');
+
+  const [q, setQ] = useState("");
+  const [docs, setDocs] = useState([]);
+
+  const handleChange = useCallback((q) => setQ(q), []);
+
+  useEffect(() => {
+    (async () => {
+      try {
+        console.log(q.length ? "qwe" : "ewq");
+
+        const response = await fetch(
+          `https://nkz.devmill.ru/docs/predvaritelnyy-kvalifikatsionnyy-otbor/${
+            (q && `?q=${q}`) || ""
+          }`
+        );
+        const json = await response.json();
+
+        setDocs(
+          json.data.map(({ DATE_ACTIVE_FROM, FILE, NAME }) => ({
+            title: NAME,
+            href: FILE,
+            date: DATE_ACTIVE_FROM,
+          }))
+        );
+      } catch (error) {
+        console.log(error);
+      }
+    })();
+  }, [q]);
 
   return <div className={styles.main}>
 
@@ -62,7 +93,7 @@ export function PurchaseDetailMain(props) {
       <div className={styles.txt}>Одноэтапный запрос предложений</div>
     </div>
 
-    <div className={classNames(styles.block, styles.table, isTableShort === 'short' ? styles.short : null)}>
+    <div className={classNames(styles.block, styles.table, isTableShort === 'full' ? styles.full : null)}>
 
       <div className={styles.ttl}>Классификатор ОКПД2</div>
 
@@ -120,6 +151,7 @@ export function PurchaseDetailMain(props) {
 
     </div>
 
+    <a name="terms"></a>
     <div className={styles.block}>
       <div className={styles.ttl}>Условия поставки</div>
       <div className={styles.txt}>Путем доставки до склада покупателя, по указанным реквизитам. Датой поставки, соответствующей партии товаров, является дата передачи Поставщиком Покупателю всей партии товаров на складе Покупателя. Учитывая факт дальнейшей транспортировки Товаров в районы Крайнего Севера на Объект упаковка груза, поступающего в таре должна обеспечивать сохранность груза в процессе его транспортировки, хранения (накопления) и грузопереработки. Груз должен удовлетворять требованиям ГОСТа 15846-2002 и ГОСТа 14192-96</div>
@@ -206,6 +238,7 @@ export function PurchaseDetailMain(props) {
       </div>
     </div>
 
+    <a name="contacts"></a>
     <div className={styles.block}>
       <div className={styles.ttl}>Контакты</div>
       <div className={styles.txt}>Запросы к Заказчику процедуры подаются через функционал<br/> B2B-center в разделе «Разъяснения»</div>
@@ -243,10 +276,12 @@ export function PurchaseDetailMain(props) {
       </div>
     </div>
 
+    <a name="docs"></a>
     <div className={styles.block}>
-      <div className={styles.ttl}>Документы</div>
       
-      <DocumentCard>ПКО по видам работ, услуг №341: Техническое диагностирование, освидетельствование и мониторинг объектов организаций системы «Транснефть», расположенных на территории Российской Федерации</DocumentCard>
+        <div className={styles.ttl}>Документы</div>
+      
+      {/* <DocumentCard>ПКО по видам работ, услуг №341: Техническое диагностирование, освидетельствование и мониторинг объектов организаций системы «Транснефть», расположенных на территории Российской Федерации</DocumentCard>
 
       <DocumentCard>ПКО по видам работ, услуг №339: Производство и наладка комплектов для доработки программного обеспечения и расширения систем автоматики технологических процессов и систем автоматики пожаротушения (СА ТП и СА ПТ) на объектах организаций системы «Транснефть»</DocumentCard>
 
@@ -254,7 +289,16 @@ export function PurchaseDetailMain(props) {
 
       <DocumentCard>ПКО по видам работ, услуг №341: Техническое диагностирование, освидетельствование и мониторинг объектов организаций системы «Транснефть», расположенных на территории Российской Федерации</DocumentCard>
 
-      <DocumentCard>ПКО по видам работ, услуг №339: Производство и наладка комплектов для доработки программного обеспечения и расширения систем автоматики технологических процессов и систем автоматики пожаротушения (СА ТП и СА ПТ) на объектах организаций системы «Транснефть»</DocumentCard>
+      <DocumentCard>ПКО по видам работ, услуг №339: Производство и наладка комплектов для доработки программного обеспечения и расширения систем автоматики технологических процессов и систем автоматики пожаротушения (СА ТП и СА ПТ) на объектах организаций системы «Транснефть»</DocumentCard> */}
+
+      {(docs.length && (
+            <DocsList>
+              {docs.map((doc) => (
+                <DocumentCard key={doc.title} {...doc} />
+              ))}
+            </DocsList>
+          )) || null}
+
     </div>
 
     <PurchaseBanner extraClass={styles.block}/>

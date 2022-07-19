@@ -97,6 +97,10 @@
     display: flex;
     padding: 16px 0;
     border-bottom: 1px solid color(greyBorder);
+
+    &:nth-child(1n + 7) {
+      display: none;
+    }
   }
 
   .code {
@@ -125,6 +129,11 @@
 
   &Btn {
     margin-top: 32px;
+
+    svg {
+      transition: $transition;
+    }
+    
     @media #{media('<')} {
       margin-top: 12px;
       width: calc(#{$col-part-t} * 3 + #{$col-width-t} - 20px);
@@ -134,9 +143,13 @@
     }
   }
 
-  &.short {
+  &.full {
     .tableRow:nth-child(1n + 7) {
-      display: none;
+      display: flex;
+    }
+
+    .tableBtn svg {
+      transform: rotate(180deg);
     }
   }
 }

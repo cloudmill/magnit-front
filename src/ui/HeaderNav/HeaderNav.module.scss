@@ -57,6 +57,11 @@
       a {
         padding: 10px 16px;
         white-space: nowrap;
+        transition: $transition;
+
+        &:hover {
+          color: color(red);
+        }
 
         &:not(:last-child) {
           border-bottom: 1px solid color(greyBorder);

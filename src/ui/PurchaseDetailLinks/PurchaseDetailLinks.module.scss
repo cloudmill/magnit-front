@@ -103,7 +103,11 @@
   }
 
   &.active {
-    color: color(red);
+
+    a {
+      color: color(red);
+    }
+    
 
     @media #{media()} {
       position: relative;

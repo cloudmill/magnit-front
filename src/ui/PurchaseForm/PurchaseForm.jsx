@@ -168,6 +168,8 @@ function PurchaseForm(props) {
     
     <div className={styles2.block}>
 
+      <a name="form"></a>
+
       <h2 className={styles2.ttl}>
         Данная процедура проводится через электронную почту.
         <br />

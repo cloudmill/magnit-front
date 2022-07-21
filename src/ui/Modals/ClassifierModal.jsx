@@ -2,9 +2,11 @@ import styles from "./Modals.module.scss";
 import { ReactComponent as Reset } from "../../assets/images/reset.svg";
 import { ReactComponent as ArrowDown } from "../../assets/images/arrow-down.svg";
 import { GreyButton, BlackButton } from "../Buttons/Buttons";
-import { Input, Checkbox } from 'antd';
+import { Input, Checkbox, Collapse } from 'antd';
 import { useDispatch } from "react-redux";
 import { close } from "../../store/index.ts";
+
+const { Panel } = Collapse;
 
 const onChange = (e) => {
   console.log(`checked = ${e.target.checked}`);
@@ -13,6 +15,10 @@ const onChange = (e) => {
 export function ClassifierModal(props) {
 
   const dispatch = useDispatch();
+
+  const onCollapseChange = (key) => {
+    console.log(key);
+  };
 
   return <div className={styles.classifier}>
 
@@ -31,81 +37,130 @@ export function ClassifierModal(props) {
 
       </div>
 
-      <div className={styles.list}>
+      <Collapse 
+        className={styles.list} 
+        onChange={onCollapseChange} 
+        expandIcon={() => <ArrowDown />}
+        ghost>
 
-        <div className={styles.row}>
-          <ArrowDown/>
-          <Checkbox className={styles.checkbox} onChange={onChange}></Checkbox> 
-          A Продукция сельского, лесного и рыбного хозяйства
-        </div>
+        <Panel 
+          header="A Продукция сельского, лесного и рыбного хозяйства" 
+          key="1" 
+          extra={<Checkbox className={styles.checkbox} onChange={onChange} onClick={(e) => {e.stopPropagation();}}></Checkbox> }>
 
-        <div className={styles.row}>
-          <ArrowDown/>
-          <Checkbox className={styles.checkbox} onChange={onChange}></Checkbox> 
-          B Продукция горнодобывающих производств
-        </div>
+          <p>Text</p>
 
-        <div className={styles.row}>
-          <ArrowDown/>
-          <Checkbox className={styles.checkbox} onChange={onChange}></Checkbox> 
-          C Продукция обрабатывающих производств
-        </div>
+        </Panel>
 
-        <div className={styles.row}>
-          <ArrowDown/>
-          <Checkbox className={styles.checkbox} onChange={onChange}></Checkbox> 
-          D Электроэнергия, газ, пар и кондиционирование воздуха
-        </div>
+        <Panel 
+          header="B Продукция горнодобывающих производств" 
+          key="2" 
+          extra={<Checkbox className={styles.checkbox} onChange={onChange} onClick={(e) => {e.stopPropagation();}}></Checkbox> }>
 
-        <div className={styles.row}>
-          <ArrowDown/>
-          <Checkbox className={styles.checkbox} onChange={onChange}></Checkbox> 
-          E Водоснабжение; водоотведение, услуги по удалению и рекультивации отходов
-        </div>
+          <p>Text</p>
 
-        <div className={styles.row}>
-          <ArrowDown/>
-          <Checkbox className={styles.checkbox} onChange={onChange}></Checkbox> 
-          F Сооружения и строительные работы
-        </div>
+        </Panel>
 
-        <div className={styles.row}>
-          <ArrowDown/>
-          <Checkbox className={styles.checkbox} onChange={onChange}></Checkbox> 
-          F Услуги по оптовой и розничной торговле; услуги по ремонту автотранспортных средств и мотоциклов
-        </div>
+        <Panel 
+          header="C Продукция обрабатывающих производств" 
+          key="3" 
+          extra={<Checkbox className={styles.checkbox} onChange={onChange} onClick={(e) => {e.stopPropagation();}}></Checkbox> }>
 
-        <div className={styles.row}>
-          <ArrowDown/>
-          <Checkbox className={styles.checkbox} onChange={onChange}></Checkbox> 
-          G Услуги по оптовой и розничной торговле; услуги по ремонту автотранспортных средств и мотоциклов
-        </div>
+          <p>Text</p>
 
-        <div className={styles.row}>
-          <ArrowDown/>
-          <Checkbox className={styles.checkbox} onChange={onChange}></Checkbox> 
-          H Услуги транспорта и складского хозяйства
-        </div>
+        </Panel>
 
-        <div className={styles.row}>
-          <ArrowDown/>
-          <Checkbox className={styles.checkbox} onChange={onChange}></Checkbox> 
-          I Услуги гостиничного хозяйства и общественного питания
-        </div>
+        <Panel 
+          header="D Электроэнергия, газ, пар и кондиционирование воздуха" 
+          key="4" 
+          extra={<Checkbox className={styles.checkbox} onChange={onChange} onClick={(e) => {e.stopPropagation();}}></Checkbox> }>
 
-        <div className={styles.row}>
-          <ArrowDown/>
-          <Checkbox className={styles.checkbox} onChange={onChange}></Checkbox> 
-          J Услуги в области информации и связи
-        </div>
+          <p>Text</p>
 
-        <div className={styles.row}>
-          <ArrowDown/>
-          <Checkbox className={styles.checkbox} onChange={onChange}></Checkbox> 
-          K Услуги финансовые и страховые
-        </div>
+        </Panel>
 
-      </div>
+        <Panel 
+          header="E Водоснабжение; водоотведение, услуги по удалению и рекультивации отходов" 
+          key="5" 
+          extra={<Checkbox className={styles.checkbox} onChange={onChange} onClick={(e) => {e.stopPropagation();}}></Checkbox> }>
+
+          <p>Text</p>
+
+        </Panel>
+
+        <Panel 
+          header="F Сооружения и строительные работы" 
+          key="6" 
+          extra={<Checkbox className={styles.checkbox} onChange={onChange} onClick={(e) => {e.stopPropagation();}}></Checkbox> }>
+
+          <p>Text</p>
+
+        </Panel>
+
+        <Panel 
+          header="F Услуги по оптовой и розничной торговле; услуги по ремонту автотранспортных средств и мотоциклов" 
+          key="7" 
+          extra={<Checkbox className={styles.checkbox} onChange={onChange} onClick={(e) => {e.stopPropagation();}}></Checkbox> }>
+
+          <p>Text</p>
+
+        </Panel>
+
+        <Panel 
+          header="G Услуги по оптовой и розничной торговле; услуги по ремонту автотранспортных средств и мотоциклов" 
+          key="8" 
+          extra={<Checkbox className={styles.checkbox} onChange={onChange} onClick={(e) => {e.stopPropagation();}}></Checkbox> }>
+
+          <p>Text</p>
+
+        </Panel>
+
+        <Panel 
+          header="H Услуги транспорта и складского хозяйства" 
+          key="9" 
+          extra={<Checkbox className={styles.checkbox} onChange={onChange} onClick={(e) => {e.stopPropagation();}}></Checkbox> }>
+
+          <p>Text</p>
+
+        </Panel>
+
+        <Panel 
+          header="I Услуги гостиничного хозяйства и общественного питания" 
+          key="10" 
+          extra={<Checkbox className={styles.checkbox} onChange={onChange} onClick={(e) => {e.stopPropagation();}}></Checkbox> }>
+
+          <p>Text</p>
+
+        </Panel>
+
+        <Panel 
+          header="I Услуги гостиничного хозяйства и общественного питания" 
+          key="10" 
+          extra={<Checkbox className={styles.checkbox} onChange={onChange} onClick={(e) => {e.stopPropagation();}}></Checkbox> }>
+
+          <p>Text</p>
+
+        </Panel>
+
+        <Panel 
+          header="J Услуги в области информации и связи" 
+          key="11" 
+          extra={<Checkbox className={styles.checkbox} onChange={onChange} onClick={(e) => {e.stopPropagation();}}></Checkbox> }>
+
+          <p>Text</p>
+
+        </Panel>
+
+        <Panel 
+          header="K Услуги финансовые и страховые" 
+          key="11" 
+          extra={<Checkbox className={styles.checkbox} onChange={onChange} onClick={(e) => {e.stopPropagation();}}></Checkbox> }>
+
+          <p>Text</p>
+
+        </Panel>
+
+      </Collapse>
 
     </div>
 

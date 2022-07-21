@@ -203,3 +203,23 @@
     flex-direction: column;
   }
 }
+
+.ant-collapse > .ant-collapse-item > .ant-collapse-header {
+  padding-left: 0;
+
+  .ant-collapse-extra {
+    margin-left: 0;
+  }
+}
+.ant-collapse-header-text {
+  order: 1;
+}
+.ant-collapse-expand-icon {
+  margin-right: 5px;
+  svg {
+    transition: $transition;
+  }
+}
+.ant-collapse-item-active .ant-collapse-expand-icon svg {
+  transform: rotate(180deg);
+}

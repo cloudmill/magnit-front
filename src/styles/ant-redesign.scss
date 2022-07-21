@@ -216,10 +216,15 @@
 }
 .ant-collapse-expand-icon {
   margin-right: 5px;
-  svg {
+
+  svg, svg path {
     transition: $transition;
   }
 }
-.ant-collapse-item-active .ant-collapse-expand-icon svg {
+.ant-collapse-item-active > .ant-collapse-header > .ant-collapse-expand-icon svg {
   transform: rotate(180deg);
+
+  path {
+    fill: color(red);
+  }
 }

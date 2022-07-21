@@ -54,15 +54,20 @@ const handleChange = (value) => {
   console.log(`selected ${value}`);
 };
 
-const onChange = (date, dateString) => {
-  console.log(date, dateString);
-};
-
 export function SearchFilters(props) {
 
   const dispatch = useDispatch();
   const [isClicked1, setActive1] = useState('no-active');
   const [isClicked2, setActive2] = useState('no-active');
+
+  const onChange1 = (date, dateString) => {
+    console.log(date, dateString);
+    setActive1('active');
+  };
+  const onChange2 = (date, dateString) => {
+    console.log(date, dateString);
+    setActive2('active');
+  };
 
   if (props.state === 'open') {
     
@@ -123,9 +128,9 @@ export function SearchFilters(props) {
         placeholder={["Дата публикации", ""]} 
         format="DD.MM.YYYY" 
         suffixIcon={<CalendarIco/>}
-        onChange={onChange} 
+        onChange={onChange1} 
         allowClear={false}
-        onClick={() => {setActive1('active')}} 
+        // onClick={() => {setActive1('active')}} 
         separator={<Tire/>}
       />
 
@@ -137,14 +142,20 @@ export function SearchFilters(props) {
           placeholder={["Дата окончания приема заявок", ""]} 
           format="DD.MM.YYYY" 
           suffixIcon={<CalendarIco/>} 
-          onChange={onChange}
+          onChange={onChange2}
           allowClear={false} 
-          onClick={() => {setActive2('active')}}
+          // onClick={() => {setActive2('active')}}
           separator={<Tire/>}
           />
 
           <div className={styles.pickerLinks}>
-            <div className={styles.item}>Сегодня</div>
+
+            <div 
+              className={styles.item} 
+              onClick={() => {console.log( moment() )}}
+            >
+              Сегодня
+            </div>
             <div className={styles.item}>Завтра</div>
             <div className={styles.item}>Неделя</div>
           </div>

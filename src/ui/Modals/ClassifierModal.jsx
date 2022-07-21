@@ -8,6 +8,22 @@ import { close } from "../../store/index.ts";
 
 const { Panel } = Collapse;
 
+const content = [
+  {
+    name: 'ПРИВЕТ',
+    key: 1,
+  },
+  {
+    name: 'A Продукция сельского, лесного и рыбного хозяйства',
+    key: 1,
+  },
+  {
+    name: 'B Продукция горнодобывающих производств',
+    key: 2,
+  },
+]
+
+
 const onChange = (e) => {
   console.log(`checked = ${e.target.checked}`);
 };
@@ -15,10 +31,6 @@ const onChange = (e) => {
 export function ClassifierModal(props) {
 
   const dispatch = useDispatch();
-
-  const onCollapseChange = (key) => {
-    console.log(key);
-  };
 
   return <div className={styles.classifier}>
 
@@ -39,7 +51,6 @@ export function ClassifierModal(props) {
 
       <Collapse 
         className={styles.list} 
-        onChange={onCollapseChange} 
         expandIcon={() => <ArrowDown />}
         ghost>
 
@@ -120,16 +131,106 @@ export function ClassifierModal(props) {
           key="9" 
           extra={<Checkbox className={styles.checkbox} onChange={onChange} onClick={(e) => {e.stopPropagation();}}></Checkbox> }>
 
-          <p>Text</p>
+          <Collapse 
+            expandIcon={() => <ArrowDown />}
+            ghost>
 
-        </Panel>
+            <Panel 
+              header="49 Услуги транспорта и складского хозяйства" 
+              key="13" 
+              extra={<Checkbox className={styles.checkbox} onChange={onChange} onClick={(e) => {e.stopPropagation();}}></Checkbox> }>
 
-        <Panel 
-          header="I Услуги гостиничного хозяйства и общественного питания" 
-          key="10" 
-          extra={<Checkbox className={styles.checkbox} onChange={onChange} onClick={(e) => {e.stopPropagation();}}></Checkbox> }>
+              <Collapse 
+                expandIcon={() => <ArrowDown />}
+                ghost>
 
-          <p>Text</p>
+                <Panel 
+                  header="49.1 Услуги железнодорожного транспорта по перевозке пассажиров в междугородном и международном сообщении" 
+                  key="18" 
+                  extra={<Checkbox className={styles.checkbox} onChange={onChange} onClick={(e) => {e.stopPropagation();}}></Checkbox> }>
+
+                  <p>Text</p>
+
+                </Panel>
+
+                <Panel 
+                  header="49.2 Услуги железнодорожного транспорта по перевозке грузов" 
+                  key="19" 
+                  extra={<Checkbox className={styles.checkbox} onChange={onChange} onClick={(e) => {e.stopPropagation();}}></Checkbox> }>
+
+                  <p>Text</p>
+
+                </Panel>
+
+                <Panel 
+                  header="49.3 Услуги сухопутного пассажирского транспорта прочие" 
+                  key="20" 
+                  extra={<Checkbox className={styles.checkbox} onChange={onChange} onClick={(e) => {e.stopPropagation();}}></Checkbox> }>
+
+                  <p>Text</p>
+
+                </Panel>
+
+                <Panel 
+                  header="49.4 Услуги по грузовым перевозкам автомобильным транспортом и услуги по переезду" 
+                  key="21" 
+                  extra={<Checkbox className={styles.checkbox} onChange={onChange} onClick={(e) => {e.stopPropagation();}}></Checkbox> }>
+
+                  <p>Text</p>
+
+                </Panel>
+
+                <Panel 
+                  header="49.5 Услуги трубопроводного транспорта" 
+                  key="22" 
+                  extra={<Checkbox className={styles.checkbox} onChange={onChange} onClick={(e) => {e.stopPropagation();}}></Checkbox> }>
+
+                  <p>Text</p>
+
+                </Panel>
+                
+              </Collapse>
+
+            </Panel>
+
+            <Panel 
+              header="50 Услуги водного транспорта" 
+              key="14" 
+              extra={<Checkbox className={styles.checkbox} onChange={onChange} onClick={(e) => {e.stopPropagation();}}></Checkbox> }>
+
+              <p>Text</p>
+
+            </Panel>
+
+            <Panel 
+              header="51 Услуги воздушного и космического транспорта" 
+              key="15" 
+              extra={<Checkbox className={styles.checkbox} onChange={onChange} onClick={(e) => {e.stopPropagation();}}></Checkbox> }>
+
+              <p>Text</p>
+
+            </Panel>
+
+            <Panel 
+              header="52 Услуги по складированию и вспомогательные транспортные услуги" 
+              key="16" 
+              extra={<Checkbox className={styles.checkbox} onChange={onChange} onClick={(e) => {e.stopPropagation();}}></Checkbox> }>
+
+              <p>Text</p>
+
+            </Panel>
+
+            <Panel 
+              header="53 Услуги почтовой связи и услуги курьерские" 
+              key="17" 
+              extra={<Checkbox className={styles.checkbox} onChange={onChange} onClick={(e) => {e.stopPropagation();}}></Checkbox> }>
+
+              <p>Text</p>
+
+            </Panel>
+
+
+          </Collapse>
 
         </Panel>
 
@@ -153,7 +254,7 @@ export function ClassifierModal(props) {
 
         <Panel 
           header="K Услуги финансовые и страховые" 
-          key="11" 
+          key="12" 
           extra={<Checkbox className={styles.checkbox} onChange={onChange} onClick={(e) => {e.stopPropagation();}}></Checkbox> }>
 
           <p>Text</p>

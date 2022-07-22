@@ -102,6 +102,7 @@
 }
 
 .ant-picker-suffix {
+  margin: 0 0 0 auto;
   @media #{media('<')} {
     width: 14px;
   }
@@ -226,5 +227,12 @@
 
   path {
     fill: color(red);
+  }
+}
+.ant-picker-range:not(.noactive) .ant-picker-input  {
+  width: fit-content;
+
+  & > input {
+    width: 85px;
   }
 }

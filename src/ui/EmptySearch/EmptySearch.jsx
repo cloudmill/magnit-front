@@ -4,7 +4,7 @@ function EmptySearch({ q }) {
   return (
     <div className={styles.block}>
       По запросу <span>{q}</span> подходящих процедур нет. <br />
-      Поробуйте изменить критерий поиска.
+      Попробуйте изменить критерий поиска.
     </div>
   );
 }
